@@ -1,0 +1,21 @@
+FROM gemma3:12b-it-qat
+
+# シンキングモードをOFFにして初回レスポンスを高速化
+# これにより最初のトークン出力が大幅に早くなる
+PARAMETER num_ctx 4096
+
+SYSTEM """
+あなたは親切な日本語アシスタントです。
+簡潔に、自然な話し言葉で回答してください。
+"""
+
+# /thinkタグを無効化してシンキングモードをOFF
+TEMPLATE """{{ if .System }}<start_of_turn>user
+{{ .System }}<end_of_turn>
+{{ end }}{{ range .Messages }}{{ if eq .Role "user" }}<start_of_turn>user
+{{ .Content }}<end_of_turn>
+<start_of_turn>model
+{{ else if eq .Role "assistant" }}<start_of_turn>model
+{{ .Content }}<end_of_turn>
+{{ end }}{{ end }}<start_of_turn>model
+"""
