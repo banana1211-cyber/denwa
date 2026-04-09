@@ -1,47 +1,75 @@
 /**
- * AIVIS Speech クラウドAPI呼び出し
+ * Aivis Cloud API 音声合成
  *
- * ストリーミングモード（stream: true）でTTFB 250ms
- * 出力形式はMP3（WAVより軽量・転送速度有利）
+ * ベースURL: https://api.aivis-project.com/v1
+ * エンドポイント: POST /v1/tts/synthesize
+ * 認証: Authorization: Bearer {API_KEY}
  *
- * API仕様:
- * POST https://api.aivis-speech.com/v1/synthesis
- * { text, speaker_id, stream: true, format: 'mp3' }
+ * ストリーミング向け推奨設定:
+ * - output_format: "mp3"（軽量・転送速度有利）
+ * - leading_silence_seconds: 0.0（先頭の無音をなくしてTTFB短縮）
+ * - trailing_silence_seconds: 0.1
  */
 
-const AIVIS_API_BASE = process.env.NEXT_PUBLIC_AIVIS_API_URL || 'https://api.aivis-speech.com';
+const AIVIS_API_BASE = process.env.NEXT_PUBLIC_AIVIS_API_URL || 'https://api.aivis-project.com';
 const AIVIS_API_KEY = process.env.AIVIS_API_KEY || '';
 
 export interface TTSOptions {
-  speakerId?: string;
+  modelUuid?: string;
+  speakerUuid?: string;
+  speakingRate?: number;
 }
 
 /**
- * テキストをAIVIS SpeechでTTS変換し、音声データ(ArrayBuffer)を返す
- * ストリーミングAPIを使用してTTFBを250msに抑える
+ * テキストをAivis Cloud TTSで音声変換し、ArrayBufferを返す
+ *
+ * model_uuid は必須（AivisHubで取得）
+ * speaker_uuid は複数話者モデルのみ必要
  */
 export async function synthesizeSpeech(
   text: string,
   options: TTSOptions = {}
 ): Promise<ArrayBuffer> {
-  const { speakerId = 'your-speaker-id' } = options;
+  const {
+    modelUuid = process.env.NEXT_PUBLIC_AIVIS_MODEL_UUID || '',
+    speakerUuid = process.env.NEXT_PUBLIC_AIVIS_SPEAKER_UUID,
+    speakingRate = 1.0,
+  } = options;
 
-  const response = await fetch(`${AIVIS_API_BASE}/v1/synthesis`, {
+  if (!modelUuid) {
+    throw new Error('NEXT_PUBLIC_AIVIS_MODEL_UUID が設定されていません');
+  }
+
+  const body: Record<string, unknown> = {
+    model_uuid: modelUuid,
+    text,
+    output_format: 'mp3',
+    leading_silence_seconds: 0.0,
+    trailing_silence_seconds: 0.1,
+    use_ssml: false,
+    speaking_rate: speakingRate,
+  };
+
+  // 複数話者モデルの場合のみ speaker_uuid を追加
+  if (speakerUuid) {
+    body.speaker_uuid = speakerUuid;
+  }
+
+  const response = await fetch(`${AIVIS_API_BASE}/v1/tts/synthesize`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
       Authorization: `Bearer ${AIVIS_API_KEY}`,
     },
-    body: JSON.stringify({
-      text,
-      speaker_id: speakerId,
-      stream: true,
-      format: 'mp3',
-    }),
+    body: JSON.stringify(body),
   });
 
   if (!response.ok) {
-    throw new Error(`AIVIS API error: ${response.status} ${response.statusText}`);
+    const status = response.status;
+    if (status === 402) throw new Error('Aivis API: クレジット残高不足');
+    if (status === 404) throw new Error('Aivis API: model_uuid が見つかりません');
+    if (status === 429) throw new Error('Aivis API: レート制限到達');
+    throw new Error(`Aivis API error: ${status} ${response.statusText}`);
   }
 
   return response.arrayBuffer();
