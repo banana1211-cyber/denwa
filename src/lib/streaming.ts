@@ -2,9 +2,9 @@
  * Ollamaストリーミング処理のメインロジック
  *
  * 1秒未満を実現する仕組み:
- * - Ollamaへ直結ストリーミング（API Gateway不使用）
- * - 最初の句読点でTTS生成を即開始
- * - TTS並行生成・Fire-and-Forget（LLMストリームをブロックしない）
+ * - /api/chat エンドポイントに直結ストリーミング（API Gateway不使用）
+ * - 最初の句読点でTTS生成を即開始（chunkSplitter）
+ * - TTS並行生成・Fire-and-Forget（awaitしないでPromiseで投げる）
  */
 
 import { streamingChunkSplitter } from './chunkSplitter';
@@ -16,33 +16,32 @@ const MODEL_NAME = process.env.NEXT_PUBLIC_MODEL_NAME || 'gemma4';
 
 export interface StreamingOptions {
   onToken?: (token: string) => void;
-  onChunk?: (chunk: string) => void;
+  onChunk?: (chunk: string, index: number) => void;
   onAudioReady?: (chunkIndex: number) => void;
   onComplete?: (fullText: string) => void;
   onError?: (error: Error) => void;
 }
 
 /**
- * Ollamaにプロンプトを送信し、ストリーミング応答をTTSに流し込む
- * 最初の句読点到達時点でTTS生成を開始し、694ms以内に初音声を再生
+ * Ollamaにメッセージを送信し、ストリーミング応答をTTSに流し込む
+ *
+ * /api/chat エンドポイント（messagesフォーマット）使用
+ * 最初の句読点到達時点でTTS生成を開始し、1秒未満で初音声を再生
  */
 export async function streamWithTTS(
-  prompt: string,
+  userMessage: string,
   audioQueue: AudioQueue,
   options: StreamingOptions = {}
 ): Promise<string> {
   const { onToken, onChunk, onAudioReady, onComplete, onError } = options;
   const startTime = performance.now();
 
-  let fullText = '';
-  let chunkIndex = 0;
-
-  const response = await fetch(`${OLLAMA_BASE_URL}/api/generate`, {
+  const response = await fetch(`${OLLAMA_BASE_URL}/api/chat`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
       model: MODEL_NAME,
-      prompt,
+      messages: [{ role: 'user', content: userMessage }],
       stream: true,
     }),
   });
@@ -55,16 +54,20 @@ export async function streamWithTTS(
     throw new Error('Response body is null');
   }
 
-  const tokenStream = ollamaResponseToTokenStream(response.body);
+  const tokenStream = ollamaChatToTokenStream(response.body, onToken);
+
+  let fullText = '';
+  let chunkIndex = 0;
 
   try {
     for await (const chunk of streamingChunkSplitter(tokenStream)) {
       fullText += chunk;
-      onChunk?.(chunk);
+      onChunk?.(chunk, chunkIndex);
 
-      // Fire-and-Forget: TTS生成をブロックせずキューに積む
+      // Fire-and-Forget: awaitせずPromiseで投げてLLMストリームをブロックしない
       const currentIndex = chunkIndex++;
-      synthesizeSpeech(chunk)
+      const ttsPromise = synthesizeSpeech(chunk);
+      ttsPromise
         .then((audioBuffer) => {
           audioQueue.enqueue(audioBuffer);
           onAudioReady?.(currentIndex);
@@ -76,7 +79,7 @@ export async function streamWithTTS(
         })
         .catch((err) => {
           console.error(`TTS error for chunk ${currentIndex}:`, err);
-          onError?.(err);
+          onError?.(err instanceof Error ? err : new Error(String(err)));
         });
     }
   } catch (err) {
@@ -90,10 +93,11 @@ export async function streamWithTTS(
 }
 
 /**
- * OllamaのNDJSONストリームをトークン文字列のAsyncIterableに変換
+ * OllamaのNDJSONストリーム（/api/chat形式）をトークン文字列のAsyncIterableに変換
  */
-async function* ollamaResponseToTokenStream(
-  body: ReadableStream<Uint8Array>
+async function* ollamaChatToTokenStream(
+  body: ReadableStream<Uint8Array>,
+  onToken?: (token: string) => void
 ): AsyncGenerator<string> {
   const reader = body.getReader();
   const decoder = new TextDecoder();
@@ -112,11 +116,14 @@ async function* ollamaResponseToTokenStream(
         if (!line.trim()) continue;
         try {
           const json = JSON.parse(line);
-          if (json.response) {
-            yield json.response;
+          // /api/chat のレスポンスは json.message.content にトークンが入る
+          const token = json.message?.content;
+          if (token) {
+            onToken?.(token);
+            yield token;
           }
         } catch {
-          // ignore malformed JSON lines
+          // malformed JSON は無視
         }
       }
     }
