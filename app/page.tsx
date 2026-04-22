@@ -15,7 +15,7 @@ import { ViewerContext } from '@/features/vrmViewer/viewerContext';
 const VrmViewer = dynamic(() => import('@/components/VrmViewer'), { ssr: false });
 
 type Role = 'user' | 'assistant';
-type Status = 'idle' | 'listening' | 'thinking' | 'speaking';
+type Status = 'idle' | 'thinking' | 'speaking';
 
 interface Message {
   id: string;
@@ -45,23 +45,19 @@ export default function ChatPage() {
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState('');
   const [status, setStatus] = useState<Status>('idle');
-  const [isRecording, setIsRecording] = useState(false);
   const [convState, setConvState] = useState<ConversationState>(createInitialState());
   const [showLog, setShowLog] = useState(false);
 
   const audioQueueRef = useRef<AudioQueue | null>(null);
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const recognitionRef = useRef<any>(null);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages]);
 
-  const addMessage = (role: Role, content: string): string => {
+  const addMessage = (role: Role, content: string) => {
     const id = crypto.randomUUID();
     setMessages((prev) => [...prev, { id, role, content }]);
-    return id;
   };
 
   const appendToLastAssistant = (token: string) => {
@@ -88,7 +84,6 @@ export default function ChatPage() {
       addMessage('assistant', '');
 
       if (!audioQueueRef.current) {
-        // VRMモデルのロード状態を動的に参照し、ロード済みならリップシンク付き再生
         audioQueueRef.current = new AudioQueue(() => viewer.model ?? undefined);
       }
 
@@ -127,38 +122,6 @@ export default function ChatPage() {
     }
   };
 
-  const toggleRecording = () => {
-    if (isRecording) {
-      recognitionRef.current?.stop();
-      setIsRecording(false);
-      setStatus('idle');
-      return;
-    }
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const w = window as any;
-    const SR = w.SpeechRecognition ?? w.webkitSpeechRecognition;
-    if (!SR) {
-      alert('このブラウザは音声認識に対応していません（Chrome推奨）');
-      return;
-    }
-    const recognition = new SR();
-    recognition.lang = 'ja-JP';
-    recognition.continuous = false;
-    recognition.interimResults = false;
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    recognition.onresult = (event: any) => {
-      const transcript = event.results[0][0].transcript;
-      setIsRecording(false);
-      sendMessage(transcript);
-    };
-    recognition.onerror = () => { setIsRecording(false); setStatus('idle'); };
-    recognition.onend = () => { setIsRecording(false); };
-    recognitionRef.current = recognition;
-    recognition.start();
-    setIsRecording(true);
-    setStatus('listening');
-  };
-
   const resetConversation = () => {
     setMessages([]);
     setConvState(createInitialState());
@@ -167,8 +130,7 @@ export default function ChatPage() {
   };
 
   const statusConfig: Record<Status, { label: string; color: string }> = {
-    idle: { label: '', color: 'transparent' },
-    listening: { label: '聞いています...', color: '#f87171' },
+    idle:     { label: '',          color: 'transparent' },
     thinking: { label: '考えています...', color: '#fbbf24' },
     speaking: { label: '話しています...', color: '#34d399' },
   };
@@ -188,7 +150,7 @@ export default function ChatPage() {
           zIndex: 0,
         }}
       />
-      {/* 背景オーバーレイ（暗め） */}
+      {/* 背景オーバーレイ */}
       <div
         style={{
           position: 'fixed',
@@ -198,7 +160,7 @@ export default function ChatPage() {
         }}
       />
 
-      {/* VRMキャラクター（Three.js canvas） */}
+      {/* VRMキャラクター */}
       <div style={{ position: 'fixed', inset: 0, zIndex: 2 }}>
         <VrmViewer />
       </div>
@@ -227,7 +189,6 @@ export default function ChatPage() {
           }}
         >
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.7rem' }}>
-            {/* 会話ログボタン */}
             <button
               onClick={() => setShowLog(!showLog)}
               style={{
@@ -245,7 +206,6 @@ export default function ChatPage() {
             >
               💬 会話ログ
             </button>
-            {/* フローバッジ */}
             <span
               style={{
                 fontSize: '0.72rem',
@@ -320,7 +280,7 @@ export default function ChatPage() {
           </div>
         </header>
 
-        {/* 会話ログパネル（右側スライド） */}
+        {/* 会話ログパネル（左スライド） */}
         {showLog && (
           <div
             style={{
@@ -381,7 +341,6 @@ export default function ChatPage() {
           </div>
         )}
 
-        {/* メインエリア（空白 - VRMキャラが透けて見える） */}
         <main style={{ flex: 1 }} />
 
         {/* 入力フッター */}
@@ -394,33 +353,6 @@ export default function ChatPage() {
           }}
         >
           <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'flex-end', maxWidth: '700px', margin: '0 auto' }}>
-            {/* マイクボタン */}
-            <button
-              onClick={toggleRecording}
-              disabled={status === 'thinking' || status === 'speaking'}
-              style={{
-                width: '44px',
-                height: '44px',
-                borderRadius: '50%',
-                border: 'none',
-                background: isRecording
-                  ? 'rgba(248, 113, 113, 0.8)'
-                  : 'rgba(139, 92, 246, 0.5)',
-                color: '#fff',
-                fontSize: '1.2rem',
-                cursor: 'pointer',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                flexShrink: 0,
-                boxShadow: isRecording ? '0 0 12px rgba(248,113,113,0.6)' : 'none',
-              }}
-              title={isRecording ? '録音停止' : '音声入力'}
-            >
-              🎙️
-            </button>
-
-            {/* テキスト入力 */}
             <textarea
               value={input}
               onChange={(e) => setInput(e.target.value)}
@@ -445,8 +377,6 @@ export default function ChatPage() {
                 opacity: isBusy ? 0.5 : 1,
               }}
             />
-
-            {/* 送信ボタン */}
             <button
               onClick={handleSend}
               disabled={!input.trim() || isBusy}
