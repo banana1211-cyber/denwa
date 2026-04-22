@@ -1,0 +1,27 @@
+﻿tarot_card,tarot_card_ja,astrology,astrology_ja,type
+The Fool (0),愚者（0）,Uranus / Air,天王星・風,Major Arcana
+The Magician (I),魔術師（I）,Mercury,水星,Major Arcana
+The High Priestess (II),女教皇（II）,Moon,月,Major Arcana
+The Empress (III),女帝（III）,Venus,金星,Major Arcana
+The Emperor (IV),皇帝（IV）,Aries,牡羊座,Major Arcana
+The Hierophant (V),法王（V）,Taurus,牡牛座,Major Arcana
+The Lovers (VI),恋人たち（VI）,Gemini,双子座,Major Arcana
+The Chariot (VII),戦車（VII）,Cancer,蟹座,Major Arcana
+Strength (VIII),力（VIII）,Leo,獅子座,Major Arcana
+The Hermit (IX),隠者（IX）,Virgo,乙女座,Major Arcana
+Wheel of Fortune (X),運命の輪（X）,Jupiter,木星,Major Arcana
+Justice (XI),正義（XI）,Libra,天秤座,Major Arcana
+The Hanged Man (XII),吊るされた男（XII）,Neptune,海王星,Major Arcana
+Death (XIII),死神（XIII）,Scorpio,蠍座,Major Arcana
+Temperance (XIV),節制（XIV）,Sagittarius,射手座,Major Arcana
+The Devil (XV),悪魔（XV）,Capricorn,山羊座,Major Arcana
+The Tower (XVI),塔（XVI）,Mars,火星,Major Arcana
+The Star (XVII),星（XVII）,Aquarius,水瓶座,Major Arcana
+The Moon (XVIII),月（XVIII）,Pisces,魚座,Major Arcana
+The Sun (XIX),太陽（XIX）,Sun,太陽,Major Arcana
+Judgement (XX),審判（XX）,Pluto / Fire,冥王星・火,Major Arcana
+The World (XXI),世界（XXI）,Saturn / Earth,土星・地,Major Arcana
+Wands (suit),ワンド（スート）,Fire,火の元素,Minor Arcana Suit
+Cups (suit),カップ（スート）,Water,水の元素,Minor Arcana Suit
+Swords (suit),ソード（スート）,Air,風の元素,Minor Arcana Suit
+Pentacles (suit),ペンタクル（スート）,Earth,地の元素,Minor Arcana Suit

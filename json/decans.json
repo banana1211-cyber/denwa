@@ -1,0 +1,326 @@
+[
+  {
+    "sign_en": "Aries",
+    "sign_ja": "牡羊座",
+    "decan_number": 1,
+    "degree_range": "0°-9°59'",
+    "ruler_en": "Aries/Mars",
+    "ruler_ja": "牡羊座・火星",
+    "description_ja": "最も純粋な牡羊座のエネルギー。積極性・勇気・開拓精神が強く表れる。"
+  },
+  {
+    "sign_en": "Aries",
+    "sign_ja": "牡羊座",
+    "decan_number": 2,
+    "degree_range": "10°-19°59'",
+    "ruler_en": "Leo/Sun",
+    "ruler_ja": "獅子座・太陽",
+    "description_ja": "創造性とリーダーシップが加わる。自己表現と情熱が強まる。"
+  },
+  {
+    "sign_en": "Aries",
+    "sign_ja": "牡羊座",
+    "decan_number": 3,
+    "degree_range": "20°-29°59'",
+    "ruler_en": "Sagittarius/Jupiter",
+    "ruler_ja": "射手座・木星",
+    "description_ja": "哲学的な探求心と楽観主義が加わる。冒険心と理想主義が強まる。"
+  },
+  {
+    "sign_en": "Taurus",
+    "sign_ja": "牡牛座",
+    "decan_number": 1,
+    "degree_range": "0°-9°59'",
+    "ruler_en": "Taurus/Venus",
+    "ruler_ja": "牡牛座・金星",
+    "description_ja": "最も純粋な牡牛座のエネルギー。安定・官能性・物質的豊かさが強く表れる。"
+  },
+  {
+    "sign_en": "Taurus",
+    "sign_ja": "牡牛座",
+    "decan_number": 2,
+    "degree_range": "10°-19°59'",
+    "ruler_en": "Virgo/Mercury",
+    "ruler_ja": "乙女座・水星",
+    "description_ja": "分析力と実用性が加わる。細部への注意と奉仕精神が強まる。"
+  },
+  {
+    "sign_en": "Taurus",
+    "sign_ja": "牡牛座",
+    "decan_number": 3,
+    "degree_range": "20°-29°59'",
+    "ruler_en": "Capricorn/Saturn",
+    "ruler_ja": "山羊座・土星",
+    "description_ja": "野心と規律が加わる。物質的な達成と長期的な計画が強まる。"
+  },
+  {
+    "sign_en": "Gemini",
+    "sign_ja": "双子座",
+    "decan_number": 1,
+    "degree_range": "0°-9°59'",
+    "ruler_en": "Gemini/Mercury",
+    "ruler_ja": "双子座・水星",
+    "description_ja": "最も純粋な双子座のエネルギー。コミュニケーション・知性・多才さが強く表れる。"
+  },
+  {
+    "sign_en": "Gemini",
+    "sign_ja": "双子座",
+    "decan_number": 2,
+    "degree_range": "10°-19°59'",
+    "ruler_en": "Libra/Venus",
+    "ruler_ja": "天秤座・金星",
+    "description_ja": "美的センスと社交性が加わる。調和と関係性への関心が強まる。"
+  },
+  {
+    "sign_en": "Gemini",
+    "sign_ja": "双子座",
+    "decan_number": 3,
+    "degree_range": "20°-29°59'",
+    "ruler_en": "Aquarius/Uranus",
+    "ruler_ja": "水瓶座・天王星",
+    "description_ja": "革新性と人道主義が加わる。独創的な思考と社会への関心が強まる。"
+  },
+  {
+    "sign_en": "Cancer",
+    "sign_ja": "蟹座",
+    "decan_number": 1,
+    "degree_range": "0°-9°59'",
+    "ruler_en": "Cancer/Moon",
+    "ruler_ja": "蟹座・月",
+    "description_ja": "最も純粋な蟹座のエネルギー。感情・直感・家族への愛が強く表れる。"
+  },
+  {
+    "sign_en": "Cancer",
+    "sign_ja": "蟹座",
+    "decan_number": 2,
+    "degree_range": "10°-19°59'",
+    "ruler_en": "Scorpio/Pluto",
+    "ruler_ja": "蠍座・冥王星",
+    "description_ja": "深い感情と変容のエネルギーが加わる。心理的な洞察力が強まる。"
+  },
+  {
+    "sign_en": "Cancer",
+    "sign_ja": "蟹座",
+    "decan_number": 3,
+    "degree_range": "20°-29°59'",
+    "ruler_en": "Pisces/Neptune",
+    "ruler_ja": "魚座・海王星",
+    "description_ja": "霊的な感受性と共感力が加わる。直感と芸術的感受性が強まる。"
+  },
+  {
+    "sign_en": "Leo",
+    "sign_ja": "獅子座",
+    "decan_number": 1,
+    "degree_range": "0°-9°59'",
+    "ruler_en": "Leo/Sun",
+    "ruler_ja": "獅子座・太陽",
+    "description_ja": "最も純粋な獅子座のエネルギー。カリスマ・創造性・リーダーシップが強く表れる。"
+  },
+  {
+    "sign_en": "Leo",
+    "sign_ja": "獅子座",
+    "decan_number": 2,
+    "degree_range": "10°-19°59'",
+    "ruler_en": "Sagittarius/Jupiter",
+    "ruler_ja": "射手座・木星",
+    "description_ja": "哲学的な拡大と楽観主義が加わる。理想主義と高い目標が強まる。"
+  },
+  {
+    "sign_en": "Leo",
+    "sign_ja": "獅子座",
+    "decan_number": 3,
+    "degree_range": "20°-29°59'",
+    "ruler_en": "Aries/Mars",
+    "ruler_ja": "牡羊座・火星",
+    "description_ja": "行動力と積極性が加わる。競争心とパイオニア精神が強まる。"
+  },
+  {
+    "sign_en": "Virgo",
+    "sign_ja": "乙女座",
+    "decan_number": 1,
+    "degree_range": "0°-9°59'",
+    "ruler_en": "Virgo/Mercury",
+    "ruler_ja": "乙女座・水星",
+    "description_ja": "最も純粋な乙女座のエネルギー。分析力・勤勉さ・完璧主義が強く表れる。"
+  },
+  {
+    "sign_en": "Virgo",
+    "sign_ja": "乙女座",
+    "decan_number": 2,
+    "degree_range": "10°-19°59'",
+    "ruler_en": "Capricorn/Saturn",
+    "ruler_ja": "山羊座・土星",
+    "description_ja": "野心と規律が加わる。実用的な達成と責任感が強まる。"
+  },
+  {
+    "sign_en": "Virgo",
+    "sign_ja": "乙女座",
+    "decan_number": 3,
+    "degree_range": "20°-29°59'",
+    "ruler_en": "Taurus/Venus",
+    "ruler_ja": "牡牛座・金星",
+    "description_ja": "美的センスと感覚的な快楽が加わる。実用性と美の融合が強まる。"
+  },
+  {
+    "sign_en": "Libra",
+    "sign_ja": "天秤座",
+    "decan_number": 1,
+    "degree_range": "0°-9°59'",
+    "ruler_en": "Libra/Venus",
+    "ruler_ja": "天秤座・金星",
+    "description_ja": "最も純粋な天秤座のエネルギー。調和・美・パートナーシップが強く表れる。"
+  },
+  {
+    "sign_en": "Libra",
+    "sign_ja": "天秤座",
+    "decan_number": 2,
+    "degree_range": "10°-19°59'",
+    "ruler_en": "Aquarius/Uranus",
+    "ruler_ja": "水瓶座・天王星",
+    "description_ja": "革新性と人道主義が加わる。社会的な公正と独創性が強まる。"
+  },
+  {
+    "sign_en": "Libra",
+    "sign_ja": "天秤座",
+    "decan_number": 3,
+    "degree_range": "20°-29°59'",
+    "ruler_en": "Gemini/Mercury",
+    "ruler_ja": "双子座・水星",
+    "description_ja": "コミュニケーション能力が加わる。知的な交流と多様な視点が強まる。"
+  },
+  {
+    "sign_en": "Scorpio",
+    "sign_ja": "蠍座",
+    "decan_number": 1,
+    "degree_range": "0°-9°59'",
+    "ruler_en": "Scorpio/Pluto",
+    "ruler_ja": "蠍座・冥王星",
+    "description_ja": "最も純粋な蠍座のエネルギー。変容・強烈さ・深層心理が強く表れる。"
+  },
+  {
+    "sign_en": "Scorpio",
+    "sign_ja": "蠍座",
+    "decan_number": 2,
+    "degree_range": "10°-19°59'",
+    "ruler_en": "Pisces/Neptune",
+    "ruler_ja": "魚座・海王星",
+    "description_ja": "霊的な感受性と直感が加わる。神秘と霊的な深みが強まる。"
+  },
+  {
+    "sign_en": "Scorpio",
+    "sign_ja": "蠍座",
+    "decan_number": 3,
+    "degree_range": "20°-29°59'",
+    "ruler_en": "Cancer/Moon",
+    "ruler_ja": "蟹座・月",
+    "description_ja": "感情的な深さと保護本能が加わる。感情と変容のエネルギーが融合する。"
+  },
+  {
+    "sign_en": "Sagittarius",
+    "sign_ja": "射手座",
+    "decan_number": 1,
+    "degree_range": "0°-9°59'",
+    "ruler_en": "Sagittarius/Jupiter",
+    "ruler_ja": "射手座・木星",
+    "description_ja": "最も純粋な射手座のエネルギー。自由・哲学・冒険が強く表れる。"
+  },
+  {
+    "sign_en": "Sagittarius",
+    "sign_ja": "射手座",
+    "decan_number": 2,
+    "degree_range": "10°-19°59'",
+    "ruler_en": "Aries/Mars",
+    "ruler_ja": "牡羊座・火星",
+    "description_ja": "行動力と積極性が加わる。理想に向けた積極的な行動が強まる。"
+  },
+  {
+    "sign_en": "Sagittarius",
+    "sign_ja": "射手座",
+    "decan_number": 3,
+    "degree_range": "20°-29°59'",
+    "ruler_en": "Leo/Sun",
+    "ruler_ja": "獅子座・太陽",
+    "description_ja": "カリスマと創造性が加わる。哲学的な表現と自己表現が強まる。"
+  },
+  {
+    "sign_en": "Capricorn",
+    "sign_ja": "山羊座",
+    "decan_number": 1,
+    "degree_range": "0°-9°59'",
+    "ruler_en": "Capricorn/Saturn",
+    "ruler_ja": "山羊座・土星",
+    "description_ja": "最も純粋な山羊座のエネルギー。野心・規律・責任感が強く表れる。"
+  },
+  {
+    "sign_en": "Capricorn",
+    "sign_ja": "山羊座",
+    "decan_number": 2,
+    "degree_range": "10°-19°59'",
+    "ruler_en": "Taurus/Venus",
+    "ruler_ja": "牡牛座・金星",
+    "description_ja": "美的センスと物質的豊かさが加わる。実用性と美の融合が強まる。"
+  },
+  {
+    "sign_en": "Capricorn",
+    "sign_ja": "山羊座",
+    "decan_number": 3,
+    "degree_range": "20°-29°59'",
+    "ruler_en": "Virgo/Mercury",
+    "ruler_ja": "乙女座・水星",
+    "description_ja": "分析力と奉仕精神が加わる。実用的な知性と完璧主義が強まる。"
+  },
+  {
+    "sign_en": "Aquarius",
+    "sign_ja": "水瓶座",
+    "decan_number": 1,
+    "degree_range": "0°-9°59'",
+    "ruler_en": "Aquarius/Uranus",
+    "ruler_ja": "水瓶座・天王星",
+    "description_ja": "最も純粋な水瓶座のエネルギー。革新・人道主義・独創性が強く表れる。"
+  },
+  {
+    "sign_en": "Aquarius",
+    "sign_ja": "水瓶座",
+    "decan_number": 2,
+    "degree_range": "10°-19°59'",
+    "ruler_en": "Gemini/Mercury",
+    "ruler_ja": "双子座・水星",
+    "description_ja": "コミュニケーション能力が加わる。知的な革新と情報共有が強まる。"
+  },
+  {
+    "sign_en": "Aquarius",
+    "sign_ja": "水瓶座",
+    "decan_number": 3,
+    "degree_range": "20°-29°59'",
+    "ruler_en": "Libra/Venus",
+    "ruler_ja": "天秤座・金星",
+    "description_ja": "美的センスと社交性が加わる。社会的な調和と美的な革新が強まる。"
+  },
+  {
+    "sign_en": "Pisces",
+    "sign_ja": "魚座",
+    "decan_number": 1,
+    "degree_range": "0°-9°59'",
+    "ruler_en": "Pisces/Neptune",
+    "ruler_ja": "魚座・海王星",
+    "description_ja": "最も純粋な魚座のエネルギー。霊性・直感・共感力が強く表れる。"
+  },
+  {
+    "sign_en": "Pisces",
+    "sign_ja": "魚座",
+    "decan_number": 2,
+    "degree_range": "10°-19°59'",
+    "ruler_en": "Cancer/Moon",
+    "ruler_ja": "蟹座・月",
+    "description_ja": "感情的な深さと保護本能が加わる。感情と霊性の融合が強まる。"
+  },
+  {
+    "sign_en": "Pisces",
+    "sign_ja": "魚座",
+    "decan_number": 3,
+    "degree_range": "20°-29°59'",
+    "ruler_en": "Scorpio/Pluto",
+    "ruler_ja": "蠍座・冥王星",
+    "description_ja": "変容のエネルギーと深層心理が加わる。霊的な変容と深い洞察が強まる。"
+  }
+]

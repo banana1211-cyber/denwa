@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>占い相談システム - 会話フローマインドマップ</title>
+  <style>
+    :root {
+      --bg: #0d1117;
+      --surface: #161b22;
+      --border: #30363d;
+      --text: #e6edf3;
+      --muted: #8b949e;
+      --blue: #58a6ff;
+      --green: #3fb950;
+      --orange: #e3b341;
+      --red: #f78166;
+      --purple: #bc8cff;
+      --pink: #ff7eb6;
+      --teal: #39d353;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      min-height: 100vh;
+      padding: 2rem;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 1.4rem;
+      color: var(--blue);
+      margin-bottom: 0.5rem;
+    }
+
+    .subtitle {
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.85rem;
+      margin-bottom: 2.5rem;
+    }
+
+    /* ── ツリー全体 ── */
+    .tree {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+    }
+
+    /* ── ノード ── */
+    .node {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      white-space: nowrap;
+      border: 1.5px solid;
+    }
+
+    .node-root {
+      background: #1f2e45;
+      border-color: var(--blue);
+      color: var(--blue);
+      font-size: 1.05rem;
+      padding: 0.7rem 1.5rem;
+    }
+
+    .node-category {
+      border-color: var(--orange);
+      color: var(--orange);
+      background: #2a1f0a;
+    }
+
+    .node-flow {
+      border-color: var(--purple);
+      color: var(--purple);
+      background: #1e1630;
+    }
+
+    .node-method {
+      border-color: var(--teal);
+      color: var(--teal);
+      background: #0e2018;
+    }
+
+    .node-advice {
+      border-color: var(--pink);
+      color: var(--pink);
+      background: #2a1025;
+    }
+
+    .node-end {
+      border-color: var(--green);
+      color: var(--green);
+      background: #0e2018;
+    }
+
+    .node-sub {
+      border-color: var(--border);
+      color: var(--muted);
+      background: var(--surface);
+      font-weight: 400;
+      font-size: 0.8rem;
+    }
+
+    /* ── コネクター ── */
+    .connector-v {
+      width: 2px;
+      height: 24px;
+      background: var(--border);
+      margin: 0 auto;
+    }
+
+    .connector-h-wrap {
+      display: flex;
+      align-items: flex-start;
+      gap: 0;
+      position: relative;
+    }
+
+    .branch-col {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+    }
+
+    .h-line {
+      height: 2px;
+      background: var(--border);
+      min-width: 40px;
+    }
+
+    .h-line-left { border-radius: 2px 0 0 2px; }
+    .h-line-right { border-radius: 0 2px 2px 0; }
+
+    .branches-wrap {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    .branch-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* ── レジェンド ── */
+    .legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      justify-content: center;
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .legend-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+
+    /* ── セクション見出し ── */
+    .section-label {
+      font-size: 0.72rem;
+      color: var(--muted);
+      text-align: center;
+      margin-bottom: 0.5rem;
+      letter-spacing: 0.05em;
+    }
+
+    /* ── サブノード群 ── */
+    .subnodes {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      align-items: center;
+      margin-top: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+
+<h1>⭐ 占い相談システム 会話フロー</h1>
+<p class="subtitle">西洋星占術 × 音声チャット</p>
+
+<div class="tree">
+
+  <!-- START -->
+  <div class="node node-root">🌟 スタート（挨拶 / 星座確認）</div>
+  <div class="connector-v"></div>
+
+  <!-- カテゴリ判定 -->
+  <div class="node node-flow">🔮 相談カテゴリ判定</div>
+  <div class="connector-v"></div>
+
+  <!-- 5つの相談カテゴリ -->
+  <div class="section-label">▼ 相談カテゴリ（発言キーワードで自動分岐）</div>
+  <div class="branches-wrap">
+
+    <!-- 恋愛 -->
+    <div class="branch-item">
+      <div class="connector-v"></div>
+      <div class="node node-category">💕 恋愛・結婚</div>
+      <div class="connector-v"></div>
+      <div class="subnodes">
+        <div class="node node-sub">好きな人との関係</div>
+        <div class="node node-sub">相性・縁</div>
+        <div class="node node-sub">結婚の時期</div>
+        <div class="node node-sub">片思い・復縁</div>
+      </div>
+    </div>
+
+    <!-- 仕事 -->
+    <div class="branch-item">
+      <div class="connector-v"></div>
+      <div class="node node-category">💼 仕事・キャリア</div>
+      <div class="connector-v"></div>
+      <div class="subnodes">
+        <div class="node node-sub">転職・転機</div>
+        <div class="node node-sub">職場の人間関係</div>
+        <div class="node node-sub">出世・評価</div>
+        <div class="node node-sub">起業・副業</div>
+      </div>
+    </div>
+
+    <!-- 健康 -->
+    <div class="branch-item">
+      <div class="connector-v"></div>
+      <div class="node node-category">🌿 健康・運気</div>
+      <div class="connector-v"></div>
+      <div class="subnodes">
+        <div class="node node-sub">体調・エネルギー</div>
+        <div class="node node-sub">運気の流れ</div>
+        <div class="node node-sub">メンタル</div>
+      </div>
+    </div>
+
+    <!-- お金 -->
+    <div class="branch-item">
+      <div class="connector-v"></div>
+      <div class="node node-category">💰 お金・財運</div>
+      <div class="connector-v"></div>
+      <div class="subnodes">
+        <div class="node node-sub">収入・財運</div>
+        <div class="node node-sub">投資・貯蓄</div>
+        <div class="node node-sub">金運の時期</div>
+      </div>
+    </div>
+
+    <!-- 人間関係 -->
+    <div class="branch-item">
+      <div class="connector-v"></div>
+      <div class="node node-category">👥 人間関係</div>
+      <div class="connector-v"></div>
+      <div class="subnodes">
+        <div class="node node-sub">家族・親子</div>
+        <div class="node node-sub">友人・仲間</div>
+        <div class="node node-sub">トラブル解決</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="connector-v" style="height:32px;"></div>
+
+  <!-- 占い手法 -->
+  <div class="section-label">▼ 占い手法（DBから該当データを取得してプロンプトに注入）</div>
+  <div class="branches-wrap">
+
+    <div class="branch-item">
+      <div class="connector-v"></div>
+      <div class="node node-method">☉ 太陽星座診断</div>
+    </div>
+
+    <div class="branch-item">
+      <div class="connector-v"></div>
+      <div class="node node-method">☽ 月星座 / 感情分析</div>
+    </div>
+
+    <div class="branch-item">
+      <div class="connector-v"></div>
+      <div class="node node-method">♀ 金星 / 恋愛運</div>
+    </div>
+
+    <div class="branch-item">
+      <div class="connector-v"></div>
+      <div class="node node-method">♃ 木星 / 運勢拡大</div>
+    </div>
+
+    <div class="branch-item">
+      <div class="connector-v"></div>
+      <div class="node node-method">🏠 ハウス配置</div>
+    </div>
+
+  </div>
+
+  <div class="connector-v" style="height:32px;"></div>
+
+  <!-- アドバイス方向性 -->
+  <div class="section-label">▼ アドバイス方向性（天体配置に応じて自動選択）</div>
+  <div class="branches-wrap">
+
+    <div class="branch-item">
+      <div class="connector-v"></div>
+      <div class="node node-advice">🚀 背中を押す</div>
+      <div class="connector-v"></div>
+      <div class="node node-sub">木星・金星が好配置</div>
+    </div>
+
+    <div class="branch-item">
+      <div class="connector-v"></div>
+      <div class="node node-advice">⏳ 慎重に待つ</div>
+      <div class="connector-v"></div>
+      <div class="node node-sub">土星・逆行期</div>
+    </div>
+
+    <div class="branch-item">
+      <div class="connector-v"></div>
+      <div class="node node-advice">🔄 変化を促す</div>
+      <div class="connector-v"></div>
+      <div class="node node-sub">冥王星・天王星</div>
+    </div>
+
+    <div class="branch-item">
+      <div class="connector-v"></div>
+      <div class="node node-advice">🌱 現状を育てる</div>
+      <div class="connector-v"></div>
+      <div class="node node-sub">安定した配置</div>
+    </div>
+
+    <div class="branch-item">
+      <div class="connector-v"></div>
+      <div class="node node-advice">🔍 内省を促す</div>
+      <div class="connector-v"></div>
+      <div class="node node-sub">12ハウス・海王星</div>
+    </div>
+
+  </div>
+
+  <div class="connector-v" style="height:32px;"></div>
+
+  <!-- 詳細相談 -->
+  <div class="node node-flow">💬 詳細ヒアリング（追加質問・深掘り）</div>
+  <div class="connector-v"></div>
+
+  <!-- 締め -->
+  <div class="branches-wrap">
+    <div class="branch-item">
+      <div class="connector-v"></div>
+      <div class="node node-end">✨ 総評・まとめ</div>
+    </div>
+    <div class="branch-item">
+      <div class="connector-v"></div>
+      <div class="node node-end">🍀 開運アドバイス</div>
+    </div>
+    <div class="branch-item">
+      <div class="connector-v"></div>
+      <div class="node node-end">🔁 別カテゴリへ続ける</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- レジェンド -->
+<div class="legend">
+  <div class="legend-item">
+    <div class="legend-dot" style="background:var(--blue);"></div>
+    スタート / フロー制御
+  </div>
+  <div class="legend-item">
+    <div class="legend-dot" style="background:var(--orange);"></div>
+    相談カテゴリ
+  </div>
+  <div class="legend-item">
+    <div class="legend-dot" style="background:var(--teal);"></div>
+    占い手法（DB参照）
+  </div>
+  <div class="legend-item">
+    <div class="legend-dot" style="background:var(--pink);"></div>
+    アドバイス方向性
+  </div>
+  <div class="legend-item">
+    <div class="legend-dot" style="background:var(--green);"></div>
+    締め・エンド
+  </div>
+  <div class="legend-item">
+    <div class="legend-dot" style="background:var(--muted);"></div>
+    サブ項目
+  </div>
+</div>
+
+</body>
+</html>

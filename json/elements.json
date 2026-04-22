@@ -1,0 +1,138 @@
+[
+  {
+    "id": 1,
+    "name_en": "Fire",
+    "name_ja": "火（ファイア）",
+    "signs": [
+      "Aries",
+      "Leo",
+      "Sagittarius"
+    ],
+    "signs_ja": [
+      "牡羊座",
+      "獅子座",
+      "射手座"
+    ],
+    "keywords_en": [
+      "energy",
+      "enthusiasm",
+      "inspiration",
+      "action",
+      "passion",
+      "creativity"
+    ],
+    "keywords_ja": [
+      "エネルギー",
+      "熱意",
+      "インスピレーション",
+      "行動",
+      "情熱",
+      "創造性"
+    ],
+    "description_ja": "火の元素は活力・情熱・インスピレーション・行動を象徴する。火サインは積極的で熱意があり、新しいことを始める力に優れる。感情的な温かさと創造的なエネルギーを持つが、衝動的になりやすい。",
+    "polarity": "Positive/Masculine",
+    "polarity_ja": "陽性・男性的"
+  },
+  {
+    "id": 2,
+    "name_en": "Earth",
+    "name_ja": "地（アース）",
+    "signs": [
+      "Taurus",
+      "Virgo",
+      "Capricorn"
+    ],
+    "signs_ja": [
+      "牡牛座",
+      "乙女座",
+      "山羊座"
+    ],
+    "keywords_en": [
+      "stability",
+      "practicality",
+      "material",
+      "grounded",
+      "patience",
+      "reliability"
+    ],
+    "keywords_ja": [
+      "安定",
+      "実用性",
+      "物質",
+      "地に足がついた",
+      "忍耐",
+      "信頼性"
+    ],
+    "description_ja": "地の元素は安定・実用性・物質的な現実・忍耐を象徴する。地サインは現実的で信頼性が高く、物事を着実に進める力に優れる。感覚的な快楽と物質的な豊かさを重視するが、変化を嫌う傾向がある。",
+    "polarity": "Negative/Feminine",
+    "polarity_ja": "陰性・女性的"
+  },
+  {
+    "id": 3,
+    "name_en": "Air",
+    "name_ja": "風（エア）",
+    "signs": [
+      "Gemini",
+      "Libra",
+      "Aquarius"
+    ],
+    "signs_ja": [
+      "双子座",
+      "天秤座",
+      "水瓶座"
+    ],
+    "keywords_en": [
+      "intellect",
+      "communication",
+      "ideas",
+      "social",
+      "logic",
+      "adaptability"
+    ],
+    "keywords_ja": [
+      "知性",
+      "コミュニケーション",
+      "アイデア",
+      "社交性",
+      "論理",
+      "適応力"
+    ],
+    "description_ja": "風の元素は知性・コミュニケーション・アイデア・社交性を象徴する。風サインは知的で社交的であり、情報の処理と共有に優れる。客観的な視点と論理的思考を持つが、感情から切り離されやすい。",
+    "polarity": "Positive/Masculine",
+    "polarity_ja": "陽性・男性的"
+  },
+  {
+    "id": 4,
+    "name_en": "Water",
+    "name_ja": "水（ウォーター）",
+    "signs": [
+      "Cancer",
+      "Scorpio",
+      "Pisces"
+    ],
+    "signs_ja": [
+      "蟹座",
+      "蠍座",
+      "魚座"
+    ],
+    "keywords_en": [
+      "emotion",
+      "intuition",
+      "sensitivity",
+      "depth",
+      "empathy",
+      "psychic"
+    ],
+    "keywords_ja": [
+      "感情",
+      "直感",
+      "感受性",
+      "深さ",
+      "共感力",
+      "霊的感覚"
+    ],
+    "description_ja": "水の元素は感情・直感・感受性・深さを象徴する。水サインは感情的に深く、直感力と共感力に優れる。霊的な感受性と他者の感情への敏感さを持つが、感情的に圧倒されやすい。",
+    "polarity": "Negative/Feminine",
+    "polarity_ja": "陰性・女性的"
+  }
+]

@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>denwa - ローカルLLM音声チャット 1秒未満システム</title>
+  <style>
+    :root {
+      --bg: #0d1117;
+      --surface: #161b22;
+      --border: #30363d;
+      --accent: #58a6ff;
+      --green: #3fb950;
+      --orange: #f78166;
+      --text: #e6edf3;
+      --muted: #8b949e;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      line-height: 1.6;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(88,166,255,0.08) 0%, transparent 70%);
+      border-radius: 50%;
+      animation: pulse 4s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 0.6; }
+      50% { transform: scale(1.2); opacity: 1; }
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 0.3rem 0.9rem;
+      border: 1px solid var(--accent);
+      border-radius: 20px;
+      font-size: 0.8rem;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+      position: relative;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.5rem, 8vw, 5rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      position: relative;
+    }
+
+    .hero h1 span {
+      color: var(--accent);
+    }
+
+    .timer-ring {
+      position: relative;
+      width: 200px; height: 200px;
+      margin: 2.5rem auto;
+    }
+
+    .timer-ring svg {
+      transform: rotate(-90deg);
+    }
+
+    .timer-ring .bg-circle {
+      fill: none;
+      stroke: var(--border);
+      stroke-width: 8;
+    }
+
+    .timer-ring .progress-circle {
+      fill: none;
+      stroke: var(--accent);
+      stroke-width: 8;
+      stroke-linecap: round;
+      stroke-dasharray: 565;
+      stroke-dashoffset: 565;
+      animation: fillRing 2s ease-out forwards 0.5s;
+    }
+
+    @keyframes fillRing {
+      to { stroke-dashoffset: 134; } /* 694/1000 = 69.4% filled = 30.6% gap */
+    }
+
+    .timer-label {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .timer-ms {
+      font-size: 2.8rem;
+      font-weight: 800;
+      color: var(--accent);
+      line-height: 1;
+    }
+
+    .timer-unit {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .hero-desc {
+      font-size: 1.15rem;
+      color: var(--muted);
+      max-width: 560px;
+      position: relative;
+    }
+
+    /* ── SECTIONS ── */
+    section {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 5rem 2rem;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 2rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.75rem;
+    }
+
+    /* ── STACK CARDS ── */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      transition: border-color 0.2s;
+    }
+
+    .card:hover { border-color: var(--accent); }
+
+    .card-icon {
+      font-size: 2rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .card h3 { font-size: 1.1rem; margin-bottom: 0.5rem; }
+
+    .card p { color: var(--muted); font-size: 0.9rem; }
+
+    /* ── TIMELINE ── */
+    .timeline {
+      position: relative;
+      padding-left: 2rem;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0.55rem;
+      top: 0; bottom: 0;
+      width: 2px;
+      background: var(--border);
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 1.75rem;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -1.55rem;
+      top: 0.35rem;
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      background: var(--border);
+      border: 2px solid var(--bg);
+    }
+
+    .timeline-item.highlight::before {
+      background: var(--green);
+      box-shadow: 0 0 8px var(--green);
+    }
+
+    .timeline-ms {
+      font-size: 0.8rem;
+      color: var(--accent);
+      font-family: monospace;
+      margin-bottom: 0.25rem;
+    }
+
+    .timeline-item p { color: var(--muted); font-size: 0.9rem; }
+
+    /* ── COMPARISON TABLE ── */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.95rem;
+    }
+
+    th, td {
+      padding: 0.75rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+
+    th { color: var(--muted); font-weight: 600; font-size: 0.85rem; }
+
+    td:first-child { color: var(--text); }
+
+    .good { color: var(--green); }
+    .bad  { color: var(--orange); }
+
+    /* ── CODE BLOCKS ── */
+    .points { display: flex; flex-direction: column; gap: 1.5rem; }
+
+    .point {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 8px 8px 0;
+      padding: 1.25rem 1.5rem;
+    }
+
+    .point h3 { font-size: 1rem; margin-bottom: 0.5rem; }
+
+    .point p { color: var(--muted); font-size: 0.9rem; margin-bottom: 0.75rem; }
+
+    pre {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 0.75rem 1rem;
+      overflow-x: auto;
+      font-size: 0.82rem;
+      color: #a5d6ff;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      text-align: center;
+      padding: 3rem 2rem;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    footer a { color: var(--accent); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <span class="badge">ローカルLLM × クラウドTTS</span>
+  <h1>音声チャット<span>694ms</span>の壁</h1>
+
+  <div class="timer-ring">
+    <svg viewBox="0 0 200 200" width="200" height="200">
+      <circle class="bg-circle" cx="100" cy="100" r="90"/>
+      <circle class="progress-circle" cx="100" cy="100" r="90"/>
+    </svg>
+    <div class="timer-label">
+      <span class="timer-ms">694</span>
+      <span class="timer-unit">ms</span>
+    </div>
+  </div>
+
+  <p class="hero-desc">
+    Gemma4 (Ollama) + AIVIS Speech クラウドAPIで実現した<br>
+    初回音声再生まで <strong>1秒未満</strong> のリアルタイム音声チャット
+  </p>
+</div>
+
+<!-- STACK -->
+<section>
+  <h2>技術スタック</h2>
+  <div class="cards">
+    <div class="card">
+      <div class="card-icon">🧠</div>
+      <h3>Gemma4 via Ollama</h3>
+      <p>E2Pモデルをローカル実行。シンキングモードをModelfileでOFFにして最初のトークンを高速化。</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🔊</div>
+      <h3>AIVIS Speech クラウドAPI</h3>
+      <p>ストリーミングTTSでTTFB約250ms。ローカルCPU処理より大幅に高速。</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">⚡</div>
+      <h3>Next.js フロントエンド</h3>
+      <p>ブラウザからOllama・AIVIS APIに直接接続。中間サーバー不要でレイテンシ最小化。</p>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section>
+  <h2>実測タイムライン</h2>
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-ms">[0ms]</div>
+      <strong>ユーザー発話・送信</strong>
+      <p>マイク入力からOllamaへリクエスト送信</p>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-ms">[~50ms]</div>
+      <strong>Ollama ストリーミング開始</strong>
+      <p>最初のトークンが届き始める（ローカル直結）</p>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-ms">[~180ms]</div>
+      <strong>最初の句読点到達 → TTS生成キック</strong>
+      <p>chunkSplitter が句読点を検出、即座にAIVIS APIへリクエスト</p>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-ms">[~430ms]</div>
+      <strong>AIVIS Speech TTFB</strong>
+      <p>クラウドTTSから最初の音声データが返ってくる</p>
+    </div>
+    <div class="timeline-item highlight">
+      <div class="timeline-ms">[694ms] 🎉</div>
+      <strong>音声再生開始！</strong>
+      <p>AudioQueue が再生、LLMストリームは並行して継続中</p>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARISON -->
+<section>
+  <h2>ローカルTTS vs クラウドTTS</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>項目</th>
+        <th>ローカルCPU TTS</th>
+        <th>AIVIS Speech クラウド</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>TTFB</td>
+        <td class="bad">2000ms〜</td>
+        <td class="good">〜250ms</td>
+      </tr>
+      <tr>
+        <td>初回音声再生</td>
+        <td class="bad">3秒〜</td>
+        <td class="good">694ms</td>
+      </tr>
+      <tr>
+        <td>音質</td>
+        <td>普通</td>
+        <td class="good">高品質</td>
+      </tr>
+      <tr>
+        <td>オフライン動作</td>
+        <td class="good">可能</td>
+        <td class="bad">不可</td>
+      </tr>
+      <tr>
+        <td>コスト</td>
+        <td class="good">無料</td>
+        <td>API従量課金</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- 5 POINTS -->
+<section>
+  <h2>1秒未満を実現した5つの工夫</h2>
+  <div class="points">
+
+    <div class="point">
+      <h3>1. Gemma4 シンキングモード OFF</h3>
+      <p>Modelfileで <code>/think</code> タグを無効化し、推論オーバーヘッドを除去</p>
+      <pre>TEMPLATE """{{ if .System }}&lt;start_of_turn&gt;user
+{{ .System }}&lt;end_of_turn&gt;
+{{ end }}..."""</pre>
+    </div>
+
+    <div class="point">
+      <h3>2. Ollama直結ストリーミング</h3>
+      <p>Lambda / API Gatewayを経由せずブラウザから直接Ollamaに接続</p>
+      <pre>fetch('http://localhost:11434/api/generate', {
+  method: 'POST',
+  body: JSON.stringify({ stream: true, ... })
+})</pre>
+    </div>
+
+    <div class="point">
+      <h3>3. 句読点ベースのチャンク分割</h3>
+      <p>最初の句読点（。、！？）到達時点でTTS生成を即開始</p>
+      <pre>if (PUNCTUATION_PATTERN.test(char) &amp;&amp; buffer.length >= MIN_LEN) {
+  yield buffer.trim(); // → TTS へ
+}</pre>
+    </div>
+
+    <div class="point">
+      <h3>4. TTS並行生成・Fire-and-Forget</h3>
+      <p>TTS APIコールをawaitせずPromiseとして投げ、LLMストリームをブロックしない</p>
+      <pre>synthesizeSpeech(chunk)          // awaitしない
+  .then(buf => audioQueue.enqueue(buf))
+  .catch(console.error);</pre>
+    </div>
+
+    <div class="point">
+      <h3>5. クラウドTTSへの切り替え</h3>
+      <p>ローカルCPU処理（TTFB 2秒〜）からAIVIS Speechクラウド（TTFB 250ms）へ移行</p>
+      <pre>POST https://api.aivis-speech.com/v1/synthesis/stream
+{ "text": chunk, "streaming": true }</pre>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>
+    元ネタ:
+    <a href="https://qiita.com/kikuziro/items/35f8fd0f56e63b25854f" target="_blank" rel="noopener">
+      Qiita @kikuziro
+    </a>
+    &nbsp;|&nbsp;
+    <a href="https://github.com/banana1211-cyber/denwa" target="_blank" rel="noopener">
+      GitHub
+    </a>
+  </p>
+  <p style="margin-top: 0.5rem; font-size: 0.8rem;">
+    Built with Claude Code &amp; love for low-latency
+  </p>
+</footer>
+
+</body>
+</html>

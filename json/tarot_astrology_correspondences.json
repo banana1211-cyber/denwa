@@ -1,0 +1,184 @@
+[
+  {
+    "tarot_card": "The Fool (0)",
+    "tarot_card_ja": "愚者（0）",
+    "astrology": "Uranus / Air",
+    "astrology_ja": "天王星・風",
+    "type": "Major Arcana"
+  },
+  {
+    "tarot_card": "The Magician (I)",
+    "tarot_card_ja": "魔術師（I）",
+    "astrology": "Mercury",
+    "astrology_ja": "水星",
+    "type": "Major Arcana"
+  },
+  {
+    "tarot_card": "The High Priestess (II)",
+    "tarot_card_ja": "女教皇（II）",
+    "astrology": "Moon",
+    "astrology_ja": "月",
+    "type": "Major Arcana"
+  },
+  {
+    "tarot_card": "The Empress (III)",
+    "tarot_card_ja": "女帝（III）",
+    "astrology": "Venus",
+    "astrology_ja": "金星",
+    "type": "Major Arcana"
+  },
+  {
+    "tarot_card": "The Emperor (IV)",
+    "tarot_card_ja": "皇帝（IV）",
+    "astrology": "Aries",
+    "astrology_ja": "牡羊座",
+    "type": "Major Arcana"
+  },
+  {
+    "tarot_card": "The Hierophant (V)",
+    "tarot_card_ja": "法王（V）",
+    "astrology": "Taurus",
+    "astrology_ja": "牡牛座",
+    "type": "Major Arcana"
+  },
+  {
+    "tarot_card": "The Lovers (VI)",
+    "tarot_card_ja": "恋人たち（VI）",
+    "astrology": "Gemini",
+    "astrology_ja": "双子座",
+    "type": "Major Arcana"
+  },
+  {
+    "tarot_card": "The Chariot (VII)",
+    "tarot_card_ja": "戦車（VII）",
+    "astrology": "Cancer",
+    "astrology_ja": "蟹座",
+    "type": "Major Arcana"
+  },
+  {
+    "tarot_card": "Strength (VIII)",
+    "tarot_card_ja": "力（VIII）",
+    "astrology": "Leo",
+    "astrology_ja": "獅子座",
+    "type": "Major Arcana"
+  },
+  {
+    "tarot_card": "The Hermit (IX)",
+    "tarot_card_ja": "隠者（IX）",
+    "astrology": "Virgo",
+    "astrology_ja": "乙女座",
+    "type": "Major Arcana"
+  },
+  {
+    "tarot_card": "Wheel of Fortune (X)",
+    "tarot_card_ja": "運命の輪（X）",
+    "astrology": "Jupiter",
+    "astrology_ja": "木星",
+    "type": "Major Arcana"
+  },
+  {
+    "tarot_card": "Justice (XI)",
+    "tarot_card_ja": "正義（XI）",
+    "astrology": "Libra",
+    "astrology_ja": "天秤座",
+    "type": "Major Arcana"
+  },
+  {
+    "tarot_card": "The Hanged Man (XII)",
+    "tarot_card_ja": "吊るされた男（XII）",
+    "astrology": "Neptune",
+    "astrology_ja": "海王星",
+    "type": "Major Arcana"
+  },
+  {
+    "tarot_card": "Death (XIII)",
+    "tarot_card_ja": "死神（XIII）",
+    "astrology": "Scorpio",
+    "astrology_ja": "蠍座",
+    "type": "Major Arcana"
+  },
+  {
+    "tarot_card": "Temperance (XIV)",
+    "tarot_card_ja": "節制（XIV）",
+    "astrology": "Sagittarius",
+    "astrology_ja": "射手座",
+    "type": "Major Arcana"
+  },
+  {
+    "tarot_card": "The Devil (XV)",
+    "tarot_card_ja": "悪魔（XV）",
+    "astrology": "Capricorn",
+    "astrology_ja": "山羊座",
+    "type": "Major Arcana"
+  },
+  {
+    "tarot_card": "The Tower (XVI)",
+    "tarot_card_ja": "塔（XVI）",
+    "astrology": "Mars",
+    "astrology_ja": "火星",
+    "type": "Major Arcana"
+  },
+  {
+    "tarot_card": "The Star (XVII)",
+    "tarot_card_ja": "星（XVII）",
+    "astrology": "Aquarius",
+    "astrology_ja": "水瓶座",
+    "type": "Major Arcana"
+  },
+  {
+    "tarot_card": "The Moon (XVIII)",
+    "tarot_card_ja": "月（XVIII）",
+    "astrology": "Pisces",
+    "astrology_ja": "魚座",
+    "type": "Major Arcana"
+  },
+  {
+    "tarot_card": "The Sun (XIX)",
+    "tarot_card_ja": "太陽（XIX）",
+    "astrology": "Sun",
+    "astrology_ja": "太陽",
+    "type": "Major Arcana"
+  },
+  {
+    "tarot_card": "Judgement (XX)",
+    "tarot_card_ja": "審判（XX）",
+    "astrology": "Pluto / Fire",
+    "astrology_ja": "冥王星・火",
+    "type": "Major Arcana"
+  },
+  {
+    "tarot_card": "The World (XXI)",
+    "tarot_card_ja": "世界（XXI）",
+    "astrology": "Saturn / Earth",
+    "astrology_ja": "土星・地",
+    "type": "Major Arcana"
+  },
+  {
+    "tarot_card": "Wands (suit)",
+    "tarot_card_ja": "ワンド（スート）",
+    "astrology": "Fire",
+    "astrology_ja": "火の元素",
+    "type": "Minor Arcana Suit"
+  },
+  {
+    "tarot_card": "Cups (suit)",
+    "tarot_card_ja": "カップ（スート）",
+    "astrology": "Water",
+    "astrology_ja": "水の元素",
+    "type": "Minor Arcana Suit"
+  },
+  {
+    "tarot_card": "Swords (suit)",
+    "tarot_card_ja": "ソード（スート）",
+    "astrology": "Air",
+    "astrology_ja": "風の元素",
+    "type": "Minor Arcana Suit"
+  },
+  {
+    "tarot_card": "Pentacles (suit)",
+    "tarot_card_ja": "ペンタクル（スート）",
+    "astrology": "Earth",
+    "astrology_ja": "地の元素",
+    "type": "Minor Arcana Suit"
+  }
+]

@@ -1,0 +1,294 @@
+[
+  {
+    "id": 1,
+    "name_en": "Conjunction",
+    "name_ja": "コンジャンクション（合）",
+    "symbol": "☌",
+    "degrees": 0,
+    "orb_standard": 8,
+    "orb_tight": 3,
+    "type": "Major",
+    "type_ja": "メジャー",
+    "nature": "Neutral (depends on planets involved)",
+    "nature_ja": "中性（関係する天体による）",
+    "keywords_en": [
+      "fusion",
+      "intensity",
+      "union",
+      "blending",
+      "focus",
+      "new beginnings"
+    ],
+    "keywords_ja": [
+      "融合",
+      "強烈さ",
+      "合一",
+      "混合",
+      "集中",
+      "新しい始まり"
+    ],
+    "description_ja": "コンジャンクション（合）は2つの天体が同じ度数（0度）に位置するアスペクト。両天体のエネルギーが融合し、強烈に表れる。関係する天体の性質によって吉凶が異なる。太陽と月のコンジャンクションは新月を示し、新しいサイクルの始まりを意味する。",
+    "interpretation_ja": "2天体のエネルギーが一体化し、その分野が人生の重要なテーマとなる。天体の性質が強化され、集中的に表れる。"
+  },
+  {
+    "id": 2,
+    "name_en": "Sextile",
+    "name_ja": "セクスタイル（六分）",
+    "symbol": "⚹",
+    "degrees": 60,
+    "orb_standard": 6,
+    "orb_tight": 2,
+    "type": "Major",
+    "type_ja": "メジャー",
+    "nature": "Harmonious",
+    "nature_ja": "調和的",
+    "keywords_en": [
+      "opportunity",
+      "cooperation",
+      "talent",
+      "ease",
+      "communication",
+      "support"
+    ],
+    "keywords_ja": [
+      "機会",
+      "協力",
+      "才能",
+      "容易さ",
+      "コミュニケーション",
+      "サポート"
+    ],
+    "description_ja": "セクスタイル（六分）は2つの天体が60度の角度を形成するアスペクト。調和的で好機をもたらす。トラインより弱いが、積極的に活用すれば大きな恩恵を得られる。異なる元素（火と風、地と水）の星座間で形成されることが多い。",
+    "interpretation_ja": "才能・機会・協力のエネルギー。努力することで活かせる好機。コミュニケーションと協力が鍵。"
+  },
+  {
+    "id": 3,
+    "name_en": "Square",
+    "name_ja": "スクエア（四分）",
+    "symbol": "□",
+    "degrees": 90,
+    "orb_standard": 8,
+    "orb_tight": 3,
+    "type": "Major",
+    "type_ja": "メジャー",
+    "nature": "Challenging",
+    "nature_ja": "困難・緊張",
+    "keywords_en": [
+      "tension",
+      "conflict",
+      "challenge",
+      "friction",
+      "action",
+      "growth through struggle"
+    ],
+    "keywords_ja": [
+      "緊張",
+      "対立",
+      "挑戦",
+      "摩擦",
+      "行動",
+      "苦闘を通じた成長"
+    ],
+    "description_ja": "スクエア（四分）は2つの天体が90度の角度を形成するアスペクト。緊張・対立・挑戦をもたらすが、その摩擦が成長の原動力となる。同じモダリティ（活動・不動・柔軟）の異なる元素の星座間で形成される。困難なアスペクトだが、克服することで大きな力となる。",
+    "interpretation_ja": "緊張と対立のエネルギー。2天体のエネルギーが衝突し、課題や摩擦が生じる。しかし、この緊張が行動と成長の原動力となる。"
+  },
+  {
+    "id": 4,
+    "name_en": "Trine",
+    "name_ja": "トライン（三分）",
+    "symbol": "△",
+    "degrees": 120,
+    "orb_standard": 8,
+    "orb_tight": 3,
+    "type": "Major",
+    "type_ja": "メジャー",
+    "nature": "Harmonious",
+    "nature_ja": "調和的・恵み",
+    "keywords_en": [
+      "harmony",
+      "flow",
+      "natural talent",
+      "ease",
+      "grace",
+      "gifts",
+      "creativity"
+    ],
+    "keywords_ja": [
+      "調和",
+      "流れ",
+      "生まれつきの才能",
+      "容易さ",
+      "優雅さ",
+      "恵み",
+      "創造性"
+    ],
+    "description_ja": "トライン（三分）は2つの天体が120度の角度を形成するアスペクト。最も調和的で恵みをもたらすアスペクト。同じ元素（火・地・風・水）の星座間で形成される。生まれつきの才能・自然な流れ・恵みを示す。ただし、容易すぎるため怠惰になる危険もある。",
+    "interpretation_ja": "調和と才能のエネルギー。2天体のエネルギーが自然に流れ、生まれつきの才能や恵みをもたらす。最も吉祥なアスペクト。"
+  },
+  {
+    "id": 5,
+    "name_en": "Opposition",
+    "name_ja": "オポジション（衝）",
+    "symbol": "☍",
+    "degrees": 180,
+    "orb_standard": 8,
+    "orb_tight": 3,
+    "type": "Major",
+    "type_ja": "メジャー",
+    "nature": "Challenging",
+    "nature_ja": "困難・対立",
+    "keywords_en": [
+      "opposition",
+      "polarity",
+      "awareness",
+      "relationships",
+      "balance",
+      "projection"
+    ],
+    "keywords_ja": [
+      "対立",
+      "二極性",
+      "気づき",
+      "人間関係",
+      "バランス",
+      "投影"
+    ],
+    "description_ja": "オポジション（衝）は2つの天体が180度の角度を形成するアスペクト。対立・二極性・バランスを示す。対向する星座間で形成される。自分の中の対立する力・他者との対立・投影のパターンを示す。バランスを取ることで統合と成長が生まれる。",
+    "interpretation_ja": "対立と二極性のエネルギー。2天体のエネルギーが引っ張り合い、バランスを求める。他者との関係を通じて気づきを得る。"
+  },
+  {
+    "id": 6,
+    "name_en": "Semi-Sextile",
+    "name_ja": "セミセクスタイル（三十分）",
+    "symbol": "⊻",
+    "degrees": 30,
+    "orb_standard": 2,
+    "orb_tight": 1,
+    "type": "Minor",
+    "type_ja": "マイナー",
+    "nature": "Mildly Harmonious",
+    "nature_ja": "穏やかな調和",
+    "keywords_en": [
+      "subtle connection",
+      "mild opportunity",
+      "adjustment"
+    ],
+    "keywords_ja": [
+      "微妙なつながり",
+      "穏やかな機会",
+      "調整"
+    ],
+    "description_ja": "セミセクスタイル（三十分）は2つの天体が30度の角度を形成するマイナーアスペクト。穏やかな調和と微妙なつながりを示す。隣接する星座間で形成される。",
+    "interpretation_ja": "穏やかな調和のエネルギー。微妙なつながりと調整が必要な関係。"
+  },
+  {
+    "id": 7,
+    "name_en": "Semi-Square",
+    "name_ja": "セミスクエア（四十五分）",
+    "symbol": "∠",
+    "degrees": 45,
+    "orb_standard": 2,
+    "orb_tight": 1,
+    "type": "Minor",
+    "type_ja": "マイナー",
+    "nature": "Mildly Challenging",
+    "nature_ja": "穏やかな緊張",
+    "keywords_en": [
+      "irritation",
+      "friction",
+      "minor tension",
+      "adjustment needed"
+    ],
+    "keywords_ja": [
+      "苛立ち",
+      "摩擦",
+      "軽い緊張",
+      "調整が必要"
+    ],
+    "description_ja": "セミスクエア（四十五分）は2つの天体が45度の角度を形成するマイナーアスペクト。スクエアより弱い緊張と摩擦を示す。",
+    "interpretation_ja": "軽い緊張と摩擦のエネルギー。調整と意識的な取り組みが必要。"
+  },
+  {
+    "id": 8,
+    "name_en": "Sesquiquadrate",
+    "name_ja": "セスキクアドレート（百三十五分）",
+    "symbol": "⊼",
+    "degrees": 135,
+    "orb_standard": 2,
+    "orb_tight": 1,
+    "type": "Minor",
+    "type_ja": "マイナー",
+    "nature": "Mildly Challenging",
+    "nature_ja": "穏やかな緊張",
+    "keywords_en": [
+      "agitation",
+      "friction",
+      "restlessness",
+      "adjustment"
+    ],
+    "keywords_ja": [
+      "焦り",
+      "摩擦",
+      "落ち着きのなさ",
+      "調整"
+    ],
+    "description_ja": "セスキクアドレート（百三十五分）は2つの天体が135度の角度を形成するマイナーアスペクト。セミスクエアと同様の緊張と焦りを示す。",
+    "interpretation_ja": "焦りと摩擦のエネルギー。行動を促す軽い緊張。"
+  },
+  {
+    "id": 9,
+    "name_en": "Quincunx (Inconjunct)",
+    "name_ja": "クインカンクス（クインカンクス・百五十分）",
+    "symbol": "⚻",
+    "degrees": 150,
+    "orb_standard": 3,
+    "orb_tight": 1,
+    "type": "Minor",
+    "type_ja": "マイナー",
+    "nature": "Awkward",
+    "nature_ja": "ぎこちない・調整困難",
+    "keywords_en": [
+      "adjustment",
+      "health",
+      "service",
+      "awkward connection",
+      "redirection"
+    ],
+    "keywords_ja": [
+      "調整",
+      "健康",
+      "奉仕",
+      "ぎこちないつながり",
+      "方向転換"
+    ],
+    "description_ja": "クインカンクス（百五十分）は2つの天体が150度の角度を形成するアスペクト。ぎこちなく調整困難な関係を示す。2つの天体は元素もモダリティも共有しないため、自然な調和が難しい。健康問題や方向転換を示すことが多い。",
+    "interpretation_ja": "ぎこちない調整のエネルギー。2天体のエネルギーが自然に噛み合わず、継続的な調整が必要。健康や奉仕のテーマと関連することが多い。"
+  },
+  {
+    "id": 10,
+    "name_en": "Quintile",
+    "name_ja": "クインタイル（七十二分）",
+    "symbol": "Q",
+    "degrees": 72,
+    "orb_standard": 2,
+    "orb_tight": 1,
+    "type": "Minor",
+    "type_ja": "マイナー",
+    "nature": "Creative",
+    "nature_ja": "創造的",
+    "keywords_en": [
+      "creativity",
+      "talent",
+      "unique gifts",
+      "special abilities"
+    ],
+    "keywords_ja": [
+      "創造性",
+      "才能",
+      "ユニークな才能",
+      "特別な能力"
+    ],
+    "description_ja": "クインタイル（七十二分）は2つの天体が72度の角度を形成するマイナーアスペクト。創造的な才能と特別な能力を示す。",
+    "interpretation_ja": "創造的な才能のエネルギー。特別な能力と独自の才能を示す。"
+  }
+]
