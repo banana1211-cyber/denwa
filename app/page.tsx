@@ -88,7 +88,8 @@ export default function ChatPage() {
       addMessage('assistant', '');
 
       if (!audioQueueRef.current) {
-        audioQueueRef.current = new AudioQueue();
+        // VRMモデルのロード状態を動的に参照し、ロード済みならリップシンク付き再生
+        audioQueueRef.current = new AudioQueue(() => viewer.model ?? undefined);
       }
 
       try {
