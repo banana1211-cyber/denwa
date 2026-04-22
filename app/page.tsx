@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useRef, useEffect, useCallback } from 'react';
+import dynamic from 'next/dynamic';
 import { AudioQueue } from '@/lib/audioQueue';
 import { streamWithTTS } from '@/lib/streaming';
 import {
@@ -8,6 +9,10 @@ import {
   transition,
   type ConversationState,
 } from '@/lib/rag/conversationFlow';
+import { ViewerContext } from '@/features/vrmViewer/viewerContext';
+
+// VRMViewerはSSR無効（Three.jsはブラウザのみ）
+const VrmViewer = dynamic(() => import('@/components/VrmViewer'), { ssr: false });
 
 type Role = 'user' | 'assistant';
 type Status = 'idle' | 'listening' | 'thinking' | 'speaking';
@@ -32,15 +37,21 @@ const FLOW_LABELS: Record<string, string> = {
   closing: '締め',
 };
 
+// ViewerContextのProviderをクライアント側で初期化
+import { Viewer } from '@/features/vrmViewer/viewer';
+const viewer = typeof window !== 'undefined' ? new Viewer() : ({} as Viewer);
+
 export default function ChatPage() {
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState('');
   const [status, setStatus] = useState<Status>('idle');
   const [isRecording, setIsRecording] = useState(false);
   const [convState, setConvState] = useState<ConversationState>(createInitialState());
+  const [showLog, setShowLog] = useState(false);
 
   const audioQueueRef = useRef<AudioQueue | null>(null);
-  const recognitionRef = useRef<InstanceType<typeof window.SpeechRecognition> | null>(null);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const recognitionRef = useRef<any>(null);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -70,11 +81,8 @@ export default function ChatPage() {
       if (!trimmed || status !== 'idle') return;
 
       setInput('');
-
-      // 会話フロー状態を更新
       const nextState = transition(convState, trimmed);
       setConvState(nextState);
-
       setStatus('thinking');
       addMessage('user', trimmed);
       addMessage('assistant', '');
@@ -90,7 +98,6 @@ export default function ChatPage() {
             if (index === 0) setStatus('speaking');
           },
           onComplete: (fullText) => {
-            // アシスタントの返答を履歴に追加
             setConvState((prev) => ({
               ...prev,
               history: [...prev.history, { role: 'assistant', content: fullText }],
@@ -126,29 +133,25 @@ export default function ChatPage() {
       setStatus('idle');
       return;
     }
-
-    const SR =
-      (window as unknown as { SpeechRecognition?: typeof SpeechRecognition }).SpeechRecognition ??
-      (window as unknown as { webkitSpeechRecognition?: typeof SpeechRecognition }).webkitSpeechRecognition;
-
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const w = window as any;
+    const SR = w.SpeechRecognition ?? w.webkitSpeechRecognition;
     if (!SR) {
       alert('このブラウザは音声認識に対応していません（Chrome推奨）');
       return;
     }
-
     const recognition = new SR();
     recognition.lang = 'ja-JP';
     recognition.continuous = false;
     recognition.interimResults = false;
-
-    recognition.onresult = (event: SpeechRecognitionEvent) => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    recognition.onresult = (event: any) => {
       const transcript = event.results[0][0].transcript;
       setIsRecording(false);
       sendMessage(transcript);
     };
     recognition.onerror = () => { setIsRecording(false); setStatus('idle'); };
     recognition.onend = () => { setIsRecording(false); };
-
     recognitionRef.current = recognition;
     recognition.start();
     setIsRecording(true);
@@ -164,124 +167,320 @@ export default function ChatPage() {
 
   const statusConfig: Record<Status, { label: string; color: string }> = {
     idle: { label: '', color: 'transparent' },
-    listening: { label: '聞いています...', color: '#f78166' },
-    thinking: { label: '考えています...', color: '#e3b341' },
-    speaking: { label: '話しています...', color: '#3fb950' },
+    listening: { label: '聞いています...', color: '#f87171' },
+    thinking: { label: '考えています...', color: '#fbbf24' },
+    speaking: { label: '話しています...', color: '#34d399' },
   };
   const { label: statusLabel, color: statusColor } = statusConfig[status];
   const isBusy = status !== 'idle';
 
   return (
-    <div style={styles.root}>
-      {/* ヘッダー */}
-      <header style={styles.header}>
-        <div style={styles.headerLeft}>
-          <span style={styles.logo}>⭐ 星占い</span>
-          {/* 現在のフローステート */}
-          <span style={styles.flowBadge}>
-            {FLOW_LABELS[convState.currentNode] ?? convState.currentNode}
-          </span>
-          {convState.zodiacSign && (
-            <span style={styles.zodiacBadge}>{convState.zodiacSign}</span>
-          )}
-        </div>
-        <div style={styles.headerRight}>
-          {statusLabel && (
-            <span style={{ ...styles.statusBadge, borderColor: statusColor, color: statusColor }}>
-              <span style={{ ...styles.dot, background: statusColor, boxShadow: `0 0 6px ${statusColor}` }} />
-              {statusLabel}
-            </span>
-          )}
-          <button onClick={resetConversation} style={styles.resetBtn} title="会話をリセット">
-            ↺
-          </button>
-        </div>
-      </header>
+    <ViewerContext.Provider value={{ viewer }}>
+      {/* 神社背景 */}
+      <div
+        style={{
+          position: 'fixed',
+          inset: 0,
+          backgroundImage: 'url(/shrine_bg.jpg)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          zIndex: 0,
+        }}
+      />
+      {/* 背景オーバーレイ（暗め） */}
+      <div
+        style={{
+          position: 'fixed',
+          inset: 0,
+          background: 'rgba(10, 5, 20, 0.45)',
+          zIndex: 1,
+        }}
+      />
 
-      {/* メッセージリスト */}
-      <main style={styles.main}>
-        {messages.length === 0 && (
-          <div style={styles.empty}>
-            <p style={{ fontSize: '3rem', marginBottom: '1rem' }}>🔮</p>
-            <p style={{ color: '#8b949e', marginBottom: '0.5rem' }}>星の導きのもとへようこそ</p>
-            <p style={{ color: '#8b949e', fontSize: '0.85rem' }}>
-              マイクか文字でお悩みをお聞かせください
-            </p>
+      {/* VRMキャラクター（Three.js canvas） */}
+      <div style={{ position: 'fixed', inset: 0, zIndex: 2 }}>
+        <VrmViewer />
+      </div>
+
+      {/* UIレイヤー */}
+      <div
+        style={{
+          position: 'fixed',
+          inset: 0,
+          zIndex: 10,
+          display: 'flex',
+          flexDirection: 'column',
+          fontFamily: '"Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif',
+        }}
+      >
+        {/* ヘッダー */}
+        <header
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            padding: '0.6rem 1.2rem',
+            background: 'rgba(15, 8, 30, 0.7)',
+            backdropFilter: 'blur(12px)',
+            borderBottom: '1px solid rgba(255,255,255,0.1)',
+          }}
+        >
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.7rem' }}>
+            {/* 会話ログボタン */}
+            <button
+              onClick={() => setShowLog(!showLog)}
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '0.4rem',
+                background: 'rgba(255,255,255,0.08)',
+                border: '1px solid rgba(255,255,255,0.15)',
+                borderRadius: '20px',
+                color: '#e2d9f3',
+                padding: '0.3rem 0.8rem',
+                fontSize: '0.8rem',
+                cursor: 'pointer',
+              }}
+            >
+              💬 会話ログ
+            </button>
+            {/* フローバッジ */}
+            <span
+              style={{
+                fontSize: '0.72rem',
+                padding: '0.2rem 0.65rem',
+                background: 'rgba(139, 92, 246, 0.25)',
+                border: '1px solid rgba(139, 92, 246, 0.6)',
+                borderRadius: '12px',
+                color: '#c4b5fd',
+              }}
+            >
+              {FLOW_LABELS[convState.currentNode] ?? convState.currentNode}
+            </span>
+            {convState.zodiacSign && (
+              <span
+                style={{
+                  fontSize: '0.72rem',
+                  padding: '0.2rem 0.65rem',
+                  background: 'rgba(251, 191, 36, 0.15)',
+                  border: '1px solid rgba(251, 191, 36, 0.5)',
+                  borderRadius: '12px',
+                  color: '#fde68a',
+                }}
+              >
+                {convState.zodiacSign}
+              </span>
+            )}
+          </div>
+
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
+            {statusLabel && (
+              <span
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '0.4rem',
+                  fontSize: '0.75rem',
+                  padding: '0.25rem 0.75rem',
+                  border: `1px solid ${statusColor}`,
+                  borderRadius: '20px',
+                  color: statusColor,
+                }}
+              >
+                <span
+                  style={{
+                    width: '7px',
+                    height: '7px',
+                    borderRadius: '50%',
+                    background: statusColor,
+                    boxShadow: `0 0 6px ${statusColor}`,
+                    display: 'inline-block',
+                  }}
+                />
+                {statusLabel}
+              </span>
+            )}
+            <button
+              onClick={resetConversation}
+              title="会話をリセット"
+              style={{
+                background: 'rgba(255,255,255,0.06)',
+                border: '1px solid rgba(255,255,255,0.15)',
+                color: '#a78bfa',
+                borderRadius: '6px',
+                width: '32px',
+                height: '32px',
+                cursor: 'pointer',
+                fontSize: '1rem',
+              }}
+            >
+              ↺
+            </button>
+          </div>
+        </header>
+
+        {/* 会話ログパネル（右側スライド） */}
+        {showLog && (
+          <div
+            style={{
+              position: 'absolute',
+              top: '52px',
+              left: 0,
+              width: '320px',
+              maxHeight: 'calc(100dvh - 130px)',
+              overflowY: 'auto',
+              background: 'rgba(15, 8, 30, 0.85)',
+              backdropFilter: 'blur(16px)',
+              borderRight: '1px solid rgba(255,255,255,0.1)',
+              padding: '1rem',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '0.75rem',
+              zIndex: 20,
+            }}
+          >
+            {messages.length === 0 ? (
+              <p style={{ color: 'rgba(255,255,255,0.4)', fontSize: '0.85rem', textAlign: 'center', marginTop: '2rem' }}>
+                まだ会話がありません
+              </p>
+            ) : (
+              messages.map((msg) => (
+                <div
+                  key={msg.id}
+                  style={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: msg.role === 'user' ? 'flex-end' : 'flex-start',
+                  }}
+                >
+                  <div
+                    style={{
+                      maxWidth: '90%',
+                      padding: '0.55rem 0.85rem',
+                      borderRadius: msg.role === 'user' ? '12px 12px 4px 12px' : '12px 12px 12px 4px',
+                      fontSize: '0.85rem',
+                      lineHeight: 1.6,
+                      whiteSpace: 'pre-wrap',
+                      wordBreak: 'break-word',
+                      background: msg.role === 'user'
+                        ? 'rgba(139, 92, 246, 0.4)'
+                        : 'rgba(255,255,255,0.08)',
+                      border: msg.role === 'user'
+                        ? '1px solid rgba(139, 92, 246, 0.6)'
+                        : '1px solid rgba(255,255,255,0.12)',
+                      color: '#f0ebff',
+                    }}
+                  >
+                    {msg.content || <span style={{ color: 'rgba(255,255,255,0.3)', fontStyle: 'italic' }}>読み解いています...</span>}
+                  </div>
+                </div>
+              ))
+            )}
+            <div ref={messagesEndRef} />
           </div>
         )}
 
-        {messages.map((msg) => (
-          <div
-            key={msg.id}
-            style={{ ...styles.bubbleWrap, justifyContent: msg.role === 'user' ? 'flex-end' : 'flex-start' }}
-          >
-            {msg.role === 'assistant' && <div style={styles.avatar}>🔮</div>}
-            <div style={{ ...styles.bubble, ...(msg.role === 'user' ? styles.bubbleUser : styles.bubbleAssistant) }}>
-              {msg.content || (
-                <span style={{ color: '#8b949e', fontStyle: 'italic' }}>読み解いています...</span>
-              )}
-            </div>
-          </div>
-        ))}
-        <div ref={messagesEndRef} />
-      </main>
+        {/* メインエリア（空白 - VRMキャラが透けて見える） */}
+        <main style={{ flex: 1 }} />
 
-      {/* 入力エリア */}
-      <footer style={styles.footer}>
-        <div style={styles.inputWrap}>
-          <textarea
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
-            onKeyDown={handleKeyDown}
-            placeholder="お悩みをお聞かせください（Enterで送信）"
-            rows={1}
-            disabled={isBusy}
-            style={{ ...styles.textarea, opacity: isBusy ? 0.5 : 1, cursor: isBusy ? 'not-allowed' : 'text' }}
-          />
-          <button
-            onClick={toggleRecording}
-            disabled={status === 'thinking' || status === 'speaking'}
-            style={{ ...styles.iconBtn, background: isRecording ? '#f78166' : '#21262d', color: isRecording ? '#fff' : '#8b949e' }}
-            title={isRecording ? '録音停止' : '音声入力'}
+        {/* 入力フッター */}
+        <footer
+          style={{
+            padding: '0.75rem 1.2rem 1rem',
+            background: 'rgba(15, 8, 30, 0.7)',
+            backdropFilter: 'blur(12px)',
+            borderTop: '1px solid rgba(255,255,255,0.1)',
+          }}
+        >
+          <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'flex-end', maxWidth: '700px', margin: '0 auto' }}>
+            {/* マイクボタン */}
+            <button
+              onClick={toggleRecording}
+              disabled={status === 'thinking' || status === 'speaking'}
+              style={{
+                width: '44px',
+                height: '44px',
+                borderRadius: '50%',
+                border: 'none',
+                background: isRecording
+                  ? 'rgba(248, 113, 113, 0.8)'
+                  : 'rgba(139, 92, 246, 0.5)',
+                color: '#fff',
+                fontSize: '1.2rem',
+                cursor: 'pointer',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                flexShrink: 0,
+                boxShadow: isRecording ? '0 0 12px rgba(248,113,113,0.6)' : 'none',
+              }}
+              title={isRecording ? '録音停止' : '音声入力'}
+            >
+              🎙️
+            </button>
+
+            {/* テキスト入力 */}
+            <textarea
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+              onKeyDown={handleKeyDown}
+              placeholder="聞きたいことをいれてね"
+              rows={1}
+              disabled={isBusy}
+              style={{
+                flex: 1,
+                background: 'rgba(255,255,255,0.08)',
+                border: '1px solid rgba(255,255,255,0.2)',
+                borderRadius: '22px',
+                color: '#f0ebff',
+                padding: '0.65rem 1.1rem',
+                fontSize: '0.95rem',
+                resize: 'none',
+                outline: 'none',
+                fontFamily: 'inherit',
+                lineHeight: 1.5,
+                maxHeight: '120px',
+                overflowY: 'auto',
+                opacity: isBusy ? 0.5 : 1,
+              }}
+            />
+
+            {/* 送信ボタン */}
+            <button
+              onClick={handleSend}
+              disabled={!input.trim() || isBusy}
+              style={{
+                width: '44px',
+                height: '44px',
+                borderRadius: '50%',
+                border: 'none',
+                background: !input.trim() || isBusy
+                  ? 'rgba(139, 92, 246, 0.2)'
+                  : 'rgba(139, 92, 246, 0.8)',
+                color: '#fff',
+                fontSize: '1.1rem',
+                cursor: !input.trim() || isBusy ? 'not-allowed' : 'pointer',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                flexShrink: 0,
+              }}
+            >
+              ▶
+            </button>
+          </div>
+          <p
+            style={{
+              marginTop: '0.4rem',
+              fontSize: '0.72rem',
+              color: 'rgba(255,255,255,0.3)',
+              textAlign: 'center',
+            }}
           >
-            🎙️
-          </button>
-          <button
-            onClick={handleSend}
-            disabled={!input.trim() || isBusy}
-            style={{ ...styles.sendBtn, opacity: !input.trim() || isBusy ? 0.4 : 1, cursor: !input.trim() || isBusy ? 'not-allowed' : 'pointer' }}
-          >
-            送信
-          </button>
-        </div>
-        <p style={styles.hint}>Shift+Enter で改行　|　↺ で会話リセット</p>
-      </footer>
-    </div>
+            Shift+Enter で改行　|　↺ で会話リセット
+          </p>
+        </footer>
+      </div>
+    </ViewerContext.Provider>
   );
 }
-
-const styles = {
-  root: { display: 'flex', flexDirection: 'column' as const, height: '100dvh', maxWidth: '800px', margin: '0 auto', fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif' },
-  header: { display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0.75rem 1.25rem', borderBottom: '1px solid #30363d', background: '#161b22', flexShrink: 0 },
-  headerLeft: { display: 'flex', alignItems: 'center', gap: '0.6rem' },
-  headerRight: { display: 'flex', alignItems: 'center', gap: '0.6rem' },
-  logo: { fontWeight: 700, fontSize: '1.05rem', color: '#e6edf3' },
-  flowBadge: { fontSize: '0.75rem', padding: '0.2rem 0.6rem', background: '#1f2e45', border: '1px solid #58a6ff', borderRadius: '12px', color: '#58a6ff' },
-  zodiacBadge: { fontSize: '0.75rem', padding: '0.2rem 0.6rem', background: '#2a1f0a', border: '1px solid #e3b341', borderRadius: '12px', color: '#e3b341' },
-  statusBadge: { display: 'inline-flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.78rem', padding: '0.2rem 0.7rem', border: '1px solid', borderRadius: '20px' },
-  dot: { width: '7px', height: '7px', borderRadius: '50%', display: 'inline-block' },
-  resetBtn: { background: 'none', border: '1px solid #30363d', color: '#8b949e', borderRadius: '6px', width: '32px', height: '32px', cursor: 'pointer', fontSize: '1rem' },
-  main: { flex: 1, overflowY: 'auto' as const, padding: '1.25rem', display: 'flex', flexDirection: 'column' as const, gap: '1rem' },
-  empty: { flex: 1, display: 'flex', flexDirection: 'column' as const, alignItems: 'center', justifyContent: 'center', textAlign: 'center' as const, padding: '3rem' },
-  bubbleWrap: { display: 'flex', alignItems: 'flex-end', gap: '0.5rem' },
-  avatar: { width: '32px', height: '32px', borderRadius: '50%', background: '#21262d', border: '1px solid #30363d', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1rem', flexShrink: 0 },
-  bubble: { maxWidth: '72%', padding: '0.65rem 1rem', borderRadius: '12px', fontSize: '0.95rem', lineHeight: 1.7, whiteSpace: 'pre-wrap' as const, wordBreak: 'break-word' as const },
-  bubbleUser: { background: '#1f6feb', color: '#fff', borderBottomRightRadius: '4px' },
-  bubbleAssistant: { background: '#161b22', border: '1px solid #30363d', color: '#e6edf3', borderBottomLeftRadius: '4px' },
-  footer: { padding: '0.75rem 1rem 1rem', borderTop: '1px solid #30363d', background: '#0d1117', flexShrink: 0 },
-  inputWrap: { display: 'flex', gap: '0.5rem', alignItems: 'flex-end' },
-  textarea: { flex: 1, background: '#161b22', border: '1px solid #30363d', borderRadius: '8px', color: '#e6edf3', padding: '0.65rem 0.9rem', fontSize: '0.95rem', resize: 'none' as const, outline: 'none', fontFamily: 'inherit', lineHeight: 1.5, maxHeight: '150px', overflowY: 'auto' as const },
-  iconBtn: { width: '40px', height: '40px', border: '1px solid #30363d', borderRadius: '8px', cursor: 'pointer', fontSize: '1.1rem', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 },
-  sendBtn: { padding: '0 1.1rem', height: '40px', background: '#1f6feb', color: '#fff', border: 'none', borderRadius: '8px', fontWeight: 600, fontSize: '0.9rem', flexShrink: 0 },
-  hint: { marginTop: '0.4rem', fontSize: '0.75rem', color: '#8b949e', paddingLeft: '0.25rem' },
-} satisfies Record<string, React.CSSProperties | Record<string, React.CSSProperties>>;
