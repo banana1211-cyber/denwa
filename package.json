@@ -10,6 +10,7 @@
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "^0.90.0",
     "@gltf-transform/core": "^4.3.0",
     "@pixiv/three-vrm": "^3.5.2",
     "@types/three": "^0.184.0",

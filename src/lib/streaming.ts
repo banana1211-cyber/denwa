@@ -1,21 +1,19 @@
 /**
- * Ollamaストリーミング + RAG + TTS Fire-and-Forget
+ * Claude API ストリーミング + TTS Fire-and-Forget
  *
  * 流れ:
- * 1. buildRagPrompt で会話状態 + RAG文脈からプロンプト構築
- * 2. Ollama /api/chat にストリーミングリクエスト
+ * 1. /api/llm (サーバーサイドプロキシ) に会話状態を送信
+ * 2. SSEストリームでトークンを受け取る
  * 3. 句読点チャンクごとにTTSを並行生成（Fire-and-Forget）
  * 4. AudioQueue でシームレス再生
+ *
+ * ※ RAGは後でローカルLLM移行時に追加予定
  */
 
 import { streamingChunkSplitter } from './chunkSplitter';
 import { synthesizeSpeech } from './tts';
 import { AudioQueue } from './audioQueue';
-import { buildRagPrompt } from './rag/retriever';
 import type { ConversationState } from './rag/conversationFlow';
-
-const OLLAMA_BASE_URL = process.env.NEXT_PUBLIC_OLLAMA_URL || 'http://localhost:11434';
-const MODEL_NAME = process.env.NEXT_PUBLIC_MODEL_NAME || 'gemma4';
 
 export interface StreamingOptions {
   onToken?: (token: string) => void;
@@ -25,10 +23,6 @@ export interface StreamingOptions {
   onError?: (error: Error) => void;
 }
 
-/**
- * RAGありのストリーミング音声チャット
- * 会話状態からプロンプトを構築し、Ollamaに送信してTTSまで繋げる
- */
 export async function streamWithTTS(
   userMessage: string,
   audioQueue: AudioQueue,
@@ -38,25 +32,22 @@ export async function streamWithTTS(
   const { onToken, onChunk, onAudioReady, onComplete, onError } = options;
   const startTime = performance.now();
 
-  // RAGプロンプト構築
-  const { messages } = await buildRagPrompt(userMessage, state);
-
-  const response = await fetch(`${OLLAMA_BASE_URL}/api/chat`, {
+  const response = await fetch('/api/llm', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
-      model: MODEL_NAME,
-      messages,
-      stream: true,
+      userMessage,
+      history: state.history,
+      currentNode: state.currentNode,
+      zodiacSign: state.zodiacSign,
+      category: state.category,
     }),
   });
 
-  if (!response.ok) {
-    throw new Error(`Ollama API error: ${response.status}`);
-  }
+  if (!response.ok) throw new Error(`LLM API error: ${response.status}`);
   if (!response.body) throw new Error('Response body is null');
 
-  const tokenStream = ollamaChatToTokenStream(response.body, onToken);
+  const tokenStream = sseToTokenStream(response.body, onToken);
 
   let fullText = '';
   let chunkIndex = 0;
@@ -91,7 +82,7 @@ export async function streamWithTTS(
   return fullText;
 }
 
-async function* ollamaChatToTokenStream(
+async function* sseToTokenStream(
   body: ReadableStream<Uint8Array>,
   onToken?: (token: string) => void
 ): AsyncGenerator<string> {
@@ -109,16 +100,21 @@ async function* ollamaChatToTokenStream(
       buffer = lines.pop() ?? '';
 
       for (const line of lines) {
-        if (!line.trim()) continue;
+        if (!line.startsWith('data: ')) continue;
+        const data = line.slice(6).trim();
+        if (data === '[DONE]') return;
+
+        let json: { token?: string; error?: string };
         try {
-          const json = JSON.parse(line);
-          const token = json.message?.content;
-          if (token) {
-            onToken?.(token);
-            yield token;
-          }
+          json = JSON.parse(data);
         } catch {
-          // malformed JSON は無視
+          continue;
+        }
+
+        if (json.error) throw new Error(json.error);
+        if (json.token) {
+          onToken?.(json.token);
+          yield json.token;
         }
       }
     }
