@@ -1,0 +1,11 @@
+﻿id,aspect,aspect_ja,type,nature,description_ja
+1,Sun Conjunction Sun,太陽コンジャンクション太陽,Conjunction,Neutral,2人の太陽が同じ度数に位置する。同じ星座の生まれで、基本的な性格・価値観・目標が似ている。強い共鳴を感じるが、競争や自我の衝突も起きやすい。
+2,Sun Trine Sun,太陽トライン太陽,Trine,Harmonious,2人の太陽が120度の調和的な関係。同じ元素の星座で、互いの性格・価値観・目標が自然に調和する。お互いを理解し、支え合える関係。
+3,Sun Square Sun,太陽スクエア太陽,Square,Challenging,2人の太陽が90度の緊張関係。性格・価値観・目標が衝突しやすい。お互いの自我がぶつかり合うが、その摩擦が成長の原動力になることも。
+4,Sun Opposition Sun,太陽オポジション太陽,Opposition,Challenging,2人の太陽が180度の対立関係。対向する星座の生まれで、性格が対照的。引き寄せ合うが、価値観の違いで対立することも。バランスを取ることで補完関係になれる。
+5,Sun Conjunction Moon,太陽コンジャンクション月,Conjunction,Harmonious,一方の太陽が他方の月と合。強力な引力と深い感情的なつながり。太陽の人が月の人を輝かせ、月の人が太陽の人に感情的な安定を与える。
+6,Venus Conjunction Mars,金星コンジャンクション火星,Conjunction,Harmonious,一方の金星が他方の火星と合。強烈な性的・ロマンティックな引力。愛（金星）と欲望（火星）が融合し、情熱的な関係が生まれる。
+7,Moon Conjunction Moon,月コンジャンクション月,Conjunction,Harmonious,2人の月が同じ度数に位置する。感情的な共鳴が非常に強く、互いの感情・ニーズ・反応が似ている。深い感情的な理解と共感が生まれる。
+8,Saturn Conjunction Sun,土星コンジャンクション太陽,Conjunction,Karmic,一方の土星が他方の太陽と合。カルマ的な関係。土星の人が太陽の人に責任・制限・構造をもたらす。長期的で真剣な関係になりやすいが、重さも感じる。
+9,North Node Conjunction Sun/Moon/Venus,ノースノードコンジャンクション太陽・月・金星,Conjunction,Karmic,一方のノースノードが他方の主要天体と合。運命的・カルマ的なつながり。互いの魂の成長に重要な役割を果たす関係。
+10,Ascendant Conjunction Sun/Moon/Venus,アセンダントコンジャンクション太陽・月・金星,Conjunction,Harmonious,一方のアセンダントが他方の主要天体と合。強い引力と即座の認識。相手の存在が自分のアイデンティティや外見に影響を与える。
