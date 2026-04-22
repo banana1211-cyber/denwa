@@ -1,11 +1,15 @@
-import Anthropic from '@anthropic-ai/sdk';
+import OpenAI from 'openai';
 import { NextRequest } from 'next/server';
-import { FLOW_NODES } from '@/data/ragData';
+import { buildSystemPrompt } from '@/lib/rag/promptBuilder';
+import { retrieveContext } from '@/lib/rag/retriever';
+import type { ConversationState } from '@/lib/rag/conversationFlow';
+import type { FlowState } from '@/data/ragData';
 
-const client = new Anthropic();
+const openai = new OpenAI();
 
 interface LLMRequest {
   userMessage: string;
+  // history は transition() 済み（末尾に今回のユーザー発言が含まれている）
   history: { role: 'user' | 'assistant'; content: string }[];
   currentNode: string;
   zodiacSign?: string;
@@ -16,47 +20,45 @@ export async function POST(req: NextRequest) {
   const body: LLMRequest = await req.json();
   const { userMessage, history, currentNode, zodiacSign, category } = body;
 
-  const node = FLOW_NODES.find((n) => n.id === currentNode);
-  const nodeInstruction = node?.systemInstruction ?? '';
+  // ConversationState を復元（RAG内部で使用）
+  const state: ConversationState = {
+    currentNode: currentNode as FlowState,
+    zodiacSign,
+    category,
+    history,
+    turnCount: history.length,
+  };
 
-  const systemLines = [
-    'あなたは西洋占星術の神秘的な占い師「星詠み」です。温かく、詩的な口調で話してください。',
-  ];
-  if (zodiacSign) systemLines.push(`ユーザーの星座: ${zodiacSign}`);
-  if (category) systemLines.push(`現在の相談カテゴリ: ${category}`);
-  if (nodeInstruction) systemLines.push('', nodeInstruction);
-  systemLines.push('', '回答は自然な会話として200文字程度を目安にしてください。');
+  // RAGコンテキスト取得 + システムプロンプト構築
+  const ragResults = await retrieveContext(userMessage, state);
+  const systemPrompt = buildSystemPrompt(state, ragResults);
 
-  const messages = [
-    ...history.map((h) => ({
-      role: h.role as 'user' | 'assistant',
-      content: h.content,
-    })),
-    { role: 'user' as const, content: userMessage },
-  ];
+  // history は末尾に今回のユーザー発言を含む（transition() で追加済み）
+  // → そのまま messages に渡す（重複防止）
+  const messages = history
+    .slice(-12)
+    .map((h) => ({ role: h.role as 'user' | 'assistant', content: h.content }));
 
   const encoder = new TextEncoder();
 
   const readable = new ReadableStream({
     async start(controller) {
       try {
-        const stream = client.messages.stream({
-          model: 'claude-opus-4-7',
+        const stream = await openai.chat.completions.create({
+          model: 'gpt-4o',
           max_tokens: 1024,
-          thinking: { type: 'adaptive' },
-          system: systemLines.join('\n'),
-          messages,
+          messages: [
+            { role: 'system', content: systemPrompt },
+            ...messages,
+          ],
+          stream: true,
         });
 
-        for await (const event of stream) {
-          if (
-            event.type === 'content_block_delta' &&
-            event.delta.type === 'text_delta'
-          ) {
+        for await (const chunk of stream) {
+          const token = chunk.choices[0]?.delta?.content;
+          if (token) {
             controller.enqueue(
-              encoder.encode(
-                `data: ${JSON.stringify({ token: event.delta.text })}\n\n`
-              )
+              encoder.encode(`data: ${JSON.stringify({ token })}\n\n`)
             );
           }
         }
