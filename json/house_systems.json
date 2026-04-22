@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "name_en": "Placidus",
+    "name_ja": "プラシダス",
+    "description_ja": "最も広く使われるハウスシステム。アセンダントとMCを基準に、時間的な分割でハウスを計算する。高緯度地域ではハウスが歪む問題がある。西洋占星術で最も一般的。",
+    "characteristics_ja": "不等分ハウス・時間的分割・高緯度で歪みあり",
+    "recommended_for_ja": "現代西洋占星術・ネイタルチャート一般",
+    "popularity": "最も一般的"
+  },
+  {
+    "id": 2,
+    "name_en": "Whole Sign",
+    "name_ja": "ホールサイン",
+    "description_ja": "古代ヘレニズム占星術で使われた最古のシステム。アセンダントのある星座全体が第1ハウスとなり、各星座が各ハウスに対応する。シンプルで明快。",
+    "characteristics_ja": "等分ハウス（30度）・星座全体がハウス・古代ヘレニズム系",
+    "recommended_for_ja": "ヘレニズム占星術・伝統占星術・シンプルな解釈",
+    "popularity": "古代・現代で再評価"
+  },
+  {
+    "id": 3,
+    "name_en": "Equal House",
+    "name_ja": "イコールハウス",
+    "description_ja": "アセンダントから30度ずつ均等にハウスを分割するシステム。プラシダスより単純で、高緯度でも歪まない。MCがハウスカスプと一致しない。",
+    "characteristics_ja": "等分ハウス（30度）・アセンダント基準・MCが10ハウスカスプと不一致",
+    "recommended_for_ja": "高緯度地域・シンプルな計算",
+    "popularity": "一般的"
+  },
+  {
+    "id": 4,
+    "name_en": "Koch",
+    "name_ja": "コッホ",
+    "description_ja": "プラシダスに似た時間的分割システム。ドイツ語圏で人気。高緯度では極端な歪みが生じる。",
+    "characteristics_ja": "不等分ハウス・時間的分割・ドイツ語圏で人気",
+    "recommended_for_ja": "ドイツ語圏の占星術師",
+    "popularity": "中程度"
+  },
+  {
+    "id": 5,
+    "name_en": "Campanus",
+    "name_ja": "カンパナス",
+    "description_ja": "天球の垂直大円を6等分して計算するシステム。空間的な分割方法を使用。",
+    "characteristics_ja": "不等分ハウス・空間的分割",
+    "recommended_for_ja": "特定の占星術師・研究目的",
+    "popularity": "少数派"
+  },
+  {
+    "id": 6,
+    "name_en": "Regiomontanus",
+    "name_ja": "レジオモンタナス",
+    "description_ja": "天球の赤道を6等分して計算するシステム。中世占星術で広く使われた。",
+    "characteristics_ja": "不等分ハウス・赤道分割・中世占星術系",
+    "recommended_for_ja": "伝統占星術・ホラリー占星術",
+    "popularity": "伝統占星術師に人気"
+  }
+]

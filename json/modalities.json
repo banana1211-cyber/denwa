@@ -1,0 +1,98 @@
+[
+  {
+    "id": 1,
+    "name_en": "Cardinal",
+    "name_ja": "活動宮（カーディナル）",
+    "signs": [
+      "Aries",
+      "Cancer",
+      "Libra",
+      "Capricorn"
+    ],
+    "signs_ja": [
+      "牡羊座",
+      "蟹座",
+      "天秤座",
+      "山羊座"
+    ],
+    "keywords_en": [
+      "initiative",
+      "action",
+      "leadership",
+      "beginnings",
+      "drive"
+    ],
+    "keywords_ja": [
+      "主導性",
+      "行動",
+      "リーダーシップ",
+      "始まり",
+      "推進力"
+    ],
+    "description_ja": "活動宮は各季節の始まりに対応し、主導性・行動力・新しいことを始める力を象徴する。活動宮サインは積極的にイニシアチブを取り、変化を起こす力を持つ。"
+  },
+  {
+    "id": 2,
+    "name_en": "Fixed",
+    "name_ja": "不動宮（フィックスド）",
+    "signs": [
+      "Taurus",
+      "Leo",
+      "Scorpio",
+      "Aquarius"
+    ],
+    "signs_ja": [
+      "牡牛座",
+      "獅子座",
+      "蠍座",
+      "水瓶座"
+    ],
+    "keywords_en": [
+      "stability",
+      "persistence",
+      "determination",
+      "resistance to change",
+      "focus"
+    ],
+    "keywords_ja": [
+      "安定",
+      "持続力",
+      "決意",
+      "変化への抵抗",
+      "集中力"
+    ],
+    "description_ja": "不動宮は各季節の中間に対応し、安定性・持続力・決意を象徴する。不動宮サインは一度始めたことを最後まで続ける粘り強さを持つが、変化を嫌う傾向がある。"
+  },
+  {
+    "id": 3,
+    "name_en": "Mutable",
+    "name_ja": "柔軟宮（ミュータブル）",
+    "signs": [
+      "Gemini",
+      "Virgo",
+      "Sagittarius",
+      "Pisces"
+    ],
+    "signs_ja": [
+      "双子座",
+      "乙女座",
+      "射手座",
+      "魚座"
+    ],
+    "keywords_en": [
+      "adaptability",
+      "flexibility",
+      "change",
+      "transition",
+      "versatility"
+    ],
+    "keywords_ja": [
+      "適応力",
+      "柔軟性",
+      "変化",
+      "移行",
+      "多才"
+    ],
+    "description_ja": "柔軟宮は各季節の終わりに対応し、適応力・柔軟性・変化への対応を象徴する。柔軟宮サインは変化に適応する能力に優れるが、優柔不断になりやすい。"
+  }
+]

@@ -1,0 +1,196 @@
+[
+  {
+    "id": 1,
+    "name_en": "New Moon",
+    "name_ja": "新月",
+    "symbol": "🌑",
+    "degrees_from_sun": "0°",
+    "illumination": "0%",
+    "keywords_en": [
+      "new beginnings",
+      "intentions",
+      "planting seeds",
+      "fresh start",
+      "potential"
+    ],
+    "keywords_ja": [
+      "新しい始まり",
+      "意図",
+      "種まき",
+      "フレッシュスタート",
+      "可能性"
+    ],
+    "description_ja": "新月は太陽と月が同じ度数に位置する時（コンジャンクション）。新しいサイクルの始まりを示し、意図を設定し種を蒔く最良の時期。新しいプロジェクトを始めたり、新しい習慣を取り入れるのに適している。",
+    "best_for_ja": "新しいプロジェクト開始・意図設定・新しい習慣の確立"
+  },
+  {
+    "id": 2,
+    "name_en": "Waxing Crescent",
+    "name_ja": "三日月（上弦前）",
+    "symbol": "🌒",
+    "degrees_from_sun": "45°-90°",
+    "illumination": "1-49%",
+    "keywords_en": [
+      "growth",
+      "intention",
+      "momentum",
+      "action",
+      "building"
+    ],
+    "keywords_ja": [
+      "成長",
+      "意図",
+      "勢い",
+      "行動",
+      "構築"
+    ],
+    "description_ja": "三日月期は新月で設定した意図に向けて行動を起こす時期。エネルギーが高まり、目標に向けて積極的に動く。",
+    "best_for_ja": "行動開始・計画実行・エネルギー構築"
+  },
+  {
+    "id": 3,
+    "name_en": "First Quarter",
+    "name_ja": "上弦の月",
+    "symbol": "🌓",
+    "degrees_from_sun": "90°",
+    "illumination": "50%",
+    "keywords_en": [
+      "decision",
+      "challenge",
+      "action",
+      "commitment",
+      "obstacles"
+    ],
+    "keywords_ja": [
+      "決断",
+      "挑戦",
+      "行動",
+      "コミットメント",
+      "障害"
+    ],
+    "description_ja": "上弦の月は太陽と月が90度（スクエア）の位置。決断と行動の時期。障害に直面することがあるが、それを乗り越えることで成長する。",
+    "best_for_ja": "決断・課題への取り組み・コミットメント"
+  },
+  {
+    "id": 4,
+    "name_en": "Waxing Gibbous",
+    "name_ja": "十三夜月（満月前）",
+    "symbol": "🌔",
+    "degrees_from_sun": "135°-180°",
+    "illumination": "51-99%",
+    "keywords_en": [
+      "refinement",
+      "adjustment",
+      "preparation",
+      "perfecting",
+      "anticipation"
+    ],
+    "keywords_ja": [
+      "洗練",
+      "調整",
+      "準備",
+      "完成に向けて",
+      "期待"
+    ],
+    "description_ja": "満月に向けて高まるエネルギーの時期。計画を洗練させ、最終調整を行う。",
+    "best_for_ja": "計画の洗練・最終調整・準備"
+  },
+  {
+    "id": 5,
+    "name_en": "Full Moon",
+    "name_ja": "満月",
+    "symbol": "🌕",
+    "degrees_from_sun": "180°",
+    "illumination": "100%",
+    "keywords_en": [
+      "culmination",
+      "completion",
+      "revelation",
+      "emotions",
+      "release",
+      "harvest"
+    ],
+    "keywords_ja": [
+      "頂点",
+      "完成",
+      "啓示",
+      "感情",
+      "解放",
+      "収穫"
+    ],
+    "description_ja": "満月は太陽と月が180度（オポジション）の位置。サイクルの頂点・完成・収穫の時期。感情が高まり、隠れていたことが明らかになる。解放と感謝の時期。",
+    "best_for_ja": "完成・収穫・感謝・解放・感情の解放"
+  },
+  {
+    "id": 6,
+    "name_en": "Waning Gibbous",
+    "name_ja": "十六夜月（満月後）",
+    "symbol": "🌖",
+    "degrees_from_sun": "225°-270°",
+    "illumination": "99-51%",
+    "keywords_en": [
+      "sharing",
+      "gratitude",
+      "reflection",
+      "distribution",
+      "wisdom"
+    ],
+    "keywords_ja": [
+      "分かち合い",
+      "感謝",
+      "振り返り",
+      "配布",
+      "知恵"
+    ],
+    "description_ja": "満月後のエネルギーが徐々に落ち着く時期。収穫したものを分かち合い、学びを振り返る。",
+    "best_for_ja": "分かち合い・感謝・振り返り・知識の共有"
+  },
+  {
+    "id": 7,
+    "name_en": "Last Quarter",
+    "name_ja": "下弦の月",
+    "symbol": "🌗",
+    "degrees_from_sun": "270°",
+    "illumination": "50%",
+    "keywords_en": [
+      "release",
+      "letting go",
+      "forgiveness",
+      "clearing",
+      "transition"
+    ],
+    "keywords_ja": [
+      "手放し",
+      "解放",
+      "許し",
+      "浄化",
+      "移行"
+    ],
+    "description_ja": "下弦の月は太陽と月が270度（スクエア）の位置。手放しと解放の時期。古いパターンや不要なものを手放し、次のサイクルへの準備をする。",
+    "best_for_ja": "手放し・解放・浄化・古いパターンの解消"
+  },
+  {
+    "id": 8,
+    "name_en": "Waning Crescent (Balsamic Moon)",
+    "name_ja": "晦日月（バルサミック・ムーン）",
+    "symbol": "🌘",
+    "degrees_from_sun": "315°-360°",
+    "illumination": "49-1%",
+    "keywords_en": [
+      "rest",
+      "surrender",
+      "healing",
+      "contemplation",
+      "preparation for new cycle"
+    ],
+    "keywords_ja": [
+      "休息",
+      "委ねる",
+      "癒し",
+      "瞑想",
+      "新サイクルへの準備"
+    ],
+    "description_ja": "新月直前の最も暗い時期。休息・内省・癒しの時期。次のサイクルへの準備として、静かに内側に向かう。",
+    "best_for_ja": "休息・内省・瞑想・癒し・次のサイクルへの準備"
+  }
+]

@@ -1,0 +1,5086 @@
+{
+  "metadata": {
+    "title": "西洋星占術 LLM/DB 統合データセット",
+    "version": "1.0",
+    "created": "2026-04-21",
+    "language": "ja",
+    "description": "占い師のLLMシステム向けに収集・構造化した西洋星占術の包括的データセット。鑑定中に参照可能な形式で整備。",
+    "total_records": 335,
+    "categories": [
+      {
+        "key": "zodiac_signs",
+        "filename": "zodiac_signs.json",
+        "count": 12
+      },
+      {
+        "key": "planets",
+        "filename": "planets.json",
+        "count": 10
+      },
+      {
+        "key": "asteroids_and_points",
+        "filename": "asteroids_and_points.json",
+        "count": 7
+      },
+      {
+        "key": "houses",
+        "filename": "houses.json",
+        "count": 12
+      },
+      {
+        "key": "aspects",
+        "filename": "aspects.json",
+        "count": 10
+      },
+      {
+        "key": "dignities",
+        "filename": "dignities.json",
+        "count": 12
+      },
+      {
+        "key": "elements",
+        "filename": "elements.json",
+        "count": 4
+      },
+      {
+        "key": "modalities",
+        "filename": "modalities.json",
+        "count": 3
+      },
+      {
+        "key": "house_systems",
+        "filename": "house_systems.json",
+        "count": 6
+      },
+      {
+        "key": "celebrity_birth_data",
+        "filename": "celebrity_birth_data.json",
+        "count": 10
+      },
+      {
+        "key": "tarot_astrology_correspondences",
+        "filename": "tarot_astrology_correspondences.json",
+        "count": 26
+      },
+      {
+        "key": "planet_in_sign_interpretations",
+        "filename": "planet_in_sign_interpretations.json",
+        "count": 48
+      },
+      {
+        "key": "moon_phases",
+        "filename": "moon_phases.json",
+        "count": 8
+      },
+      {
+        "key": "decans",
+        "filename": "decans.json",
+        "count": 36
+      },
+      {
+        "key": "arabic_parts",
+        "filename": "arabic_parts.json",
+        "count": 5
+      },
+      {
+        "key": "astrology_glossary",
+        "filename": "astrology_glossary.json",
+        "count": 30
+      },
+      {
+        "key": "planet_in_house_interpretations",
+        "filename": "planet_in_house_interpretations.json",
+        "count": 72
+      },
+      {
+        "key": "major_transits",
+        "filename": "major_transits.json",
+        "count": 9
+      },
+      {
+        "key": "synastry_aspects",
+        "filename": "synastry_aspects.json",
+        "count": 10
+      },
+      {
+        "key": "retrograde_planets",
+        "filename": "retrograde_planets.json",
+        "count": 5
+      }
+    ]
+  },
+  "data": {
+    "zodiac_signs": [
+      {
+        "id": 1,
+        "name_en": "Aries",
+        "name_ja": "牡羊座",
+        "symbol": "♈",
+        "glyph": "♈",
+        "date_range": "3/21 - 4/19",
+        "date_start_approx": "March 21",
+        "date_end_approx": "April 19",
+        "element": "Fire",
+        "element_ja": "火",
+        "modality": "Cardinal",
+        "modality_ja": "活動宮",
+        "ruling_planet_traditional": "Mars",
+        "ruling_planet_modern": "Mars",
+        "ruling_planet_ja": "火星",
+        "body_part": "Head, Face",
+        "body_part_ja": "頭部・顔",
+        "house_natural": 1,
+        "polarity": "Positive/Masculine",
+        "polarity_ja": "陽性・男性的",
+        "keywords_en": [
+          "initiative",
+          "courage",
+          "action",
+          "leadership",
+          "impulsive",
+          "pioneering",
+          "competitive",
+          "assertive"
+        ],
+        "keywords_ja": [
+          "積極性",
+          "勇気",
+          "行動力",
+          "リーダーシップ",
+          "衝動的",
+          "開拓精神",
+          "競争心",
+          "自己主張"
+        ],
+        "strengths_ja": "行動力・開拓精神・勇気・情熱・リーダーシップ",
+        "weaknesses_ja": "衝動的・短気・自己中心的・無謀",
+        "description_ja": "牡羊座は黄道帯の第1サインであり、春分点から始まる。火の元素と活動宮の組み合わせにより、強烈な行動エネルギーを持つ。支配星の火星が示す通り、戦士的な精神と開拓者の魂を体現する。新しいことを始める力に優れるが、継続力に欠ける面もある。",
+        "tarot_major_arcana": "The Emperor (IV)",
+        "tarot_major_arcana_ja": "皇帝（IV）",
+        "color": "Red",
+        "color_ja": "赤",
+        "gemstone": "Diamond, Ruby",
+        "gemstone_ja": "ダイヤモンド、ルビー",
+        "compatible_signs": [
+          "Leo",
+          "Sagittarius",
+          "Gemini",
+          "Aquarius"
+        ],
+        "compatible_signs_ja": [
+          "獅子座",
+          "射手座",
+          "双子座",
+          "水瓶座"
+        ],
+        "famous_people_examples": [
+          "Lady Gaga",
+          "Elton John",
+          "Mariah Carey"
+        ]
+      },
+      {
+        "id": 2,
+        "name_en": "Taurus",
+        "name_ja": "牡牛座",
+        "symbol": "♉",
+        "glyph": "♉",
+        "date_range": "4/20 - 5/20",
+        "date_start_approx": "April 20",
+        "date_end_approx": "May 20",
+        "element": "Earth",
+        "element_ja": "地",
+        "modality": "Fixed",
+        "modality_ja": "不動宮",
+        "ruling_planet_traditional": "Venus",
+        "ruling_planet_modern": "Venus",
+        "ruling_planet_ja": "金星",
+        "body_part": "Throat, Neck",
+        "body_part_ja": "喉・首",
+        "house_natural": 2,
+        "polarity": "Negative/Feminine",
+        "polarity_ja": "陰性・女性的",
+        "keywords_en": [
+          "stability",
+          "sensuality",
+          "patience",
+          "determination",
+          "materialism",
+          "reliability",
+          "stubbornness",
+          "beauty"
+        ],
+        "keywords_ja": [
+          "安定",
+          "官能性",
+          "忍耐",
+          "決断力",
+          "物質主義",
+          "信頼性",
+          "頑固さ",
+          "美的感覚"
+        ],
+        "strengths_ja": "忍耐力・信頼性・実用性・美的センス・安定志向",
+        "weaknesses_ja": "頑固・変化を嫌う・物質主義・嫉妬深い",
+        "description_ja": "牡牛座は地の元素と不動宮の組み合わせにより、安定と持続力を象徴する。支配星の金星が示す通り、美・快楽・物質的豊かさへの強い志向を持つ。五感を大切にし、心地よい環境を求める。変化を好まず、一度決めたことを最後まで貫く粘り強さがある。",
+        "tarot_major_arcana": "The Hierophant (V)",
+        "tarot_major_arcana_ja": "法王（V）",
+        "color": "Green, Pink",
+        "color_ja": "緑、ピンク",
+        "gemstone": "Emerald, Rose Quartz",
+        "gemstone_ja": "エメラルド、ローズクォーツ",
+        "compatible_signs": [
+          "Virgo",
+          "Capricorn",
+          "Cancer",
+          "Pisces"
+        ],
+        "compatible_signs_ja": [
+          "乙女座",
+          "山羊座",
+          "蟹座",
+          "魚座"
+        ],
+        "famous_people_examples": [
+          "Adele",
+          "Dwayne Johnson",
+          "Audrey Hepburn"
+        ]
+      },
+      {
+        "id": 3,
+        "name_en": "Gemini",
+        "name_ja": "双子座",
+        "symbol": "♊",
+        "glyph": "♊",
+        "date_range": "5/21 - 6/20",
+        "date_start_approx": "May 21",
+        "date_end_approx": "June 20",
+        "element": "Air",
+        "element_ja": "風",
+        "modality": "Mutable",
+        "modality_ja": "柔軟宮",
+        "ruling_planet_traditional": "Mercury",
+        "ruling_planet_modern": "Mercury",
+        "ruling_planet_ja": "水星",
+        "body_part": "Arms, Hands, Lungs",
+        "body_part_ja": "腕・手・肺",
+        "house_natural": 3,
+        "polarity": "Positive/Masculine",
+        "polarity_ja": "陽性・男性的",
+        "keywords_en": [
+          "communication",
+          "versatility",
+          "curiosity",
+          "adaptability",
+          "duality",
+          "intellect",
+          "wit",
+          "restlessness"
+        ],
+        "keywords_ja": [
+          "コミュニケーション",
+          "多才",
+          "好奇心",
+          "適応力",
+          "二面性",
+          "知性",
+          "機知",
+          "落ち着きのなさ"
+        ],
+        "strengths_ja": "コミュニケーション能力・知性・適応力・多才・機知",
+        "weaknesses_ja": "優柔不断・二面性・飽きっぽい・表面的",
+        "description_ja": "双子座は風の元素と柔軟宮の組み合わせにより、知的な柔軟性と適応力を象徴する。支配星の水星が示す通り、言語・情報・コミュニケーションに強い関心を持つ。双子のシンボルが示す二面性を持ち、様々な視点から物事を捉える能力に優れる。",
+        "tarot_major_arcana": "The Lovers (VI)",
+        "tarot_major_arcana_ja": "恋人たち（VI）",
+        "color": "Yellow, Silver",
+        "color_ja": "黄色、シルバー",
+        "gemstone": "Agate, Citrine",
+        "gemstone_ja": "アゲート、シトリン",
+        "compatible_signs": [
+          "Libra",
+          "Aquarius",
+          "Aries",
+          "Leo"
+        ],
+        "compatible_signs_ja": [
+          "天秤座",
+          "水瓶座",
+          "牡羊座",
+          "獅子座"
+        ],
+        "famous_people_examples": [
+          "Angelina Jolie",
+          "Kanye West",
+          "Marilyn Monroe"
+        ]
+      },
+      {
+        "id": 4,
+        "name_en": "Cancer",
+        "name_ja": "蟹座",
+        "symbol": "♋",
+        "glyph": "♋",
+        "date_range": "6/21 - 7/22",
+        "date_start_approx": "June 21",
+        "date_end_approx": "July 22",
+        "element": "Water",
+        "element_ja": "水",
+        "modality": "Cardinal",
+        "modality_ja": "活動宮",
+        "ruling_planet_traditional": "Moon",
+        "ruling_planet_modern": "Moon",
+        "ruling_planet_ja": "月",
+        "body_part": "Chest, Stomach, Breasts",
+        "body_part_ja": "胸部・胃・乳房",
+        "house_natural": 4,
+        "polarity": "Negative/Feminine",
+        "polarity_ja": "陰性・女性的",
+        "keywords_en": [
+          "nurturing",
+          "emotional",
+          "intuitive",
+          "protective",
+          "home-loving",
+          "sensitive",
+          "moody",
+          "tenacious"
+        ],
+        "keywords_ja": [
+          "養育",
+          "感情的",
+          "直感的",
+          "保護本能",
+          "家庭志向",
+          "繊細",
+          "気分屋",
+          "粘り強い"
+        ],
+        "strengths_ja": "共感力・直感力・家族への愛情・保護本能・忍耐力",
+        "weaknesses_ja": "気分屋・過度に感情的・執着心・引きこもり傾向",
+        "description_ja": "蟹座は水の元素と活動宮の組み合わせにより、感情的な深さと行動力を持つ。支配星の月が示す通り、感情・直感・記憶・家族との絆を重視する。蟹の甲羅のように、外側は硬く内側は柔らかい。家庭と家族を何より大切にし、愛する人を守ろうとする強い保護本能を持つ。",
+        "tarot_major_arcana": "The Chariot (VII)",
+        "tarot_major_arcana_ja": "戦車（VII）",
+        "color": "Silver, White",
+        "color_ja": "シルバー、白",
+        "gemstone": "Moonstone, Pearl",
+        "gemstone_ja": "ムーンストーン、パール",
+        "compatible_signs": [
+          "Scorpio",
+          "Pisces",
+          "Taurus",
+          "Virgo"
+        ],
+        "compatible_signs_ja": [
+          "蠍座",
+          "魚座",
+          "牡牛座",
+          "乙女座"
+        ],
+        "famous_people_examples": [
+          "Ariana Grande",
+          "Princess Diana",
+          "Tom Hanks"
+        ]
+      },
+      {
+        "id": 5,
+        "name_en": "Leo",
+        "name_ja": "獅子座",
+        "symbol": "♌",
+        "glyph": "♌",
+        "date_range": "7/23 - 8/22",
+        "date_start_approx": "July 23",
+        "date_end_approx": "August 22",
+        "element": "Fire",
+        "element_ja": "火",
+        "modality": "Fixed",
+        "modality_ja": "不動宮",
+        "ruling_planet_traditional": "Sun",
+        "ruling_planet_modern": "Sun",
+        "ruling_planet_ja": "太陽",
+        "body_part": "Heart, Spine, Upper Back",
+        "body_part_ja": "心臓・背骨・上背部",
+        "house_natural": 5,
+        "polarity": "Positive/Masculine",
+        "polarity_ja": "陽性・男性的",
+        "keywords_en": [
+          "creativity",
+          "generosity",
+          "leadership",
+          "drama",
+          "pride",
+          "loyalty",
+          "warmth",
+          "confidence"
+        ],
+        "keywords_ja": [
+          "創造性",
+          "寛大さ",
+          "リーダーシップ",
+          "劇的",
+          "プライド",
+          "忠誠心",
+          "温かさ",
+          "自信"
+        ],
+        "strengths_ja": "カリスマ性・創造力・寛大さ・忠誠心・リーダーシップ",
+        "weaknesses_ja": "傲慢・自己中心的・承認欲求が強い・頑固",
+        "description_ja": "獅子座は火の元素と不動宮の組み合わせにより、燃え続ける情熱と強い自己表現を象徴する。支配星の太陽が示す通り、自己・アイデンティティ・創造性の中心にある。舞台の中心に立つことを好み、周囲を明るく照らすカリスマ性を持つ。愛する人への忠誠心は深く、惜しみなく与える。",
+        "tarot_major_arcana": "Strength (VIII)",
+        "tarot_major_arcana_ja": "力（VIII）",
+        "color": "Gold, Orange",
+        "color_ja": "ゴールド、オレンジ",
+        "gemstone": "Ruby, Amber",
+        "gemstone_ja": "ルビー、アンバー",
+        "compatible_signs": [
+          "Aries",
+          "Sagittarius",
+          "Gemini",
+          "Libra"
+        ],
+        "compatible_signs_ja": [
+          "牡羊座",
+          "射手座",
+          "双子座",
+          "天秤座"
+        ],
+        "famous_people_examples": [
+          "Barack Obama",
+          "Madonna",
+          "Jennifer Lopez"
+        ]
+      },
+      {
+        "id": 6,
+        "name_en": "Virgo",
+        "name_ja": "乙女座",
+        "symbol": "♍",
+        "glyph": "♍",
+        "date_range": "8/23 - 9/22",
+        "date_start_approx": "August 23",
+        "date_end_approx": "September 22",
+        "element": "Earth",
+        "element_ja": "地",
+        "modality": "Mutable",
+        "modality_ja": "柔軟宮",
+        "ruling_planet_traditional": "Mercury",
+        "ruling_planet_modern": "Mercury",
+        "ruling_planet_ja": "水星",
+        "body_part": "Digestive System, Intestines",
+        "body_part_ja": "消化器系・腸",
+        "house_natural": 6,
+        "polarity": "Negative/Feminine",
+        "polarity_ja": "陰性・女性的",
+        "keywords_en": [
+          "analytical",
+          "practical",
+          "diligent",
+          "perfectionist",
+          "helpful",
+          "critical",
+          "organized",
+          "health-conscious"
+        ],
+        "keywords_ja": [
+          "分析的",
+          "実用的",
+          "勤勉",
+          "完璧主義",
+          "奉仕的",
+          "批判的",
+          "整理整頓",
+          "健康意識"
+        ],
+        "strengths_ja": "分析力・勤勉さ・実用性・奉仕精神・完璧主義",
+        "weaknesses_ja": "批判的・心配性・完璧主義すぎる・自己批判",
+        "description_ja": "乙女座は地の元素と柔軟宮の組み合わせにより、実用的な知性と奉仕精神を象徴する。支配星の水星が示す通り、細部への注意・分析・実用的なコミュニケーションに優れる。完璧を追求する傾向があり、仕事や日常生活において高い基準を設ける。他者への奉仕に喜びを見出す。",
+        "tarot_major_arcana": "The Hermit (IX)",
+        "tarot_major_arcana_ja": "隠者（IX）",
+        "color": "Navy, Brown, Green",
+        "color_ja": "ネイビー、茶色、緑",
+        "gemstone": "Sapphire, Peridot",
+        "gemstone_ja": "サファイア、ペリドット",
+        "compatible_signs": [
+          "Taurus",
+          "Capricorn",
+          "Cancer",
+          "Scorpio"
+        ],
+        "compatible_signs_ja": [
+          "牡牛座",
+          "山羊座",
+          "蟹座",
+          "蠍座"
+        ],
+        "famous_people_examples": [
+          "Beyoncé",
+          "Michael Jackson",
+          "Mother Teresa"
+        ]
+      },
+      {
+        "id": 7,
+        "name_en": "Libra",
+        "name_ja": "天秤座",
+        "symbol": "♎",
+        "glyph": "♎",
+        "date_range": "9/23 - 10/22",
+        "date_start_approx": "September 23",
+        "date_end_approx": "October 22",
+        "element": "Air",
+        "element_ja": "風",
+        "modality": "Cardinal",
+        "modality_ja": "活動宮",
+        "ruling_planet_traditional": "Venus",
+        "ruling_planet_modern": "Venus",
+        "ruling_planet_ja": "金星",
+        "body_part": "Kidneys, Lower Back",
+        "body_part_ja": "腎臓・腰部",
+        "house_natural": 7,
+        "polarity": "Positive/Masculine",
+        "polarity_ja": "陽性・男性的",
+        "keywords_en": [
+          "balance",
+          "harmony",
+          "justice",
+          "diplomacy",
+          "beauty",
+          "partnership",
+          "indecision",
+          "fairness"
+        ],
+        "keywords_ja": [
+          "バランス",
+          "調和",
+          "正義",
+          "外交性",
+          "美",
+          "パートナーシップ",
+          "優柔不断",
+          "公平さ"
+        ],
+        "strengths_ja": "外交力・美的センス・公平さ・協調性・知性",
+        "weaknesses_ja": "優柔不断・対立を避けすぎる・依存的・表面的",
+        "description_ja": "天秤座は風の元素と活動宮の組み合わせにより、知的なバランス感覚と社交性を象徴する。支配星の金星が示す通り、美・調和・関係性を重視する。天秤のシンボルが示す通り、公平さと正義を追求し、対立する意見の間で均衡を保とうとする。パートナーシップを通じて自己を表現する。",
+        "tarot_major_arcana": "Justice (XI)",
+        "tarot_major_arcana_ja": "正義（XI）",
+        "color": "Pink, Light Blue",
+        "color_ja": "ピンク、ライトブルー",
+        "gemstone": "Opal, Rose Quartz",
+        "gemstone_ja": "オパール、ローズクォーツ",
+        "compatible_signs": [
+          "Gemini",
+          "Aquarius",
+          "Leo",
+          "Sagittarius"
+        ],
+        "compatible_signs_ja": [
+          "双子座",
+          "水瓶座",
+          "獅子座",
+          "射手座"
+        ],
+        "famous_people_examples": [
+          "Kim Kardashian",
+          "Will Smith",
+          "Cardi B"
+        ]
+      },
+      {
+        "id": 8,
+        "name_en": "Scorpio",
+        "name_ja": "蠍座",
+        "symbol": "♏",
+        "glyph": "♏",
+        "date_range": "10/23 - 11/21",
+        "date_start_approx": "October 23",
+        "date_end_approx": "November 21",
+        "element": "Water",
+        "element_ja": "水",
+        "modality": "Fixed",
+        "modality_ja": "不動宮",
+        "ruling_planet_traditional": "Mars",
+        "ruling_planet_modern": "Pluto",
+        "ruling_planet_ja": "冥王星（伝統：火星）",
+        "body_part": "Reproductive System, Pelvis",
+        "body_part_ja": "生殖器・骨盤",
+        "house_natural": 8,
+        "polarity": "Negative/Feminine",
+        "polarity_ja": "陰性・女性的",
+        "keywords_en": [
+          "transformation",
+          "intensity",
+          "power",
+          "mystery",
+          "passion",
+          "control",
+          "jealousy",
+          "depth"
+        ],
+        "keywords_ja": [
+          "変容",
+          "強烈さ",
+          "力",
+          "神秘",
+          "情熱",
+          "コントロール",
+          "嫉妬",
+          "深さ"
+        ],
+        "strengths_ja": "洞察力・変容力・情熱・忠誠心・探究心",
+        "weaknesses_ja": "嫉妬深い・執念深い・秘密主義・支配的",
+        "description_ja": "蠍座は水の元素と不動宮の組み合わせにより、深い感情と変容の力を象徴する。現代支配星の冥王星が示す通り、死と再生・変容・隠れた真実を探求する。表面的なものに満足せず、物事の本質と深層に迫ろうとする。強烈な感情と意志力を持ち、一度決めたことは必ず成し遂げる。",
+        "tarot_major_arcana": "Death (XIII)",
+        "tarot_major_arcana_ja": "死神（XIII）",
+        "color": "Black, Deep Red",
+        "color_ja": "黒、深紅",
+        "gemstone": "Obsidian, Topaz",
+        "gemstone_ja": "オブシディアン、トパーズ",
+        "compatible_signs": [
+          "Cancer",
+          "Pisces",
+          "Virgo",
+          "Capricorn"
+        ],
+        "compatible_signs_ja": [
+          "蟹座",
+          "魚座",
+          "乙女座",
+          "山羊座"
+        ],
+        "famous_people_examples": [
+          "Leonardo DiCaprio",
+          "Drake",
+          "Katy Perry"
+        ]
+      },
+      {
+        "id": 9,
+        "name_en": "Sagittarius",
+        "name_ja": "射手座",
+        "symbol": "♐",
+        "glyph": "♐",
+        "date_range": "11/22 - 12/21",
+        "date_start_approx": "November 22",
+        "date_end_approx": "December 21",
+        "element": "Fire",
+        "element_ja": "火",
+        "modality": "Mutable",
+        "modality_ja": "柔軟宮",
+        "ruling_planet_traditional": "Jupiter",
+        "ruling_planet_modern": "Jupiter",
+        "ruling_planet_ja": "木星",
+        "body_part": "Hips, Thighs, Liver",
+        "body_part_ja": "腰・太もも・肝臓",
+        "house_natural": 9,
+        "polarity": "Positive/Masculine",
+        "polarity_ja": "陽性・男性的",
+        "keywords_en": [
+          "freedom",
+          "philosophy",
+          "adventure",
+          "optimism",
+          "honesty",
+          "expansion",
+          "wanderlust",
+          "wisdom"
+        ],
+        "keywords_ja": [
+          "自由",
+          "哲学",
+          "冒険",
+          "楽観主義",
+          "正直さ",
+          "拡大",
+          "旅への憧れ",
+          "知恵"
+        ],
+        "strengths_ja": "楽観主義・哲学的思考・冒険心・正直さ・知的好奇心",
+        "weaknesses_ja": "無責任・約束を守らない・無神経・過度な楽観主義",
+        "description_ja": "射手座は火の元素と柔軟宮の組み合わせにより、自由な精神と知的探求を象徴する。支配星の木星が示す通り、拡大・成長・哲学・高等教育を重視する。弓矢のシンボルが示す通り、常に遠くの目標に向かって矢を放つ。旅・外国文化・宗教・哲学に強い関心を持つ。",
+        "tarot_major_arcana": "Temperance (XIV)",
+        "tarot_major_arcana_ja": "節制（XIV）",
+        "color": "Purple, Blue",
+        "color_ja": "紫、青",
+        "gemstone": "Turquoise, Amethyst",
+        "gemstone_ja": "ターコイズ、アメジスト",
+        "compatible_signs": [
+          "Aries",
+          "Leo",
+          "Libra",
+          "Aquarius"
+        ],
+        "compatible_signs_ja": [
+          "牡羊座",
+          "獅子座",
+          "天秤座",
+          "水瓶座"
+        ],
+        "famous_people_examples": [
+          "Taylor Swift",
+          "Jay-Z",
+          "Britney Spears"
+        ]
+      },
+      {
+        "id": 10,
+        "name_en": "Capricorn",
+        "name_ja": "山羊座",
+        "symbol": "♑",
+        "glyph": "♑",
+        "date_range": "12/22 - 1/19",
+        "date_start_approx": "December 22",
+        "date_end_approx": "January 19",
+        "element": "Earth",
+        "element_ja": "地",
+        "modality": "Cardinal",
+        "modality_ja": "活動宮",
+        "ruling_planet_traditional": "Saturn",
+        "ruling_planet_modern": "Saturn",
+        "ruling_planet_ja": "土星",
+        "body_part": "Knees, Bones, Skin",
+        "body_part_ja": "膝・骨・皮膚",
+        "house_natural": 10,
+        "polarity": "Negative/Feminine",
+        "polarity_ja": "陰性・女性的",
+        "keywords_en": [
+          "ambition",
+          "discipline",
+          "responsibility",
+          "patience",
+          "structure",
+          "achievement",
+          "tradition",
+          "practicality"
+        ],
+        "keywords_ja": [
+          "野心",
+          "規律",
+          "責任感",
+          "忍耐",
+          "構造",
+          "達成",
+          "伝統",
+          "実用性"
+        ],
+        "strengths_ja": "野心・規律・責任感・実用性・忍耐力",
+        "weaknesses_ja": "冷淡・悲観的・硬直的・仕事中毒",
+        "description_ja": "山羊座は地の元素と活動宮の組み合わせにより、実用的な野心と社会的達成を象徴する。支配星の土星が示す通り、構造・規律・責任・時間を重視する。山を登る山羊のように、着実に頂点を目指す粘り強さを持つ。社会的地位・キャリア・長期的な目標に強い関心を持つ。",
+        "tarot_major_arcana": "The Devil (XV)",
+        "tarot_major_arcana_ja": "悪魔（XV）",
+        "color": "Black, Dark Brown",
+        "color_ja": "黒、ダークブラウン",
+        "gemstone": "Garnet, Onyx",
+        "gemstone_ja": "ガーネット、オニキス",
+        "compatible_signs": [
+          "Taurus",
+          "Virgo",
+          "Scorpio",
+          "Pisces"
+        ],
+        "compatible_signs_ja": [
+          "牡牛座",
+          "乙女座",
+          "蠍座",
+          "魚座"
+        ],
+        "famous_people_examples": [
+          "Michelle Obama",
+          "LeBron James",
+          "Dolly Parton"
+        ]
+      },
+      {
+        "id": 11,
+        "name_en": "Aquarius",
+        "name_ja": "水瓶座",
+        "symbol": "♒",
+        "glyph": "♒",
+        "date_range": "1/20 - 2/18",
+        "date_start_approx": "January 20",
+        "date_end_approx": "February 18",
+        "element": "Air",
+        "element_ja": "風",
+        "modality": "Fixed",
+        "modality_ja": "不動宮",
+        "ruling_planet_traditional": "Saturn",
+        "ruling_planet_modern": "Uranus",
+        "ruling_planet_ja": "天王星（伝統：土星）",
+        "body_part": "Ankles, Calves, Circulatory System",
+        "body_part_ja": "足首・ふくらはぎ・循環器系",
+        "house_natural": 11,
+        "polarity": "Positive/Masculine",
+        "polarity_ja": "陽性・男性的",
+        "keywords_en": [
+          "innovation",
+          "humanitarianism",
+          "independence",
+          "rebellion",
+          "originality",
+          "eccentricity",
+          "idealism",
+          "community"
+        ],
+        "keywords_ja": [
+          "革新",
+          "人道主義",
+          "独立心",
+          "反骨精神",
+          "独創性",
+          "奇抜さ",
+          "理想主義",
+          "コミュニティ"
+        ],
+        "strengths_ja": "独創性・人道主義・革新性・知性・友情",
+        "weaknesses_ja": "感情的に距離を置く・頑固・反抗的・予測不能",
+        "description_ja": "水瓶座は風の元素と不動宮の組み合わせにより、知的な独立心と人道主義を象徴する。現代支配星の天王星が示す通り、革新・変革・独創性を重視する。水瓶のシンボルが示す通り、知識と革新のエネルギーを社会に注ぎ込む。個人の自由と集団の利益の両方を大切にする。",
+        "tarot_major_arcana": "The Star (XVII)",
+        "tarot_major_arcana_ja": "星（XVII）",
+        "color": "Electric Blue, Silver",
+        "color_ja": "エレクトリックブルー、シルバー",
+        "gemstone": "Amethyst, Aquamarine",
+        "gemstone_ja": "アメジスト、アクアマリン",
+        "compatible_signs": [
+          "Gemini",
+          "Libra",
+          "Aries",
+          "Sagittarius"
+        ],
+        "compatible_signs_ja": [
+          "双子座",
+          "天秤座",
+          "牡羊座",
+          "射手座"
+        ],
+        "famous_people_examples": [
+          "Oprah Winfrey",
+          "Harry Styles",
+          "Shakira"
+        ]
+      },
+      {
+        "id": 12,
+        "name_en": "Pisces",
+        "name_ja": "魚座",
+        "symbol": "♓",
+        "glyph": "♓",
+        "date_range": "2/19 - 3/20",
+        "date_start_approx": "February 19",
+        "date_end_approx": "March 20",
+        "element": "Water",
+        "element_ja": "水",
+        "modality": "Mutable",
+        "modality_ja": "柔軟宮",
+        "ruling_planet_traditional": "Jupiter",
+        "ruling_planet_modern": "Neptune",
+        "ruling_planet_ja": "海王星（伝統：木星）",
+        "body_part": "Feet, Lymphatic System",
+        "body_part_ja": "足・リンパ系",
+        "house_natural": 12,
+        "polarity": "Negative/Feminine",
+        "polarity_ja": "陰性・女性的",
+        "keywords_en": [
+          "compassion",
+          "intuition",
+          "spirituality",
+          "imagination",
+          "sensitivity",
+          "escapism",
+          "mysticism",
+          "empathy"
+        ],
+        "keywords_ja": [
+          "思いやり",
+          "直感",
+          "霊性",
+          "想像力",
+          "感受性",
+          "現実逃避",
+          "神秘主義",
+          "共感力"
+        ],
+        "strengths_ja": "共感力・直感・創造性・霊的感受性・思いやり",
+        "weaknesses_ja": "現実逃避・境界線が曖昧・優柔不断・自己犠牲過多",
+        "description_ja": "魚座は水の元素と柔軟宮の組み合わせにより、深い感受性と霊的な感覚を象徴する。現代支配星の海王星が示す通り、夢・直感・神秘・幻想を重視する。二匹の魚が反対方向に泳ぐシンボルが示す通り、現実と夢想の間を揺れ動く。深い共感力と芸術的感受性を持つ。",
+        "tarot_major_arcana": "The Moon (XVIII)",
+        "tarot_major_arcana_ja": "月（XVIII）",
+        "color": "Sea Green, Lavender",
+        "color_ja": "シーグリーン、ラベンダー",
+        "gemstone": "Aquamarine, Amethyst",
+        "gemstone_ja": "アクアマリン、アメジスト",
+        "compatible_signs": [
+          "Cancer",
+          "Scorpio",
+          "Taurus",
+          "Capricorn"
+        ],
+        "compatible_signs_ja": [
+          "蟹座",
+          "蠍座",
+          "牡牛座",
+          "山羊座"
+        ],
+        "famous_people_examples": [
+          "Rihanna",
+          "Justin Bieber",
+          "Albert Einstein"
+        ]
+      }
+    ],
+    "planets": [
+      {
+        "id": 1,
+        "name_en": "Sun",
+        "name_ja": "太陽",
+        "symbol": "☉",
+        "type": "Luminary",
+        "type_ja": "発光体",
+        "orbit_days": 365.25,
+        "rules_sign": [
+          "Leo"
+        ],
+        "rules_sign_ja": [
+          "獅子座"
+        ],
+        "exaltation": "Aries (19°)",
+        "exaltation_ja": "牡羊座（19度）",
+        "detriment": "Aquarius",
+        "detriment_ja": "水瓶座",
+        "fall": "Libra (19°)",
+        "fall_ja": "天秤座（19度）",
+        "house_natural": 5,
+        "keywords_en": [
+          "identity",
+          "ego",
+          "vitality",
+          "consciousness",
+          "will",
+          "purpose",
+          "father",
+          "authority"
+        ],
+        "keywords_ja": [
+          "アイデンティティ",
+          "自我",
+          "活力",
+          "意識",
+          "意志",
+          "目的",
+          "父親像",
+          "権威"
+        ],
+        "body_parts": "Heart, Spine, Eyes",
+        "body_parts_ja": "心臓・背骨・目",
+        "day_of_week": "Sunday",
+        "day_of_week_ja": "日曜日",
+        "metal": "Gold",
+        "metal_ja": "金",
+        "color": "Gold, Orange",
+        "color_ja": "ゴールド、オレンジ",
+        "description_ja": "太陽はチャートの中心的な発光体であり、個人の核となるアイデンティティ・自我・意識的な自己を象徴する。出生チャートにおける太陽の星座（サン・サイン）は、その人の本質的な性格と人生の目的を示す。父親・権威者・リーダーシップとも関連し、自己表現と創造性のエネルギーを司る。",
+        "in_natal_chart_ja": "出生チャートの太陽は、その人の核となる性格・人生の目的・自己表現の方法を示す。太陽のサインとハウスが、どのような分野でどのように自己を表現するかを教えてくれる。",
+        "retrograde": false,
+        "retrograde_note_ja": "太陽は逆行しない",
+        "avg_transit_per_sign_days": 30
+      },
+      {
+        "id": 2,
+        "name_en": "Moon",
+        "name_ja": "月",
+        "symbol": "☽",
+        "type": "Luminary",
+        "type_ja": "発光体",
+        "orbit_days": 27.3,
+        "rules_sign": [
+          "Cancer"
+        ],
+        "rules_sign_ja": [
+          "蟹座"
+        ],
+        "exaltation": "Taurus (3°)",
+        "exaltation_ja": "牡牛座（3度）",
+        "detriment": "Capricorn",
+        "detriment_ja": "山羊座",
+        "fall": "Scorpio (3°)",
+        "fall_ja": "蠍座（3度）",
+        "house_natural": 4,
+        "keywords_en": [
+          "emotions",
+          "instincts",
+          "subconscious",
+          "mother",
+          "home",
+          "habits",
+          "memory",
+          "nurturing"
+        ],
+        "keywords_ja": [
+          "感情",
+          "本能",
+          "潜在意識",
+          "母親像",
+          "家庭",
+          "習慣",
+          "記憶",
+          "養育"
+        ],
+        "body_parts": "Stomach, Breasts, Lymphatic System",
+        "body_parts_ja": "胃・乳房・リンパ系",
+        "day_of_week": "Monday",
+        "day_of_week_ja": "月曜日",
+        "metal": "Silver",
+        "metal_ja": "銀",
+        "color": "Silver, White",
+        "color_ja": "シルバー、白",
+        "description_ja": "月は感情・本能・潜在意識・記憶を象徴する。出生チャートにおける月の位置は、感情的な反応パターン・安心感の求め方・母親との関係を示す。月は約2.5日ごとに星座を移動し、日々の感情の潮流に影響を与える。月相（新月・満月など）も重要な占星術的要素である。",
+        "in_natal_chart_ja": "出生チャートの月は、感情的な性質・本能的な反応・内なる安心感の求め方を示す。月のサインとハウスが、どのように感情を処理し、何に安らぎを感じるかを教えてくれる。",
+        "retrograde": false,
+        "retrograde_note_ja": "月は逆行しない",
+        "avg_transit_per_sign_days": 2.5
+      },
+      {
+        "id": 3,
+        "name_en": "Mercury",
+        "name_ja": "水星",
+        "symbol": "☿",
+        "type": "Personal Planet",
+        "type_ja": "個人天体",
+        "orbit_days": 88,
+        "rules_sign": [
+          "Gemini",
+          "Virgo"
+        ],
+        "rules_sign_ja": [
+          "双子座",
+          "乙女座"
+        ],
+        "exaltation": "Virgo (15°)",
+        "exaltation_ja": "乙女座（15度）",
+        "detriment": "Sagittarius, Pisces",
+        "detriment_ja": "射手座、魚座",
+        "fall": "Pisces (15°)",
+        "fall_ja": "魚座（15度）",
+        "house_natural": 3,
+        "keywords_en": [
+          "communication",
+          "intellect",
+          "logic",
+          "learning",
+          "travel",
+          "siblings",
+          "writing",
+          "analysis"
+        ],
+        "keywords_ja": [
+          "コミュニケーション",
+          "知性",
+          "論理",
+          "学習",
+          "短距離旅行",
+          "兄弟姉妹",
+          "文章",
+          "分析"
+        ],
+        "body_parts": "Nervous System, Arms, Hands, Lungs",
+        "body_parts_ja": "神経系・腕・手・肺",
+        "day_of_week": "Wednesday",
+        "day_of_week_ja": "水曜日",
+        "metal": "Mercury (Quicksilver)",
+        "metal_ja": "水銀",
+        "color": "Yellow, Gray",
+        "color_ja": "黄色、グレー",
+        "description_ja": "水星は思考・コミュニケーション・情報処理・移動を象徴する。出生チャートにおける水星の位置は、その人の思考スタイル・コミュニケーション方法・学習の仕方を示す。水星逆行（年3回、各約3週間）は、コミュニケーション・交通・技術に混乱をもたらすとされる。",
+        "in_natal_chart_ja": "出生チャートの水星は、思考パターン・コミュニケーションスタイル・学習方法を示す。水星のサインとハウスが、どのように情報を処理し、どのように表現するかを教えてくれる。",
+        "retrograde": true,
+        "retrograde_note_ja": "年3回逆行（各約3週間）。逆行中はコミュニケーション・契約・旅行に注意が必要とされる。",
+        "avg_transit_per_sign_days": 15
+      },
+      {
+        "id": 4,
+        "name_en": "Venus",
+        "name_ja": "金星",
+        "symbol": "♀",
+        "type": "Personal Planet",
+        "type_ja": "個人天体",
+        "orbit_days": 225,
+        "rules_sign": [
+          "Taurus",
+          "Libra"
+        ],
+        "rules_sign_ja": [
+          "牡牛座",
+          "天秤座"
+        ],
+        "exaltation": "Pisces (27°)",
+        "exaltation_ja": "魚座（27度）",
+        "detriment": "Aries, Scorpio",
+        "detriment_ja": "牡羊座、蠍座",
+        "fall": "Virgo (27°)",
+        "fall_ja": "乙女座（27度）",
+        "house_natural": 2,
+        "keywords_en": [
+          "love",
+          "beauty",
+          "harmony",
+          "pleasure",
+          "art",
+          "relationships",
+          "values",
+          "attraction"
+        ],
+        "keywords_ja": [
+          "愛",
+          "美",
+          "調和",
+          "快楽",
+          "芸術",
+          "人間関係",
+          "価値観",
+          "引き寄せ"
+        ],
+        "body_parts": "Throat, Kidneys, Skin",
+        "body_parts_ja": "喉・腎臓・皮膚",
+        "day_of_week": "Friday",
+        "day_of_week_ja": "金曜日",
+        "metal": "Copper",
+        "metal_ja": "銅",
+        "color": "Pink, Green",
+        "color_ja": "ピンク、緑",
+        "description_ja": "金星は愛・美・快楽・芸術・価値観・人間関係を象徴する。出生チャートにおける金星の位置は、その人の愛のスタイル・美的感覚・何に価値を見出すかを示す。恋愛関係・友情・お金・芸術的才能とも関連する。金星逆行（約18ヶ月に1回、約40日間）は、恋愛・美・価値観の見直しをもたらす。",
+        "in_natal_chart_ja": "出生チャートの金星は、愛のスタイル・美的感覚・価値観・引き寄せるものを示す。金星のサインとハウスが、どのように愛を表現し、何に美を感じるかを教えてくれる。",
+        "retrograde": true,
+        "retrograde_note_ja": "約18ヶ月に1回逆行（約40日間）。逆行中は過去の恋愛の見直し・価値観の再評価が起きやすい。",
+        "avg_transit_per_sign_days": 23
+      },
+      {
+        "id": 5,
+        "name_en": "Mars",
+        "name_ja": "火星",
+        "symbol": "♂",
+        "type": "Personal Planet",
+        "type_ja": "個人天体",
+        "orbit_days": 687,
+        "rules_sign": [
+          "Aries",
+          "Scorpio (traditional)"
+        ],
+        "rules_sign_ja": [
+          "牡羊座",
+          "蠍座（伝統）"
+        ],
+        "exaltation": "Capricorn (28°)",
+        "exaltation_ja": "山羊座（28度）",
+        "detriment": "Libra, Taurus",
+        "detriment_ja": "天秤座、牡牛座",
+        "fall": "Cancer (28°)",
+        "fall_ja": "蟹座（28度）",
+        "house_natural": 1,
+        "keywords_en": [
+          "action",
+          "desire",
+          "aggression",
+          "courage",
+          "drive",
+          "sexuality",
+          "conflict",
+          "energy"
+        ],
+        "keywords_ja": [
+          "行動",
+          "欲望",
+          "攻撃性",
+          "勇気",
+          "推進力",
+          "性欲",
+          "対立",
+          "エネルギー"
+        ],
+        "body_parts": "Muscles, Head, Adrenal Glands",
+        "body_parts_ja": "筋肉・頭部・副腎",
+        "day_of_week": "Tuesday",
+        "day_of_week_ja": "火曜日",
+        "metal": "Iron",
+        "metal_ja": "鉄",
+        "color": "Red",
+        "color_ja": "赤",
+        "description_ja": "火星は行動・欲望・攻撃性・性エネルギー・競争心を象徴する。出生チャートにおける火星の位置は、その人の行動スタイル・何に情熱を注ぐか・怒りの表現方法を示す。戦争・スポーツ・手術とも関連する。火星逆行（約2年に1回、約2ヶ月）は、行動エネルギーが内向きになる時期。",
+        "in_natal_chart_ja": "出生チャートの火星は、行動パターン・欲望・性エネルギー・競争心を示す。火星のサインとハウスが、どのようにエネルギーを使い、何に情熱を燃やすかを教えてくれる。",
+        "retrograde": true,
+        "retrograde_note_ja": "約2年に1回逆行（約2ヶ月間）。逆行中は行動エネルギーが内向きになり、フラストレーションが溜まりやすい。",
+        "avg_transit_per_sign_days": 57
+      },
+      {
+        "id": 6,
+        "name_en": "Jupiter",
+        "name_ja": "木星",
+        "symbol": "♃",
+        "type": "Social Planet",
+        "type_ja": "社会天体",
+        "orbit_days": 4333,
+        "rules_sign": [
+          "Sagittarius",
+          "Pisces (traditional)"
+        ],
+        "rules_sign_ja": [
+          "射手座",
+          "魚座（伝統）"
+        ],
+        "exaltation": "Cancer (15°)",
+        "exaltation_ja": "蟹座（15度）",
+        "detriment": "Gemini",
+        "detriment_ja": "双子座",
+        "fall": "Capricorn (15°)",
+        "fall_ja": "山羊座（15度）",
+        "house_natural": 9,
+        "keywords_en": [
+          "expansion",
+          "luck",
+          "abundance",
+          "wisdom",
+          "philosophy",
+          "travel",
+          "higher education",
+          "optimism"
+        ],
+        "keywords_ja": [
+          "拡大",
+          "幸運",
+          "豊かさ",
+          "知恵",
+          "哲学",
+          "旅行",
+          "高等教育",
+          "楽観主義"
+        ],
+        "body_parts": "Liver, Hips, Thighs",
+        "body_parts_ja": "肝臓・腰・太もも",
+        "day_of_week": "Thursday",
+        "day_of_week_ja": "木曜日",
+        "metal": "Tin",
+        "metal_ja": "錫",
+        "color": "Purple, Blue",
+        "color_ja": "紫、青",
+        "description_ja": "木星は拡大・幸運・豊かさ・知恵・高等教育・哲学・旅行を象徴する。出生チャートにおける木星の位置は、その人が人生のどの分野で幸運を得やすいか・どこで成長と拡大が起きるかを示す。木星は約12年で黄道を一周し、各星座に約1年滞在する。",
+        "in_natal_chart_ja": "出生チャートの木星は、幸運・成長・拡大の領域を示す。木星のサインとハウスが、どの分野で恵みを受けやすく、どのように成長するかを教えてくれる。",
+        "retrograde": true,
+        "retrograde_note_ja": "毎年約4ヶ月逆行。逆行中は内的な成長・哲学的な見直しの時期。",
+        "avg_transit_per_sign_days": 365
+      },
+      {
+        "id": 7,
+        "name_en": "Saturn",
+        "name_ja": "土星",
+        "symbol": "♄",
+        "type": "Social Planet",
+        "type_ja": "社会天体",
+        "orbit_days": 10759,
+        "rules_sign": [
+          "Capricorn",
+          "Aquarius (traditional)"
+        ],
+        "rules_sign_ja": [
+          "山羊座",
+          "水瓶座（伝統）"
+        ],
+        "exaltation": "Libra (21°)",
+        "exaltation_ja": "天秤座（21度）",
+        "detriment": "Cancer",
+        "detriment_ja": "蟹座",
+        "fall": "Aries (21°)",
+        "fall_ja": "牡羊座（21度）",
+        "house_natural": 10,
+        "keywords_en": [
+          "discipline",
+          "structure",
+          "karma",
+          "limitation",
+          "responsibility",
+          "time",
+          "authority",
+          "lessons"
+        ],
+        "keywords_ja": [
+          "規律",
+          "構造",
+          "カルマ",
+          "制限",
+          "責任",
+          "時間",
+          "権威",
+          "試練"
+        ],
+        "body_parts": "Bones, Teeth, Skin, Knees",
+        "body_parts_ja": "骨・歯・皮膚・膝",
+        "day_of_week": "Saturday",
+        "day_of_week_ja": "土曜日",
+        "metal": "Lead",
+        "metal_ja": "鉛",
+        "color": "Black, Dark Gray",
+        "color_ja": "黒、ダークグレー",
+        "description_ja": "土星は規律・構造・制限・カルマ・責任・試練・時間を象徴する。出生チャートにおける土星の位置は、その人が人生で最も大きな試練と成長を経験する分野を示す。土星は約29.5年で黄道を一周する（サターン・リターン）。サターン・リターン（約29歳・58歳）は人生の重要な転換点とされる。",
+        "in_natal_chart_ja": "出生チャートの土星は、試練・制限・カルマ的な課題の領域を示す。土星のサインとハウスが、どの分野で最も努力と忍耐が必要かを教えてくれる。サターン・リターン（約29歳）は人生の大きな節目。",
+        "retrograde": true,
+        "retrograde_note_ja": "毎年約4.5ヶ月逆行。逆行中は過去のカルマ・責任の見直しの時期。",
+        "avg_transit_per_sign_days": 913,
+        "saturn_return_age": "約29歳・58歳"
+      },
+      {
+        "id": 8,
+        "name_en": "Uranus",
+        "name_ja": "天王星",
+        "symbol": "♅",
+        "type": "Transpersonal Planet",
+        "type_ja": "世代天体",
+        "orbit_days": 30589,
+        "rules_sign": [
+          "Aquarius"
+        ],
+        "rules_sign_ja": [
+          "水瓶座"
+        ],
+        "exaltation": "Scorpio",
+        "exaltation_ja": "蠍座",
+        "detriment": "Leo",
+        "detriment_ja": "獅子座",
+        "fall": "Taurus",
+        "fall_ja": "牡牛座",
+        "house_natural": 11,
+        "keywords_en": [
+          "revolution",
+          "innovation",
+          "rebellion",
+          "freedom",
+          "sudden change",
+          "technology",
+          "originality",
+          "awakening"
+        ],
+        "keywords_ja": [
+          "革命",
+          "革新",
+          "反骨",
+          "自由",
+          "突然の変化",
+          "テクノロジー",
+          "独創性",
+          "覚醒"
+        ],
+        "body_parts": "Nervous System, Ankles",
+        "body_parts_ja": "神経系・足首",
+        "day_of_week": "N/A",
+        "day_of_week_ja": "なし（現代天体）",
+        "metal": "Uranium",
+        "metal_ja": "ウラン",
+        "color": "Electric Blue",
+        "color_ja": "エレクトリックブルー",
+        "description_ja": "天王星は革命・革新・突然の変化・自由・テクノロジー・覚醒を象徴する。出生チャートにおける天王星の位置は、その世代が社会にどのような変革をもたらすかを示す。天王星は約84年で黄道を一周し、各星座に約7年滞在する。個人チャートでは、天王星のハウスが突然の変化と革新が起きやすい分野を示す。",
+        "in_natal_chart_ja": "出生チャートの天王星は、世代的な革新テーマと個人的な変革・自由への衝動を示す。天王星のハウスが、どの分野で予期せぬ変化と突破口が生まれるかを教えてくれる。",
+        "retrograde": true,
+        "retrograde_note_ja": "毎年約5ヶ月逆行。逆行中は内的な革命・個人的な自由の探求の時期。",
+        "avg_transit_per_sign_days": 2557
+      },
+      {
+        "id": 9,
+        "name_en": "Neptune",
+        "name_ja": "海王星",
+        "symbol": "♆",
+        "type": "Transpersonal Planet",
+        "type_ja": "世代天体",
+        "orbit_days": 60190,
+        "rules_sign": [
+          "Pisces"
+        ],
+        "rules_sign_ja": [
+          "魚座"
+        ],
+        "exaltation": "Aquarius",
+        "exaltation_ja": "水瓶座",
+        "detriment": "Virgo",
+        "detriment_ja": "乙女座",
+        "fall": "Leo",
+        "fall_ja": "獅子座",
+        "house_natural": 12,
+        "keywords_en": [
+          "spirituality",
+          "dreams",
+          "illusion",
+          "mysticism",
+          "compassion",
+          "dissolution",
+          "art",
+          "addiction"
+        ],
+        "keywords_ja": [
+          "霊性",
+          "夢",
+          "幻想",
+          "神秘主義",
+          "思いやり",
+          "溶解",
+          "芸術",
+          "依存"
+        ],
+        "body_parts": "Feet, Lymphatic System, Pineal Gland",
+        "body_parts_ja": "足・リンパ系・松果体",
+        "day_of_week": "N/A",
+        "day_of_week_ja": "なし（現代天体）",
+        "metal": "Neptunium",
+        "metal_ja": "ネプツニウム",
+        "color": "Sea Green, Violet",
+        "color_ja": "シーグリーン、バイオレット",
+        "description_ja": "海王星は霊性・夢・幻想・神秘主義・芸術・依存・境界の溶解を象徴する。出生チャートにおける海王星の位置は、その世代の霊的テーマと集合的な夢を示す。海王星は約165年で黄道を一周し、各星座に約14年滞在する。個人チャートでは、海王星のハウスが幻想・霊的探求・犠牲が起きやすい分野を示す。",
+        "in_natal_chart_ja": "出生チャートの海王星は、世代的な霊的テーマと個人的な幻想・夢・霊的感受性を示す。海王星のハウスが、どの分野で境界が曖昧になりやすく、霊的な深みがあるかを教えてくれる。",
+        "retrograde": true,
+        "retrograde_note_ja": "毎年約5ヶ月逆行。逆行中は霊的な内省・幻想の見直しの時期。",
+        "avg_transit_per_sign_days": 5110
+      },
+      {
+        "id": 10,
+        "name_en": "Pluto",
+        "name_ja": "冥王星",
+        "symbol": "♇",
+        "type": "Transpersonal Planet",
+        "type_ja": "世代天体",
+        "orbit_days": 90560,
+        "rules_sign": [
+          "Scorpio"
+        ],
+        "rules_sign_ja": [
+          "蠍座"
+        ],
+        "exaltation": "Leo",
+        "exaltation_ja": "獅子座",
+        "detriment": "Taurus",
+        "detriment_ja": "牡牛座",
+        "fall": "Aquarius",
+        "fall_ja": "水瓶座",
+        "house_natural": 8,
+        "keywords_en": [
+          "transformation",
+          "power",
+          "death/rebirth",
+          "intensity",
+          "control",
+          "obsession",
+          "regeneration",
+          "hidden forces"
+        ],
+        "keywords_ja": [
+          "変容",
+          "権力",
+          "死と再生",
+          "強烈さ",
+          "コントロール",
+          "執着",
+          "再生",
+          "隠れた力"
+        ],
+        "body_parts": "Reproductive System, Colon",
+        "body_parts_ja": "生殖器・結腸",
+        "day_of_week": "N/A",
+        "day_of_week_ja": "なし（現代天体）",
+        "metal": "Plutonium",
+        "metal_ja": "プルトニウム",
+        "color": "Black, Dark Red",
+        "color_ja": "黒、ダークレッド",
+        "description_ja": "冥王星は変容・権力・死と再生・隠れた力・強迫的なエネルギーを象徴する。出生チャートにおける冥王星の位置は、その世代が社会にどのような根本的変革をもたらすかを示す。冥王星は約248年で黄道を一周し、各星座に約12〜31年（楕円軌道のため不均等）滞在する。個人チャートでは、冥王星のハウスが根本的な変容と権力が働く分野を示す。",
+        "in_natal_chart_ja": "出生チャートの冥王星は、世代的な変容テーマと個人的な権力・変革・再生の領域を示す。冥王星のハウスが、どの分野で最も深い変容と再生が起きるかを教えてくれる。",
+        "retrograde": true,
+        "retrograde_note_ja": "毎年約5ヶ月逆行。逆行中は深層心理の変容・権力構造の見直しの時期。",
+        "avg_transit_per_sign_days": "7300〜11315（不均等）"
+      }
+    ],
+    "asteroids_and_points": [
+      {
+        "id": 11,
+        "name_en": "Chiron",
+        "name_ja": "カイロン",
+        "symbol": "⚷",
+        "type": "Centaur / Asteroid",
+        "type_ja": "ケンタウロス天体",
+        "orbit_days": 18500,
+        "keywords_en": [
+          "wounded healer",
+          "healing",
+          "wounds",
+          "teaching",
+          "bridge",
+          "maverick"
+        ],
+        "keywords_ja": [
+          "傷ついた癒し手",
+          "癒し",
+          "傷",
+          "教師",
+          "橋渡し",
+          "異端者"
+        ],
+        "description_ja": "カイロンは「傷ついた癒し手」と呼ばれ、最も深い傷とその癒しの可能性を示す。出生チャートにおけるカイロンの位置は、その人が最も深い傷を抱える分野と、その傷を癒すことで他者を助ける力を得る領域を示す。カイロンのサインとハウスが、人生の核心的な傷と癒しのテーマを教えてくれる。",
+        "avg_transit_per_sign_years": "約2〜8年（楕円軌道）"
+      },
+      {
+        "id": 12,
+        "name_en": "Ceres",
+        "name_ja": "ケレス",
+        "symbol": "⚳",
+        "type": "Dwarf Planet / Asteroid",
+        "type_ja": "矮小惑星",
+        "orbit_days": 1680,
+        "keywords_en": [
+          "nurturing",
+          "motherhood",
+          "food",
+          "agriculture",
+          "loss",
+          "grief",
+          "cycles"
+        ],
+        "keywords_ja": [
+          "養育",
+          "母性",
+          "食物",
+          "農業",
+          "喪失",
+          "悲嘆",
+          "サイクル"
+        ],
+        "description_ja": "ケレスはローマ神話の農業の女神（ギリシャ神話のデメテル）に対応し、養育・母性・食物・喪失と再会のサイクルを象徴する。出生チャートにおけるケレスの位置は、その人がどのように愛情を与え・受け取るか、喪失とどう向き合うかを示す。",
+        "avg_transit_per_sign_years": "約4.6ヶ月"
+      },
+      {
+        "id": 13,
+        "name_en": "Pallas",
+        "name_ja": "パラス",
+        "symbol": "⚴",
+        "type": "Asteroid",
+        "type_ja": "小惑星",
+        "orbit_days": 1686,
+        "keywords_en": [
+          "wisdom",
+          "strategy",
+          "creativity",
+          "healing",
+          "intelligence",
+          "pattern recognition"
+        ],
+        "keywords_ja": [
+          "知恵",
+          "戦略",
+          "創造性",
+          "癒し",
+          "知性",
+          "パターン認識"
+        ],
+        "description_ja": "パラスはギリシャ神話の知恵の女神アテナに対応し、実践的な知恵・戦略的思考・創造的問題解決を象徴する。出生チャートにおけるパラスの位置は、その人の知的な強みと戦略的な才能を示す。",
+        "avg_transit_per_sign_years": "約4.6ヶ月"
+      },
+      {
+        "id": 14,
+        "name_en": "Juno",
+        "name_ja": "ジュノ",
+        "symbol": "⚵",
+        "type": "Asteroid",
+        "type_ja": "小惑星",
+        "orbit_days": 1594,
+        "keywords_en": [
+          "marriage",
+          "partnership",
+          "commitment",
+          "equality",
+          "jealousy",
+          "betrayal"
+        ],
+        "keywords_ja": [
+          "結婚",
+          "パートナーシップ",
+          "コミットメント",
+          "平等",
+          "嫉妬",
+          "裏切り"
+        ],
+        "description_ja": "ジュノはローマ神話の結婚の女神（ギリシャ神話のヘラ）に対応し、結婚・長期パートナーシップ・コミットメントを象徴する。出生チャートにおけるジュノの位置は、その人が求めるパートナーの資質と関係性のパターンを示す。",
+        "avg_transit_per_sign_years": "約4.4ヶ月"
+      },
+      {
+        "id": 15,
+        "name_en": "Vesta",
+        "name_ja": "ベスタ",
+        "symbol": "⚶",
+        "type": "Asteroid",
+        "type_ja": "小惑星",
+        "orbit_days": 1325,
+        "keywords_en": [
+          "devotion",
+          "focus",
+          "sacred flame",
+          "sexuality",
+          "spirituality",
+          "dedication"
+        ],
+        "keywords_ja": [
+          "献身",
+          "集中力",
+          "聖なる炎",
+          "性",
+          "霊性",
+          "専念"
+        ],
+        "description_ja": "ベスタはローマ神話の炉の女神（ギリシャ神話のヘスティア）に対応し、献身・聖なる炎・霊的な焦点を象徴する。出生チャートにおけるベスタの位置は、その人が最も献身的になれる分野と、霊的な焦点を示す。",
+        "avg_transit_per_sign_years": "約3.6ヶ月"
+      },
+      {
+        "id": 16,
+        "name_en": "North Node",
+        "name_ja": "ノース・ノード（龍の頭）",
+        "symbol": "☊",
+        "type": "Lunar Node",
+        "type_ja": "月のノード",
+        "orbit_days": 6793,
+        "keywords_en": [
+          "destiny",
+          "soul purpose",
+          "growth",
+          "future",
+          "karma",
+          "life direction"
+        ],
+        "keywords_ja": [
+          "運命",
+          "魂の目的",
+          "成長",
+          "未来",
+          "カルマ",
+          "人生の方向性"
+        ],
+        "description_ja": "ノース・ノード（北交点・龍の頭）は魂の進化の方向性・今生の課題と目的を示す。出生チャートにおけるノース・ノードの位置は、この人生で発展させるべき資質と経験すべき領域を示す。ノース・ノードのサインとハウスが、魂の成長の方向を教えてくれる。",
+        "avg_transit_per_sign_years": "約1.5年"
+      },
+      {
+        "id": 17,
+        "name_en": "South Node",
+        "name_ja": "サウス・ノード（龍の尾）",
+        "symbol": "☋",
+        "type": "Lunar Node",
+        "type_ja": "月のノード",
+        "orbit_days": 6793,
+        "keywords_en": [
+          "past lives",
+          "karma",
+          "comfort zone",
+          "talents",
+          "release",
+          "past patterns"
+        ],
+        "keywords_ja": [
+          "前世",
+          "カルマ",
+          "コンフォートゾーン",
+          "才能",
+          "手放し",
+          "過去のパターン"
+        ],
+        "description_ja": "サウス・ノード（南交点・龍の尾）は過去世からの蓄積・カルマ的な才能と過去のパターンを示す。出生チャートにおけるサウス・ノードの位置は、前世から持ち越した資質と手放すべき執着を示す。常にノース・ノードと対向の位置にある。",
+        "avg_transit_per_sign_years": "約1.5年"
+      }
+    ],
+    "houses": [
+      {
+        "id": 1,
+        "name_en": "First House",
+        "name_ja": "第1ハウス",
+        "cusp_name": "Ascendant (ASC)",
+        "cusp_name_ja": "アセンダント（ASC）",
+        "natural_sign": "Aries",
+        "natural_sign_ja": "牡羊座",
+        "natural_ruler": "Mars",
+        "natural_ruler_ja": "火星",
+        "keywords_en": [
+          "self",
+          "appearance",
+          "personality",
+          "first impressions",
+          "physical body",
+          "beginnings"
+        ],
+        "keywords_ja": [
+          "自己",
+          "外見",
+          "人格",
+          "第一印象",
+          "肉体",
+          "始まり"
+        ],
+        "area_of_life_ja": "自己・外見・個性・身体・人生の始まり・第一印象",
+        "description_ja": "第1ハウスは「自己のハウス」と呼ばれ、外見・人格・第一印象・身体的特徴・人生への全体的なアプローチを示す。アセンダント（上昇サイン）はこのハウスのカスプにあり、他者からどのように見られるかを示す「仮面」の役割を果たす。このハウスに天体があると、その天体の性質が外見や人格に強く表れる。",
+        "angular_succedent_cadent": "Angular",
+        "house_type_ja": "アンギュラー（活動的）"
+      },
+      {
+        "id": 2,
+        "name_en": "Second House",
+        "name_ja": "第2ハウス",
+        "cusp_name": "N/A",
+        "cusp_name_ja": "なし",
+        "natural_sign": "Taurus",
+        "natural_sign_ja": "牡牛座",
+        "natural_ruler": "Venus",
+        "natural_ruler_ja": "金星",
+        "keywords_en": [
+          "money",
+          "possessions",
+          "values",
+          "self-worth",
+          "resources",
+          "material security"
+        ],
+        "keywords_ja": [
+          "お金",
+          "所有物",
+          "価値観",
+          "自己価値",
+          "資源",
+          "物質的安全"
+        ],
+        "area_of_life_ja": "金銭・所有物・価値観・自己価値・物質的資源",
+        "description_ja": "第2ハウスは「価値のハウス」と呼ばれ、金銭・所有物・物質的価値観・自己価値感を示す。このハウスは何を大切にするか、どのようにお金を稼ぎ使うか、物質的な安全をどのように求めるかを教えてくれる。第2ハウスの天体は、財政的なパターンと価値観に影響を与える。",
+        "angular_succedent_cadent": "Succedent",
+        "house_type_ja": "サクシーデント（継続的）"
+      },
+      {
+        "id": 3,
+        "name_en": "Third House",
+        "name_ja": "第3ハウス",
+        "cusp_name": "N/A",
+        "cusp_name_ja": "なし",
+        "natural_sign": "Gemini",
+        "natural_sign_ja": "双子座",
+        "natural_ruler": "Mercury",
+        "natural_ruler_ja": "水星",
+        "keywords_en": [
+          "communication",
+          "siblings",
+          "short trips",
+          "learning",
+          "writing",
+          "neighbors",
+          "mind"
+        ],
+        "keywords_ja": [
+          "コミュニケーション",
+          "兄弟姉妹",
+          "短距離旅行",
+          "学習",
+          "文章",
+          "近隣",
+          "思考"
+        ],
+        "area_of_life_ja": "コミュニケーション・兄弟姉妹・短距離旅行・初等教育・文章・近隣",
+        "description_ja": "第3ハウスは「コミュニケーションのハウス」と呼ばれ、日常的なコミュニケーション・兄弟姉妹・短距離旅行・初等教育・文章を示す。このハウスは思考スタイル・情報の処理と共有方法・近隣や兄弟との関係を教えてくれる。",
+        "angular_succedent_cadent": "Cadent",
+        "house_type_ja": "ケーデント（変化的）"
+      },
+      {
+        "id": 4,
+        "name_en": "Fourth House",
+        "name_ja": "第4ハウス",
+        "cusp_name": "IC (Imum Coeli)",
+        "cusp_name_ja": "IC（天底）",
+        "natural_sign": "Cancer",
+        "natural_sign_ja": "蟹座",
+        "natural_ruler": "Moon",
+        "natural_ruler_ja": "月",
+        "keywords_en": [
+          "home",
+          "family",
+          "roots",
+          "mother",
+          "childhood",
+          "inner foundation",
+          "real estate"
+        ],
+        "keywords_ja": [
+          "家庭",
+          "家族",
+          "ルーツ",
+          "母親",
+          "幼少期",
+          "内的基盤",
+          "不動産"
+        ],
+        "area_of_life_ja": "家庭・家族・ルーツ・幼少期・内的基盤・不動産・晩年",
+        "description_ja": "第4ハウスは「家庭のハウス」と呼ばれ、家庭・家族・ルーツ・幼少期・内的な基盤を示す。IC（天底）はこのハウスのカスプにあり、チャートの最も深い個人的な部分を示す。このハウスは家族との関係・幼少期の経験・心理的な基盤・晩年の生活を教えてくれる。",
+        "angular_succedent_cadent": "Angular",
+        "house_type_ja": "アンギュラー（活動的）"
+      },
+      {
+        "id": 5,
+        "name_en": "Fifth House",
+        "name_ja": "第5ハウス",
+        "cusp_name": "N/A",
+        "cusp_name_ja": "なし",
+        "natural_sign": "Leo",
+        "natural_sign_ja": "獅子座",
+        "natural_ruler": "Sun",
+        "natural_ruler_ja": "太陽",
+        "keywords_en": [
+          "creativity",
+          "romance",
+          "children",
+          "play",
+          "self-expression",
+          "entertainment",
+          "gambling"
+        ],
+        "keywords_ja": [
+          "創造性",
+          "恋愛",
+          "子供",
+          "遊び",
+          "自己表現",
+          "娯楽",
+          "ギャンブル"
+        ],
+        "area_of_life_ja": "創造性・恋愛・子供・遊び・自己表現・芸術・娯楽",
+        "description_ja": "第5ハウスは「創造と喜びのハウス」と呼ばれ、創造性・恋愛・子供・遊び・自己表現を示す。このハウスは楽しみ・趣味・芸術的才能・恋愛のスタイル・子供との関係を教えてくれる。第5ハウスの天体は、創造的な表現と喜びの追求に影響を与える。",
+        "angular_succedent_cadent": "Succedent",
+        "house_type_ja": "サクシーデント（継続的）"
+      },
+      {
+        "id": 6,
+        "name_en": "Sixth House",
+        "name_ja": "第6ハウス",
+        "cusp_name": "N/A",
+        "cusp_name_ja": "なし",
+        "natural_sign": "Virgo",
+        "natural_sign_ja": "乙女座",
+        "natural_ruler": "Mercury",
+        "natural_ruler_ja": "水星",
+        "keywords_en": [
+          "health",
+          "work",
+          "daily routines",
+          "service",
+          "diet",
+          "pets",
+          "coworkers"
+        ],
+        "keywords_ja": [
+          "健康",
+          "仕事",
+          "日課",
+          "奉仕",
+          "食事",
+          "ペット",
+          "同僚"
+        ],
+        "area_of_life_ja": "健康・日常業務・奉仕・食事・ペット・同僚・ルーティン",
+        "description_ja": "第6ハウスは「健康と奉仕のハウス」と呼ばれ、健康・日常的な仕事・奉仕・ルーティンを示す。このハウスは身体的な健康状態・職場環境・日々の習慣・奉仕の精神を教えてくれる。第6ハウスの天体は、健康と日常業務のパターンに影響を与える。",
+        "angular_succedent_cadent": "Cadent",
+        "house_type_ja": "ケーデント（変化的）"
+      },
+      {
+        "id": 7,
+        "name_en": "Seventh House",
+        "name_ja": "第7ハウス",
+        "cusp_name": "Descendant (DSC)",
+        "cusp_name_ja": "ディセンダント（DSC）",
+        "natural_sign": "Libra",
+        "natural_sign_ja": "天秤座",
+        "natural_ruler": "Venus",
+        "natural_ruler_ja": "金星",
+        "keywords_en": [
+          "partnerships",
+          "marriage",
+          "open enemies",
+          "contracts",
+          "one-on-one relationships",
+          "balance"
+        ],
+        "keywords_ja": [
+          "パートナーシップ",
+          "結婚",
+          "公然の敵",
+          "契約",
+          "一対一の関係",
+          "バランス"
+        ],
+        "area_of_life_ja": "結婚・パートナーシップ・契約・公然の敵・一対一の関係",
+        "description_ja": "第7ハウスは「パートナーシップのハウス」と呼ばれ、結婚・長期パートナーシップ・契約・公然の敵を示す。ディセンダントはこのハウスのカスプにあり、引き寄せるパートナーの資質を示す。このハウスは恋愛・ビジネスパートナーとの関係パターンを教えてくれる。",
+        "angular_succedent_cadent": "Angular",
+        "house_type_ja": "アンギュラー（活動的）"
+      },
+      {
+        "id": 8,
+        "name_en": "Eighth House",
+        "name_ja": "第8ハウス",
+        "cusp_name": "N/A",
+        "cusp_name_ja": "なし",
+        "natural_sign": "Scorpio",
+        "natural_sign_ja": "蠍座",
+        "natural_ruler": "Pluto (modern), Mars (traditional)",
+        "natural_ruler_ja": "冥王星（現代）、火星（伝統）",
+        "keywords_en": [
+          "transformation",
+          "death/rebirth",
+          "shared resources",
+          "sexuality",
+          "occult",
+          "inheritance",
+          "psychology"
+        ],
+        "keywords_ja": [
+          "変容",
+          "死と再生",
+          "共有資源",
+          "性",
+          "オカルト",
+          "遺産",
+          "深層心理"
+        ],
+        "area_of_life_ja": "変容・死と再生・共有資源・遺産・深層心理・オカルト・性",
+        "description_ja": "第8ハウスは「変容のハウス」と呼ばれ、変容・死と再生・共有資源・深層心理・オカルトを示す。このハウスは他者との深い結びつき・タブー・隠れた力・心理的な深みを教えてくれる。第8ハウスの天体は、変容と深層心理のテーマに影響を与える。",
+        "angular_succedent_cadent": "Succedent",
+        "house_type_ja": "サクシーデント（継続的）"
+      },
+      {
+        "id": 9,
+        "name_en": "Ninth House",
+        "name_ja": "第9ハウス",
+        "cusp_name": "N/A",
+        "cusp_name_ja": "なし",
+        "natural_sign": "Sagittarius",
+        "natural_sign_ja": "射手座",
+        "natural_ruler": "Jupiter",
+        "natural_ruler_ja": "木星",
+        "keywords_en": [
+          "philosophy",
+          "higher education",
+          "long-distance travel",
+          "religion",
+          "law",
+          "publishing",
+          "beliefs"
+        ],
+        "keywords_ja": [
+          "哲学",
+          "高等教育",
+          "長距離旅行",
+          "宗教",
+          "法律",
+          "出版",
+          "信念"
+        ],
+        "area_of_life_ja": "哲学・高等教育・長距離旅行・宗教・法律・出版・信念体系",
+        "description_ja": "第9ハウスは「哲学と探求のハウス」と呼ばれ、高等教育・哲学・宗教・長距離旅行・出版を示す。このハウスは世界観・信念体系・高次の学び・外国文化への関心を教えてくれる。第9ハウスの天体は、精神的な探求と世界観に影響を与える。",
+        "angular_succedent_cadent": "Cadent",
+        "house_type_ja": "ケーデント（変化的）"
+      },
+      {
+        "id": 10,
+        "name_en": "Tenth House",
+        "name_ja": "第10ハウス",
+        "cusp_name": "Midheaven (MC)",
+        "cusp_name_ja": "MC（天頂）",
+        "natural_sign": "Capricorn",
+        "natural_sign_ja": "山羊座",
+        "natural_ruler": "Saturn",
+        "natural_ruler_ja": "土星",
+        "keywords_en": [
+          "career",
+          "public image",
+          "reputation",
+          "authority",
+          "father",
+          "ambition",
+          "social status"
+        ],
+        "keywords_ja": [
+          "キャリア",
+          "公的イメージ",
+          "名声",
+          "権威",
+          "父親像",
+          "野心",
+          "社会的地位"
+        ],
+        "area_of_life_ja": "キャリア・公的イメージ・名声・権威・社会的地位・使命",
+        "description_ja": "第10ハウスは「キャリアと公的イメージのハウス」と呼ばれ、職業・社会的地位・公的な評判・権威を示す。MC（天頂）はこのハウスのカスプにあり、人生の最高点と社会的な使命を示す。このハウスは職業的な目標・社会での役割・父親との関係を教えてくれる。",
+        "angular_succedent_cadent": "Angular",
+        "house_type_ja": "アンギュラー（活動的）"
+      },
+      {
+        "id": 11,
+        "name_en": "Eleventh House",
+        "name_ja": "第11ハウス",
+        "cusp_name": "N/A",
+        "cusp_name_ja": "なし",
+        "natural_sign": "Aquarius",
+        "natural_sign_ja": "水瓶座",
+        "natural_ruler": "Uranus (modern), Saturn (traditional)",
+        "natural_ruler_ja": "天王星（現代）、土星（伝統）",
+        "keywords_en": [
+          "friends",
+          "groups",
+          "hopes",
+          "wishes",
+          "social causes",
+          "community",
+          "future goals"
+        ],
+        "keywords_ja": [
+          "友人",
+          "グループ",
+          "希望",
+          "願望",
+          "社会的大義",
+          "コミュニティ",
+          "将来の目標"
+        ],
+        "area_of_life_ja": "友人・グループ・希望・社会的大義・コミュニティ・将来の目標",
+        "description_ja": "第11ハウスは「友人と希望のハウス」と呼ばれ、友人関係・グループ・社会的大義・将来の希望を示す。このハウスは社会的なネットワーク・コミュニティへの参加・人道主義的な目標を教えてくれる。第11ハウスの天体は、社会的なつながりと将来の目標に影響を与える。",
+        "angular_succedent_cadent": "Succedent",
+        "house_type_ja": "サクシーデント（継続的）"
+      },
+      {
+        "id": 12,
+        "name_en": "Twelfth House",
+        "name_ja": "第12ハウス",
+        "cusp_name": "N/A",
+        "cusp_name_ja": "なし",
+        "natural_sign": "Pisces",
+        "natural_sign_ja": "魚座",
+        "natural_ruler": "Neptune (modern), Jupiter (traditional)",
+        "natural_ruler_ja": "海王星（現代）、木星（伝統）",
+        "keywords_en": [
+          "hidden matters",
+          "spirituality",
+          "isolation",
+          "karma",
+          "self-undoing",
+          "institutions",
+          "unconscious"
+        ],
+        "keywords_ja": [
+          "隠れた事柄",
+          "霊性",
+          "孤立",
+          "カルマ",
+          "自己破壊",
+          "施設",
+          "無意識"
+        ],
+        "area_of_life_ja": "隠れた事柄・霊性・孤独・カルマ・無意識・施設・秘密",
+        "description_ja": "第12ハウスは「隠れた事柄と霊性のハウス」と呼ばれ、無意識・隠れたカルマ・霊的な探求・孤独・施設を示す。このハウスは隠れた才能・自己破壊的なパターン・霊的な成長・カルマ的な課題を教えてくれる。第12ハウスの天体は、内向きのエネルギーとして働き、霊的な深みを与える。",
+        "angular_succedent_cadent": "Cadent",
+        "house_type_ja": "ケーデント（変化的）"
+      }
+    ],
+    "aspects": [
+      {
+        "id": 1,
+        "name_en": "Conjunction",
+        "name_ja": "コンジャンクション（合）",
+        "symbol": "☌",
+        "degrees": 0,
+        "orb_standard": 8,
+        "orb_tight": 3,
+        "type": "Major",
+        "type_ja": "メジャー",
+        "nature": "Neutral (depends on planets involved)",
+        "nature_ja": "中性（関係する天体による）",
+        "keywords_en": [
+          "fusion",
+          "intensity",
+          "union",
+          "blending",
+          "focus",
+          "new beginnings"
+        ],
+        "keywords_ja": [
+          "融合",
+          "強烈さ",
+          "合一",
+          "混合",
+          "集中",
+          "新しい始まり"
+        ],
+        "description_ja": "コンジャンクション（合）は2つの天体が同じ度数（0度）に位置するアスペクト。両天体のエネルギーが融合し、強烈に表れる。関係する天体の性質によって吉凶が異なる。太陽と月のコンジャンクションは新月を示し、新しいサイクルの始まりを意味する。",
+        "interpretation_ja": "2天体のエネルギーが一体化し、その分野が人生の重要なテーマとなる。天体の性質が強化され、集中的に表れる。"
+      },
+      {
+        "id": 2,
+        "name_en": "Sextile",
+        "name_ja": "セクスタイル（六分）",
+        "symbol": "⚹",
+        "degrees": 60,
+        "orb_standard": 6,
+        "orb_tight": 2,
+        "type": "Major",
+        "type_ja": "メジャー",
+        "nature": "Harmonious",
+        "nature_ja": "調和的",
+        "keywords_en": [
+          "opportunity",
+          "cooperation",
+          "talent",
+          "ease",
+          "communication",
+          "support"
+        ],
+        "keywords_ja": [
+          "機会",
+          "協力",
+          "才能",
+          "容易さ",
+          "コミュニケーション",
+          "サポート"
+        ],
+        "description_ja": "セクスタイル（六分）は2つの天体が60度の角度を形成するアスペクト。調和的で好機をもたらす。トラインより弱いが、積極的に活用すれば大きな恩恵を得られる。異なる元素（火と風、地と水）の星座間で形成されることが多い。",
+        "interpretation_ja": "才能・機会・協力のエネルギー。努力することで活かせる好機。コミュニケーションと協力が鍵。"
+      },
+      {
+        "id": 3,
+        "name_en": "Square",
+        "name_ja": "スクエア（四分）",
+        "symbol": "□",
+        "degrees": 90,
+        "orb_standard": 8,
+        "orb_tight": 3,
+        "type": "Major",
+        "type_ja": "メジャー",
+        "nature": "Challenging",
+        "nature_ja": "困難・緊張",
+        "keywords_en": [
+          "tension",
+          "conflict",
+          "challenge",
+          "friction",
+          "action",
+          "growth through struggle"
+        ],
+        "keywords_ja": [
+          "緊張",
+          "対立",
+          "挑戦",
+          "摩擦",
+          "行動",
+          "苦闘を通じた成長"
+        ],
+        "description_ja": "スクエア（四分）は2つの天体が90度の角度を形成するアスペクト。緊張・対立・挑戦をもたらすが、その摩擦が成長の原動力となる。同じモダリティ（活動・不動・柔軟）の異なる元素の星座間で形成される。困難なアスペクトだが、克服することで大きな力となる。",
+        "interpretation_ja": "緊張と対立のエネルギー。2天体のエネルギーが衝突し、課題や摩擦が生じる。しかし、この緊張が行動と成長の原動力となる。"
+      },
+      {
+        "id": 4,
+        "name_en": "Trine",
+        "name_ja": "トライン（三分）",
+        "symbol": "△",
+        "degrees": 120,
+        "orb_standard": 8,
+        "orb_tight": 3,
+        "type": "Major",
+        "type_ja": "メジャー",
+        "nature": "Harmonious",
+        "nature_ja": "調和的・恵み",
+        "keywords_en": [
+          "harmony",
+          "flow",
+          "natural talent",
+          "ease",
+          "grace",
+          "gifts",
+          "creativity"
+        ],
+        "keywords_ja": [
+          "調和",
+          "流れ",
+          "生まれつきの才能",
+          "容易さ",
+          "優雅さ",
+          "恵み",
+          "創造性"
+        ],
+        "description_ja": "トライン（三分）は2つの天体が120度の角度を形成するアスペクト。最も調和的で恵みをもたらすアスペクト。同じ元素（火・地・風・水）の星座間で形成される。生まれつきの才能・自然な流れ・恵みを示す。ただし、容易すぎるため怠惰になる危険もある。",
+        "interpretation_ja": "調和と才能のエネルギー。2天体のエネルギーが自然に流れ、生まれつきの才能や恵みをもたらす。最も吉祥なアスペクト。"
+      },
+      {
+        "id": 5,
+        "name_en": "Opposition",
+        "name_ja": "オポジション（衝）",
+        "symbol": "☍",
+        "degrees": 180,
+        "orb_standard": 8,
+        "orb_tight": 3,
+        "type": "Major",
+        "type_ja": "メジャー",
+        "nature": "Challenging",
+        "nature_ja": "困難・対立",
+        "keywords_en": [
+          "opposition",
+          "polarity",
+          "awareness",
+          "relationships",
+          "balance",
+          "projection"
+        ],
+        "keywords_ja": [
+          "対立",
+          "二極性",
+          "気づき",
+          "人間関係",
+          "バランス",
+          "投影"
+        ],
+        "description_ja": "オポジション（衝）は2つの天体が180度の角度を形成するアスペクト。対立・二極性・バランスを示す。対向する星座間で形成される。自分の中の対立する力・他者との対立・投影のパターンを示す。バランスを取ることで統合と成長が生まれる。",
+        "interpretation_ja": "対立と二極性のエネルギー。2天体のエネルギーが引っ張り合い、バランスを求める。他者との関係を通じて気づきを得る。"
+      },
+      {
+        "id": 6,
+        "name_en": "Semi-Sextile",
+        "name_ja": "セミセクスタイル（三十分）",
+        "symbol": "⊻",
+        "degrees": 30,
+        "orb_standard": 2,
+        "orb_tight": 1,
+        "type": "Minor",
+        "type_ja": "マイナー",
+        "nature": "Mildly Harmonious",
+        "nature_ja": "穏やかな調和",
+        "keywords_en": [
+          "subtle connection",
+          "mild opportunity",
+          "adjustment"
+        ],
+        "keywords_ja": [
+          "微妙なつながり",
+          "穏やかな機会",
+          "調整"
+        ],
+        "description_ja": "セミセクスタイル（三十分）は2つの天体が30度の角度を形成するマイナーアスペクト。穏やかな調和と微妙なつながりを示す。隣接する星座間で形成される。",
+        "interpretation_ja": "穏やかな調和のエネルギー。微妙なつながりと調整が必要な関係。"
+      },
+      {
+        "id": 7,
+        "name_en": "Semi-Square",
+        "name_ja": "セミスクエア（四十五分）",
+        "symbol": "∠",
+        "degrees": 45,
+        "orb_standard": 2,
+        "orb_tight": 1,
+        "type": "Minor",
+        "type_ja": "マイナー",
+        "nature": "Mildly Challenging",
+        "nature_ja": "穏やかな緊張",
+        "keywords_en": [
+          "irritation",
+          "friction",
+          "minor tension",
+          "adjustment needed"
+        ],
+        "keywords_ja": [
+          "苛立ち",
+          "摩擦",
+          "軽い緊張",
+          "調整が必要"
+        ],
+        "description_ja": "セミスクエア（四十五分）は2つの天体が45度の角度を形成するマイナーアスペクト。スクエアより弱い緊張と摩擦を示す。",
+        "interpretation_ja": "軽い緊張と摩擦のエネルギー。調整と意識的な取り組みが必要。"
+      },
+      {
+        "id": 8,
+        "name_en": "Sesquiquadrate",
+        "name_ja": "セスキクアドレート（百三十五分）",
+        "symbol": "⊼",
+        "degrees": 135,
+        "orb_standard": 2,
+        "orb_tight": 1,
+        "type": "Minor",
+        "type_ja": "マイナー",
+        "nature": "Mildly Challenging",
+        "nature_ja": "穏やかな緊張",
+        "keywords_en": [
+          "agitation",
+          "friction",
+          "restlessness",
+          "adjustment"
+        ],
+        "keywords_ja": [
+          "焦り",
+          "摩擦",
+          "落ち着きのなさ",
+          "調整"
+        ],
+        "description_ja": "セスキクアドレート（百三十五分）は2つの天体が135度の角度を形成するマイナーアスペクト。セミスクエアと同様の緊張と焦りを示す。",
+        "interpretation_ja": "焦りと摩擦のエネルギー。行動を促す軽い緊張。"
+      },
+      {
+        "id": 9,
+        "name_en": "Quincunx (Inconjunct)",
+        "name_ja": "クインカンクス（クインカンクス・百五十分）",
+        "symbol": "⚻",
+        "degrees": 150,
+        "orb_standard": 3,
+        "orb_tight": 1,
+        "type": "Minor",
+        "type_ja": "マイナー",
+        "nature": "Awkward",
+        "nature_ja": "ぎこちない・調整困難",
+        "keywords_en": [
+          "adjustment",
+          "health",
+          "service",
+          "awkward connection",
+          "redirection"
+        ],
+        "keywords_ja": [
+          "調整",
+          "健康",
+          "奉仕",
+          "ぎこちないつながり",
+          "方向転換"
+        ],
+        "description_ja": "クインカンクス（百五十分）は2つの天体が150度の角度を形成するアスペクト。ぎこちなく調整困難な関係を示す。2つの天体は元素もモダリティも共有しないため、自然な調和が難しい。健康問題や方向転換を示すことが多い。",
+        "interpretation_ja": "ぎこちない調整のエネルギー。2天体のエネルギーが自然に噛み合わず、継続的な調整が必要。健康や奉仕のテーマと関連することが多い。"
+      },
+      {
+        "id": 10,
+        "name_en": "Quintile",
+        "name_ja": "クインタイル（七十二分）",
+        "symbol": "Q",
+        "degrees": 72,
+        "orb_standard": 2,
+        "orb_tight": 1,
+        "type": "Minor",
+        "type_ja": "マイナー",
+        "nature": "Creative",
+        "nature_ja": "創造的",
+        "keywords_en": [
+          "creativity",
+          "talent",
+          "unique gifts",
+          "special abilities"
+        ],
+        "keywords_ja": [
+          "創造性",
+          "才能",
+          "ユニークな才能",
+          "特別な能力"
+        ],
+        "description_ja": "クインタイル（七十二分）は2つの天体が72度の角度を形成するマイナーアスペクト。創造的な才能と特別な能力を示す。",
+        "interpretation_ja": "創造的な才能のエネルギー。特別な能力と独自の才能を示す。"
+      }
+    ],
+    "dignities": [
+      {
+        "planet_en": "Sun",
+        "planet_ja": "太陽",
+        "domicile": "Leo",
+        "domicile_ja": "獅子座",
+        "exaltation": "Aries 19°",
+        "exaltation_ja": "牡羊座19度",
+        "detriment": "Aquarius",
+        "detriment_ja": "水瓶座",
+        "fall": "Libra 19°",
+        "fall_ja": "天秤座19度"
+      },
+      {
+        "planet_en": "Moon",
+        "planet_ja": "月",
+        "domicile": "Cancer",
+        "domicile_ja": "蟹座",
+        "exaltation": "Taurus 3°",
+        "exaltation_ja": "牡牛座3度",
+        "detriment": "Capricorn",
+        "detriment_ja": "山羊座",
+        "fall": "Scorpio 3°",
+        "fall_ja": "蠍座3度"
+      },
+      {
+        "planet_en": "Mercury",
+        "planet_ja": "水星",
+        "domicile": "Gemini, Virgo",
+        "domicile_ja": "双子座・乙女座",
+        "exaltation": "Virgo 15°",
+        "exaltation_ja": "乙女座15度",
+        "detriment": "Sagittarius, Pisces",
+        "detriment_ja": "射手座・魚座",
+        "fall": "Pisces 15°",
+        "fall_ja": "魚座15度"
+      },
+      {
+        "planet_en": "Venus",
+        "planet_ja": "金星",
+        "domicile": "Taurus, Libra",
+        "domicile_ja": "牡牛座・天秤座",
+        "exaltation": "Pisces 27°",
+        "exaltation_ja": "魚座27度",
+        "detriment": "Aries, Scorpio",
+        "detriment_ja": "牡羊座・蠍座",
+        "fall": "Virgo 27°",
+        "fall_ja": "乙女座27度"
+      },
+      {
+        "planet_en": "Mars",
+        "planet_ja": "火星",
+        "domicile": "Aries, Scorpio",
+        "domicile_ja": "牡羊座・蠍座",
+        "exaltation": "Capricorn 28°",
+        "exaltation_ja": "山羊座28度",
+        "detriment": "Libra, Taurus",
+        "detriment_ja": "天秤座・牡牛座",
+        "fall": "Cancer 28°",
+        "fall_ja": "蟹座28度"
+      },
+      {
+        "planet_en": "Jupiter",
+        "planet_ja": "木星",
+        "domicile": "Sagittarius, Pisces",
+        "domicile_ja": "射手座・魚座",
+        "exaltation": "Cancer 15°",
+        "exaltation_ja": "蟹座15度",
+        "detriment": "Gemini",
+        "detriment_ja": "双子座",
+        "fall": "Capricorn 15°",
+        "fall_ja": "山羊座15度"
+      },
+      {
+        "planet_en": "Saturn",
+        "planet_ja": "土星",
+        "domicile": "Capricorn, Aquarius",
+        "domicile_ja": "山羊座・水瓶座",
+        "exaltation": "Libra 21°",
+        "exaltation_ja": "天秤座21度",
+        "detriment": "Cancer",
+        "detriment_ja": "蟹座",
+        "fall": "Aries 21°",
+        "fall_ja": "牡羊座21度"
+      },
+      {
+        "planet_en": "Uranus",
+        "planet_ja": "天王星",
+        "domicile": "Aquarius",
+        "domicile_ja": "水瓶座",
+        "exaltation": "Scorpio",
+        "exaltation_ja": "蠍座",
+        "detriment": "Leo",
+        "detriment_ja": "獅子座",
+        "fall": "Taurus",
+        "fall_ja": "牡牛座"
+      },
+      {
+        "planet_en": "Neptune",
+        "planet_ja": "海王星",
+        "domicile": "Pisces",
+        "domicile_ja": "魚座",
+        "exaltation": "Aquarius",
+        "exaltation_ja": "水瓶座",
+        "detriment": "Virgo",
+        "detriment_ja": "乙女座",
+        "fall": "Leo",
+        "fall_ja": "獅子座"
+      },
+      {
+        "planet_en": "Pluto",
+        "planet_ja": "冥王星",
+        "domicile": "Scorpio",
+        "domicile_ja": "蠍座",
+        "exaltation": "Leo",
+        "exaltation_ja": "獅子座",
+        "detriment": "Taurus",
+        "detriment_ja": "牡牛座",
+        "fall": "Aquarius",
+        "fall_ja": "水瓶座"
+      },
+      {
+        "planet_en": "North Node",
+        "planet_ja": "ノース・ノード",
+        "domicile": "N/A",
+        "domicile_ja": "なし",
+        "exaltation": "Gemini 3°",
+        "exaltation_ja": "双子座3度",
+        "detriment": "N/A",
+        "detriment_ja": "なし",
+        "fall": "Sagittarius 3°",
+        "fall_ja": "射手座3度"
+      },
+      {
+        "planet_en": "South Node",
+        "planet_ja": "サウス・ノード",
+        "domicile": "N/A",
+        "domicile_ja": "なし",
+        "exaltation": "Sagittarius 3°",
+        "exaltation_ja": "射手座3度",
+        "detriment": "N/A",
+        "detriment_ja": "なし",
+        "fall": "Gemini 3°",
+        "fall_ja": "双子座3度"
+      }
+    ],
+    "elements": [
+      {
+        "id": 1,
+        "name_en": "Fire",
+        "name_ja": "火（ファイア）",
+        "signs": [
+          "Aries",
+          "Leo",
+          "Sagittarius"
+        ],
+        "signs_ja": [
+          "牡羊座",
+          "獅子座",
+          "射手座"
+        ],
+        "keywords_en": [
+          "energy",
+          "enthusiasm",
+          "inspiration",
+          "action",
+          "passion",
+          "creativity"
+        ],
+        "keywords_ja": [
+          "エネルギー",
+          "熱意",
+          "インスピレーション",
+          "行動",
+          "情熱",
+          "創造性"
+        ],
+        "description_ja": "火の元素は活力・情熱・インスピレーション・行動を象徴する。火サインは積極的で熱意があり、新しいことを始める力に優れる。感情的な温かさと創造的なエネルギーを持つが、衝動的になりやすい。",
+        "polarity": "Positive/Masculine",
+        "polarity_ja": "陽性・男性的"
+      },
+      {
+        "id": 2,
+        "name_en": "Earth",
+        "name_ja": "地（アース）",
+        "signs": [
+          "Taurus",
+          "Virgo",
+          "Capricorn"
+        ],
+        "signs_ja": [
+          "牡牛座",
+          "乙女座",
+          "山羊座"
+        ],
+        "keywords_en": [
+          "stability",
+          "practicality",
+          "material",
+          "grounded",
+          "patience",
+          "reliability"
+        ],
+        "keywords_ja": [
+          "安定",
+          "実用性",
+          "物質",
+          "地に足がついた",
+          "忍耐",
+          "信頼性"
+        ],
+        "description_ja": "地の元素は安定・実用性・物質的な現実・忍耐を象徴する。地サインは現実的で信頼性が高く、物事を着実に進める力に優れる。感覚的な快楽と物質的な豊かさを重視するが、変化を嫌う傾向がある。",
+        "polarity": "Negative/Feminine",
+        "polarity_ja": "陰性・女性的"
+      },
+      {
+        "id": 3,
+        "name_en": "Air",
+        "name_ja": "風（エア）",
+        "signs": [
+          "Gemini",
+          "Libra",
+          "Aquarius"
+        ],
+        "signs_ja": [
+          "双子座",
+          "天秤座",
+          "水瓶座"
+        ],
+        "keywords_en": [
+          "intellect",
+          "communication",
+          "ideas",
+          "social",
+          "logic",
+          "adaptability"
+        ],
+        "keywords_ja": [
+          "知性",
+          "コミュニケーション",
+          "アイデア",
+          "社交性",
+          "論理",
+          "適応力"
+        ],
+        "description_ja": "風の元素は知性・コミュニケーション・アイデア・社交性を象徴する。風サインは知的で社交的であり、情報の処理と共有に優れる。客観的な視点と論理的思考を持つが、感情から切り離されやすい。",
+        "polarity": "Positive/Masculine",
+        "polarity_ja": "陽性・男性的"
+      },
+      {
+        "id": 4,
+        "name_en": "Water",
+        "name_ja": "水（ウォーター）",
+        "signs": [
+          "Cancer",
+          "Scorpio",
+          "Pisces"
+        ],
+        "signs_ja": [
+          "蟹座",
+          "蠍座",
+          "魚座"
+        ],
+        "keywords_en": [
+          "emotion",
+          "intuition",
+          "sensitivity",
+          "depth",
+          "empathy",
+          "psychic"
+        ],
+        "keywords_ja": [
+          "感情",
+          "直感",
+          "感受性",
+          "深さ",
+          "共感力",
+          "霊的感覚"
+        ],
+        "description_ja": "水の元素は感情・直感・感受性・深さを象徴する。水サインは感情的に深く、直感力と共感力に優れる。霊的な感受性と他者の感情への敏感さを持つが、感情的に圧倒されやすい。",
+        "polarity": "Negative/Feminine",
+        "polarity_ja": "陰性・女性的"
+      }
+    ],
+    "modalities": [
+      {
+        "id": 1,
+        "name_en": "Cardinal",
+        "name_ja": "活動宮（カーディナル）",
+        "signs": [
+          "Aries",
+          "Cancer",
+          "Libra",
+          "Capricorn"
+        ],
+        "signs_ja": [
+          "牡羊座",
+          "蟹座",
+          "天秤座",
+          "山羊座"
+        ],
+        "keywords_en": [
+          "initiative",
+          "action",
+          "leadership",
+          "beginnings",
+          "drive"
+        ],
+        "keywords_ja": [
+          "主導性",
+          "行動",
+          "リーダーシップ",
+          "始まり",
+          "推進力"
+        ],
+        "description_ja": "活動宮は各季節の始まりに対応し、主導性・行動力・新しいことを始める力を象徴する。活動宮サインは積極的にイニシアチブを取り、変化を起こす力を持つ。"
+      },
+      {
+        "id": 2,
+        "name_en": "Fixed",
+        "name_ja": "不動宮（フィックスド）",
+        "signs": [
+          "Taurus",
+          "Leo",
+          "Scorpio",
+          "Aquarius"
+        ],
+        "signs_ja": [
+          "牡牛座",
+          "獅子座",
+          "蠍座",
+          "水瓶座"
+        ],
+        "keywords_en": [
+          "stability",
+          "persistence",
+          "determination",
+          "resistance to change",
+          "focus"
+        ],
+        "keywords_ja": [
+          "安定",
+          "持続力",
+          "決意",
+          "変化への抵抗",
+          "集中力"
+        ],
+        "description_ja": "不動宮は各季節の中間に対応し、安定性・持続力・決意を象徴する。不動宮サインは一度始めたことを最後まで続ける粘り強さを持つが、変化を嫌う傾向がある。"
+      },
+      {
+        "id": 3,
+        "name_en": "Mutable",
+        "name_ja": "柔軟宮（ミュータブル）",
+        "signs": [
+          "Gemini",
+          "Virgo",
+          "Sagittarius",
+          "Pisces"
+        ],
+        "signs_ja": [
+          "双子座",
+          "乙女座",
+          "射手座",
+          "魚座"
+        ],
+        "keywords_en": [
+          "adaptability",
+          "flexibility",
+          "change",
+          "transition",
+          "versatility"
+        ],
+        "keywords_ja": [
+          "適応力",
+          "柔軟性",
+          "変化",
+          "移行",
+          "多才"
+        ],
+        "description_ja": "柔軟宮は各季節の終わりに対応し、適応力・柔軟性・変化への対応を象徴する。柔軟宮サインは変化に適応する能力に優れるが、優柔不断になりやすい。"
+      }
+    ],
+    "house_systems": [
+      {
+        "id": 1,
+        "name_en": "Placidus",
+        "name_ja": "プラシダス",
+        "description_ja": "最も広く使われるハウスシステム。アセンダントとMCを基準に、時間的な分割でハウスを計算する。高緯度地域ではハウスが歪む問題がある。西洋占星術で最も一般的。",
+        "characteristics_ja": "不等分ハウス・時間的分割・高緯度で歪みあり",
+        "recommended_for_ja": "現代西洋占星術・ネイタルチャート一般",
+        "popularity": "最も一般的"
+      },
+      {
+        "id": 2,
+        "name_en": "Whole Sign",
+        "name_ja": "ホールサイン",
+        "description_ja": "古代ヘレニズム占星術で使われた最古のシステム。アセンダントのある星座全体が第1ハウスとなり、各星座が各ハウスに対応する。シンプルで明快。",
+        "characteristics_ja": "等分ハウス（30度）・星座全体がハウス・古代ヘレニズム系",
+        "recommended_for_ja": "ヘレニズム占星術・伝統占星術・シンプルな解釈",
+        "popularity": "古代・現代で再評価"
+      },
+      {
+        "id": 3,
+        "name_en": "Equal House",
+        "name_ja": "イコールハウス",
+        "description_ja": "アセンダントから30度ずつ均等にハウスを分割するシステム。プラシダスより単純で、高緯度でも歪まない。MCがハウスカスプと一致しない。",
+        "characteristics_ja": "等分ハウス（30度）・アセンダント基準・MCが10ハウスカスプと不一致",
+        "recommended_for_ja": "高緯度地域・シンプルな計算",
+        "popularity": "一般的"
+      },
+      {
+        "id": 4,
+        "name_en": "Koch",
+        "name_ja": "コッホ",
+        "description_ja": "プラシダスに似た時間的分割システム。ドイツ語圏で人気。高緯度では極端な歪みが生じる。",
+        "characteristics_ja": "不等分ハウス・時間的分割・ドイツ語圏で人気",
+        "recommended_for_ja": "ドイツ語圏の占星術師",
+        "popularity": "中程度"
+      },
+      {
+        "id": 5,
+        "name_en": "Campanus",
+        "name_ja": "カンパナス",
+        "description_ja": "天球の垂直大円を6等分して計算するシステム。空間的な分割方法を使用。",
+        "characteristics_ja": "不等分ハウス・空間的分割",
+        "recommended_for_ja": "特定の占星術師・研究目的",
+        "popularity": "少数派"
+      },
+      {
+        "id": 6,
+        "name_en": "Regiomontanus",
+        "name_ja": "レジオモンタナス",
+        "description_ja": "天球の赤道を6等分して計算するシステム。中世占星術で広く使われた。",
+        "characteristics_ja": "不等分ハウス・赤道分割・中世占星術系",
+        "recommended_for_ja": "伝統占星術・ホラリー占星術",
+        "popularity": "伝統占星術師に人気"
+      }
+    ],
+    "celebrity_birth_data": [
+      {
+        "id": 1,
+        "name": "Ariana Grande",
+        "birth_date": "1993-06-26",
+        "birth_time": "21:16",
+        "birth_place": "Boca Raton, Florida, USA",
+        "sun_sign": "Cancer",
+        "sun_sign_ja": "蟹座",
+        "sun_degree": "5°25'",
+        "moon_sign": "Libra",
+        "moon_sign_ja": "天秤座",
+        "moon_degree": "6°48'",
+        "ascendant": "Capricorn",
+        "ascendant_ja": "山羊座",
+        "ascendant_degree": "20°56'",
+        "mercury": "Cancer 27°26'",
+        "venus": "Taurus 20°28'",
+        "mars": "Virgo 2°9'",
+        "jupiter": "Libra 5°44'",
+        "saturn": "Pisces 0°5' (r)",
+        "uranus": "Capricorn 20°49' (r)",
+        "neptune": "Capricorn 20°10' (r)",
+        "pluto": "Scorpio 23°4' (r)",
+        "north_node": "Sagittarius 11°3' (r)",
+        "chiron": "Leo 21°19'",
+        "mc": "Scorpio 6°24'",
+        "profession": "Singer, Actress",
+        "profession_ja": "歌手・女優",
+        "source": "astro-charts.com"
+      },
+      {
+        "id": 2,
+        "name": "Taylor Swift",
+        "birth_date": "1989-12-13",
+        "birth_time": "05:17",
+        "birth_place": "West Reading, Pennsylvania, USA",
+        "sun_sign": "Sagittarius",
+        "sun_sign_ja": "射手座",
+        "sun_degree": "21°23'",
+        "moon_sign": "Cancer",
+        "moon_sign_ja": "蟹座",
+        "moon_degree": "29°59'",
+        "ascendant": "Scorpio",
+        "ascendant_ja": "蠍座",
+        "ascendant_degree": "16°53'",
+        "mercury": "Capricorn 6°26'",
+        "venus": "Aquarius 8°53'",
+        "mars": "Scorpio 6°59'",
+        "jupiter": "Cancer 28°32'",
+        "saturn": "Capricorn 10°42'",
+        "uranus": "Capricorn 5°7'",
+        "neptune": "Capricorn 12°20'",
+        "pluto": "Scorpio 16°15'",
+        "north_node": "Aquarius 22°24'",
+        "chiron": "Cancer 21°21'",
+        "mc": "Leo 26°5'",
+        "profession": "Singer-Songwriter",
+        "profession_ja": "シンガーソングライター",
+        "source": "astro.com"
+      },
+      {
+        "id": 3,
+        "name": "Beyoncé",
+        "birth_date": "1981-09-04",
+        "birth_time": "10:00",
+        "birth_place": "Houston, Texas, USA",
+        "sun_sign": "Virgo",
+        "sun_sign_ja": "乙女座",
+        "sun_degree": "11°54'",
+        "moon_sign": "Scorpio",
+        "moon_sign_ja": "蠍座",
+        "moon_degree": "4°40'",
+        "ascendant": "Libra",
+        "ascendant_ja": "天秤座",
+        "ascendant_degree": "26°44'",
+        "mercury": "Libra 6°34'",
+        "venus": "Libra 14°55'",
+        "mars": "Cancer 17°30'",
+        "jupiter": "Libra 3°15'",
+        "saturn": "Libra 14°33'",
+        "uranus": "Scorpio 25°33'",
+        "neptune": "Sagittarius 22°32'",
+        "pluto": "Libra 22°21'",
+        "north_node": "Leo 25°11'",
+        "chiron": "Taurus 19°56'",
+        "mc": "Cancer 28°21'",
+        "profession": "Singer, Actress, Businesswoman",
+        "profession_ja": "歌手・女優・実業家",
+        "source": "astro.com"
+      },
+      {
+        "id": 4,
+        "name": "Barack Obama",
+        "birth_date": "1961-08-04",
+        "birth_time": "19:24",
+        "birth_place": "Honolulu, Hawaii, USA",
+        "sun_sign": "Leo",
+        "sun_sign_ja": "獅子座",
+        "sun_degree": "12°33'",
+        "moon_sign": "Gemini",
+        "moon_sign_ja": "双子座",
+        "moon_degree": "3°21'",
+        "ascendant": "Aquarius",
+        "ascendant_ja": "水瓶座",
+        "ascendant_degree": "18°3'",
+        "mercury": "Leo 2°20'",
+        "venus": "Cancer 1°47'",
+        "mars": "Virgo 22°35'",
+        "jupiter": "Aquarius 0°52'",
+        "saturn": "Capricorn 25°20'",
+        "uranus": "Leo 25°16'",
+        "neptune": "Scorpio 8°36'",
+        "pluto": "Virgo 6°59'",
+        "north_node": "Leo 27°55'",
+        "chiron": "Pisces 5°19'",
+        "mc": "Scorpio 28°54'",
+        "profession": "44th US President, Politician",
+        "profession_ja": "第44代米国大統領・政治家",
+        "source": "astro.com"
+      },
+      {
+        "id": 5,
+        "name": "Lady Gaga",
+        "birth_date": "1986-03-28",
+        "birth_time": "09:53",
+        "birth_place": "New York City, New York, USA",
+        "sun_sign": "Aries",
+        "sun_sign_ja": "牡羊座",
+        "sun_degree": "7°42'",
+        "moon_sign": "Scorpio",
+        "moon_sign_ja": "蠍座",
+        "moon_degree": "21°58'",
+        "ascendant": "Gemini",
+        "ascendant_ja": "双子座",
+        "ascendant_degree": "24°7'",
+        "mercury": "Aries 2°56'",
+        "venus": "Aries 18°55'",
+        "mars": "Capricorn 21°27'",
+        "jupiter": "Pisces 13°30'",
+        "saturn": "Sagittarius 8°12'",
+        "uranus": "Sagittarius 20°42'",
+        "neptune": "Capricorn 5°15'",
+        "pluto": "Scorpio 5°51'",
+        "north_node": "Taurus 5°20'",
+        "chiron": "Gemini 12°41'",
+        "mc": "Aquarius 16°45'",
+        "profession": "Singer, Songwriter, Actress",
+        "profession_ja": "歌手・ソングライター・女優",
+        "source": "astro.com"
+      },
+      {
+        "id": 6,
+        "name": "Leonardo DiCaprio",
+        "birth_date": "1974-11-11",
+        "birth_time": "02:47",
+        "birth_place": "Los Angeles, California, USA",
+        "sun_sign": "Scorpio",
+        "sun_sign_ja": "蠍座",
+        "sun_degree": "18°52'",
+        "moon_sign": "Libra",
+        "moon_sign_ja": "天秤座",
+        "moon_degree": "21°39'",
+        "ascendant": "Libra",
+        "ascendant_ja": "天秤座",
+        "ascendant_degree": "3°51'",
+        "mercury": "Scorpio 9°9'",
+        "venus": "Scorpio 21°16'",
+        "mars": "Libra 26°23'",
+        "jupiter": "Pisces 17°51'",
+        "saturn": "Cancer 17°7' (r)",
+        "uranus": "Libra 26°57'",
+        "neptune": "Sagittarius 8°44'",
+        "pluto": "Libra 7°26'",
+        "north_node": "Sagittarius 18°4'",
+        "chiron": "Aries 19°45' (r)",
+        "mc": "Cancer 5°39'",
+        "profession": "Actor",
+        "profession_ja": "俳優",
+        "source": "astro.com"
+      },
+      {
+        "id": 7,
+        "name": "Rihanna",
+        "birth_date": "1988-02-20",
+        "birth_time": "08:50",
+        "birth_place": "Saint Michael, Barbados",
+        "sun_sign": "Pisces",
+        "sun_sign_ja": "魚座",
+        "sun_degree": "1°23'",
+        "moon_sign": "Aries",
+        "moon_sign_ja": "牡羊座",
+        "moon_degree": "11°27'",
+        "ascendant": "Aries",
+        "ascendant_ja": "牡羊座",
+        "ascendant_degree": "3°10'",
+        "mercury": "Aquarius 23°36'",
+        "venus": "Aries 14°4'",
+        "mars": "Sagittarius 11°10'",
+        "jupiter": "Aries 5°39'",
+        "saturn": "Sagittarius 29°20'",
+        "uranus": "Sagittarius 27°53'",
+        "neptune": "Capricorn 9°2'",
+        "pluto": "Scorpio 11°4'",
+        "north_node": "Pisces 23°15'",
+        "chiron": "Gemini 25°47'",
+        "mc": "Capricorn 11°36'",
+        "profession": "Singer, Businesswoman",
+        "profession_ja": "歌手・実業家",
+        "source": "astro.com"
+      },
+      {
+        "id": 8,
+        "name": "Elon Musk",
+        "birth_date": "1971-06-28",
+        "birth_time": "07:30",
+        "birth_place": "Pretoria, South Africa",
+        "sun_sign": "Cancer",
+        "sun_sign_ja": "蟹座",
+        "sun_degree": "6°30'",
+        "moon_sign": "Virgo",
+        "moon_sign_ja": "乙女座",
+        "moon_degree": "8°57'",
+        "ascendant": "Cancer",
+        "ascendant_ja": "蟹座",
+        "ascendant_degree": "14°12'",
+        "mercury": "Cancer 25°1'",
+        "venus": "Gemini 19°57'",
+        "mars": "Aquarius 20°11'",
+        "jupiter": "Scorpio 21°7'",
+        "saturn": "Gemini 16°42'",
+        "uranus": "Libra 11°14'",
+        "neptune": "Sagittarius 2°3'",
+        "pluto": "Virgo 27°27'",
+        "north_node": "Aquarius 26°8'",
+        "chiron": "Aries 11°16'",
+        "mc": "Pisces 15°58'",
+        "profession": "Entrepreneur, CEO of Tesla & SpaceX",
+        "profession_ja": "起業家・テスラ＆スペースX CEO",
+        "source": "astro.com"
+      },
+      {
+        "id": 9,
+        "name": "Adele",
+        "birth_date": "1988-05-05",
+        "birth_time": "08:19",
+        "birth_place": "Tottenham, London, England",
+        "sun_sign": "Taurus",
+        "sun_sign_ja": "牡牛座",
+        "sun_degree": "15°12'",
+        "moon_sign": "Sagittarius",
+        "moon_sign_ja": "射手座",
+        "moon_degree": "2°49'",
+        "ascendant": "Gemini",
+        "ascendant_ja": "双子座",
+        "ascendant_degree": "7°24'",
+        "mercury": "Taurus 29°48'",
+        "venus": "Gemini 0°19'",
+        "mars": "Capricorn 4°29'",
+        "jupiter": "Taurus 27°31'",
+        "saturn": "Sagittarius 29°26'",
+        "uranus": "Sagittarius 28°18'",
+        "neptune": "Capricorn 10°13'",
+        "pluto": "Scorpio 11°26'",
+        "north_node": "Pisces 19°22'",
+        "chiron": "Gemini 25°42'",
+        "mc": "Aquarius 11°11'",
+        "profession": "Singer-Songwriter",
+        "profession_ja": "シンガーソングライター",
+        "source": "astro.com"
+      },
+      {
+        "id": 10,
+        "name": "Albert Einstein",
+        "birth_date": "1879-03-14",
+        "birth_time": "11:30",
+        "birth_place": "Ulm, Germany",
+        "sun_sign": "Pisces",
+        "sun_sign_ja": "魚座",
+        "sun_degree": "23°30'",
+        "moon_sign": "Sagittarius",
+        "moon_sign_ja": "射手座",
+        "moon_degree": "14°32'",
+        "ascendant": "Cancer",
+        "ascendant_ja": "蟹座",
+        "ascendant_degree": "11°38'",
+        "mercury": "Aries 3°30'",
+        "venus": "Aries 16°41'",
+        "mars": "Capricorn 16°41'",
+        "jupiter": "Aquarius 12°32'",
+        "saturn": "Aries 15°15'",
+        "uranus": "Virgo 19°31' (r)",
+        "neptune": "Taurus 19°31'",
+        "pluto": "Taurus 24°20'",
+        "north_node": "Aries 14°10'",
+        "chiron": "N/A",
+        "mc": "Pisces 11°38'",
+        "profession": "Physicist, Nobel Prize Winner",
+        "profession_ja": "物理学者・ノーベル賞受賞者",
+        "source": "astro.com"
+      }
+    ],
+    "tarot_astrology_correspondences": [
+      {
+        "tarot_card": "The Fool (0)",
+        "tarot_card_ja": "愚者（0）",
+        "astrology": "Uranus / Air",
+        "astrology_ja": "天王星・風",
+        "type": "Major Arcana"
+      },
+      {
+        "tarot_card": "The Magician (I)",
+        "tarot_card_ja": "魔術師（I）",
+        "astrology": "Mercury",
+        "astrology_ja": "水星",
+        "type": "Major Arcana"
+      },
+      {
+        "tarot_card": "The High Priestess (II)",
+        "tarot_card_ja": "女教皇（II）",
+        "astrology": "Moon",
+        "astrology_ja": "月",
+        "type": "Major Arcana"
+      },
+      {
+        "tarot_card": "The Empress (III)",
+        "tarot_card_ja": "女帝（III）",
+        "astrology": "Venus",
+        "astrology_ja": "金星",
+        "type": "Major Arcana"
+      },
+      {
+        "tarot_card": "The Emperor (IV)",
+        "tarot_card_ja": "皇帝（IV）",
+        "astrology": "Aries",
+        "astrology_ja": "牡羊座",
+        "type": "Major Arcana"
+      },
+      {
+        "tarot_card": "The Hierophant (V)",
+        "tarot_card_ja": "法王（V）",
+        "astrology": "Taurus",
+        "astrology_ja": "牡牛座",
+        "type": "Major Arcana"
+      },
+      {
+        "tarot_card": "The Lovers (VI)",
+        "tarot_card_ja": "恋人たち（VI）",
+        "astrology": "Gemini",
+        "astrology_ja": "双子座",
+        "type": "Major Arcana"
+      },
+      {
+        "tarot_card": "The Chariot (VII)",
+        "tarot_card_ja": "戦車（VII）",
+        "astrology": "Cancer",
+        "astrology_ja": "蟹座",
+        "type": "Major Arcana"
+      },
+      {
+        "tarot_card": "Strength (VIII)",
+        "tarot_card_ja": "力（VIII）",
+        "astrology": "Leo",
+        "astrology_ja": "獅子座",
+        "type": "Major Arcana"
+      },
+      {
+        "tarot_card": "The Hermit (IX)",
+        "tarot_card_ja": "隠者（IX）",
+        "astrology": "Virgo",
+        "astrology_ja": "乙女座",
+        "type": "Major Arcana"
+      },
+      {
+        "tarot_card": "Wheel of Fortune (X)",
+        "tarot_card_ja": "運命の輪（X）",
+        "astrology": "Jupiter",
+        "astrology_ja": "木星",
+        "type": "Major Arcana"
+      },
+      {
+        "tarot_card": "Justice (XI)",
+        "tarot_card_ja": "正義（XI）",
+        "astrology": "Libra",
+        "astrology_ja": "天秤座",
+        "type": "Major Arcana"
+      },
+      {
+        "tarot_card": "The Hanged Man (XII)",
+        "tarot_card_ja": "吊るされた男（XII）",
+        "astrology": "Neptune",
+        "astrology_ja": "海王星",
+        "type": "Major Arcana"
+      },
+      {
+        "tarot_card": "Death (XIII)",
+        "tarot_card_ja": "死神（XIII）",
+        "astrology": "Scorpio",
+        "astrology_ja": "蠍座",
+        "type": "Major Arcana"
+      },
+      {
+        "tarot_card": "Temperance (XIV)",
+        "tarot_card_ja": "節制（XIV）",
+        "astrology": "Sagittarius",
+        "astrology_ja": "射手座",
+        "type": "Major Arcana"
+      },
+      {
+        "tarot_card": "The Devil (XV)",
+        "tarot_card_ja": "悪魔（XV）",
+        "astrology": "Capricorn",
+        "astrology_ja": "山羊座",
+        "type": "Major Arcana"
+      },
+      {
+        "tarot_card": "The Tower (XVI)",
+        "tarot_card_ja": "塔（XVI）",
+        "astrology": "Mars",
+        "astrology_ja": "火星",
+        "type": "Major Arcana"
+      },
+      {
+        "tarot_card": "The Star (XVII)",
+        "tarot_card_ja": "星（XVII）",
+        "astrology": "Aquarius",
+        "astrology_ja": "水瓶座",
+        "type": "Major Arcana"
+      },
+      {
+        "tarot_card": "The Moon (XVIII)",
+        "tarot_card_ja": "月（XVIII）",
+        "astrology": "Pisces",
+        "astrology_ja": "魚座",
+        "type": "Major Arcana"
+      },
+      {
+        "tarot_card": "The Sun (XIX)",
+        "tarot_card_ja": "太陽（XIX）",
+        "astrology": "Sun",
+        "astrology_ja": "太陽",
+        "type": "Major Arcana"
+      },
+      {
+        "tarot_card": "Judgement (XX)",
+        "tarot_card_ja": "審判（XX）",
+        "astrology": "Pluto / Fire",
+        "astrology_ja": "冥王星・火",
+        "type": "Major Arcana"
+      },
+      {
+        "tarot_card": "The World (XXI)",
+        "tarot_card_ja": "世界（XXI）",
+        "astrology": "Saturn / Earth",
+        "astrology_ja": "土星・地",
+        "type": "Major Arcana"
+      },
+      {
+        "tarot_card": "Wands (suit)",
+        "tarot_card_ja": "ワンド（スート）",
+        "astrology": "Fire",
+        "astrology_ja": "火の元素",
+        "type": "Minor Arcana Suit"
+      },
+      {
+        "tarot_card": "Cups (suit)",
+        "tarot_card_ja": "カップ（スート）",
+        "astrology": "Water",
+        "astrology_ja": "水の元素",
+        "type": "Minor Arcana Suit"
+      },
+      {
+        "tarot_card": "Swords (suit)",
+        "tarot_card_ja": "ソード（スート）",
+        "astrology": "Air",
+        "astrology_ja": "風の元素",
+        "type": "Minor Arcana Suit"
+      },
+      {
+        "tarot_card": "Pentacles (suit)",
+        "tarot_card_ja": "ペンタクル（スート）",
+        "astrology": "Earth",
+        "astrology_ja": "地の元素",
+        "type": "Minor Arcana Suit"
+      }
+    ],
+    "planet_in_sign_interpretations": [
+      {
+        "planet_en": "Sun",
+        "planet_ja": "太陽",
+        "sign_en": "Aries",
+        "sign_ja": "牡羊座",
+        "interpretation_ja": "太陽牡羊座の人は積極的でエネルギッシュ。リーダーシップがあり、新しいことを始める力に優れる。衝動的になりやすいが、情熱と勇気で道を切り開く。"
+      },
+      {
+        "planet_en": "Sun",
+        "planet_ja": "太陽",
+        "sign_en": "Taurus",
+        "sign_ja": "牡牛座",
+        "interpretation_ja": "太陽牡牛座の人は安定と快楽を重視する。忍耐強く信頼性が高い。美的センスに優れ、物質的な豊かさを大切にする。変化を嫌い頑固な面もある。"
+      },
+      {
+        "planet_en": "Sun",
+        "planet_ja": "太陽",
+        "sign_en": "Gemini",
+        "sign_ja": "双子座",
+        "interpretation_ja": "太陽双子座の人は知的好奇心旺盛でコミュニケーション上手。多才で適応力があるが、飽きっぽく優柔不断な面もある。"
+      },
+      {
+        "planet_en": "Sun",
+        "planet_ja": "太陽",
+        "sign_en": "Cancer",
+        "sign_ja": "蟹座",
+        "interpretation_ja": "太陽蟹座の人は感情豊かで直感的。家族と家庭を何より大切にし、深い共感力を持つ。気分屋で過去に執着する傾向がある。"
+      },
+      {
+        "planet_en": "Sun",
+        "planet_ja": "太陽",
+        "sign_en": "Leo",
+        "sign_ja": "獅子座",
+        "interpretation_ja": "太陽獅子座の人はカリスマ的でクリエイティブ。舞台の中心に立つことを好み、寛大で温かい。自己中心的になりやすく承認欲求が強い。"
+      },
+      {
+        "planet_en": "Sun",
+        "planet_ja": "太陽",
+        "sign_en": "Virgo",
+        "sign_ja": "乙女座",
+        "interpretation_ja": "太陽乙女座の人は分析的で勤勉。細部への注意と実用性に優れ、奉仕精神が高い。完璧主義で自己批判が強い傾向がある。"
+      },
+      {
+        "planet_en": "Sun",
+        "planet_ja": "太陽",
+        "sign_en": "Libra",
+        "sign_ja": "天秤座",
+        "interpretation_ja": "太陽天秤座の人は外交的でバランス感覚に優れる。美と調和を重視し、公平さを追求する。優柔不断で対立を避けすぎる面もある。"
+      },
+      {
+        "planet_en": "Sun",
+        "planet_ja": "太陽",
+        "sign_en": "Scorpio",
+        "sign_ja": "蠍座",
+        "interpretation_ja": "太陽蠍座の人は強烈で洞察力が鋭い。物事の本質を見抜く力と変容のエネルギーを持つ。嫉妬深く執念深い面もある。"
+      },
+      {
+        "planet_en": "Sun",
+        "planet_ja": "太陽",
+        "sign_en": "Sagittarius",
+        "sign_ja": "射手座",
+        "interpretation_ja": "太陽射手座の人は楽観的で冒険好き。哲学・旅行・高等教育に強い関心を持つ。無責任で約束を守らない面もある。"
+      },
+      {
+        "planet_en": "Sun",
+        "planet_ja": "太陽",
+        "sign_en": "Capricorn",
+        "sign_ja": "山羊座",
+        "interpretation_ja": "太陽山羊座の人は野心的で規律正しい。着実に目標を達成する忍耐力と責任感を持つ。冷淡で仕事中毒になりやすい。"
+      },
+      {
+        "planet_en": "Sun",
+        "planet_ja": "太陽",
+        "sign_en": "Aquarius",
+        "sign_ja": "水瓶座",
+        "interpretation_ja": "太陽水瓶座の人は独創的で人道主義的。革新と自由を重視し、コミュニティに貢献しようとする。感情的に距離を置きやすい。"
+      },
+      {
+        "planet_en": "Sun",
+        "planet_ja": "太陽",
+        "sign_en": "Pisces",
+        "sign_ja": "魚座",
+        "interpretation_ja": "太陽魚座の人は感受性豊かで霊的。深い共感力と芸術的感受性を持つ。現実逃避しやすく境界線が曖昧な傾向がある。"
+      },
+      {
+        "planet_en": "Moon",
+        "planet_ja": "月",
+        "sign_en": "Aries",
+        "sign_ja": "牡羊座",
+        "interpretation_ja": "月牡羊座は感情的に衝動的で即座に反応する。感情を素直に表現し、行動で感情を発散する。怒りやすいが立ち直りも早い。"
+      },
+      {
+        "planet_en": "Moon",
+        "planet_ja": "月",
+        "sign_en": "Taurus",
+        "sign_ja": "牡牛座",
+        "interpretation_ja": "月牡牛座は感情的に安定していて落ち着いている。安心感と物質的な快適さを求める。変化を嫌い、感情的に頑固になりやすい。"
+      },
+      {
+        "planet_en": "Moon",
+        "planet_ja": "月",
+        "sign_en": "Gemini",
+        "sign_ja": "双子座",
+        "interpretation_ja": "月双子座は感情を知的に処理する。話すことで感情を整理し、多様な感情を同時に感じる。感情的に不安定になりやすい。"
+      },
+      {
+        "planet_en": "Moon",
+        "planet_ja": "月",
+        "sign_en": "Cancer",
+        "sign_ja": "蟹座",
+        "interpretation_ja": "月蟹座は月の本来の位置（ドミサイル）。深い感情と強い直感を持つ。家族と家庭への愛着が強く、過去の記憶を大切にする。"
+      },
+      {
+        "planet_en": "Moon",
+        "planet_ja": "月",
+        "sign_en": "Leo",
+        "sign_ja": "獅子座",
+        "interpretation_ja": "月獅子座は感情を劇的に表現する。愛情と承認を求め、感情的に温かく寛大。プライドが傷つくと感情的になりやすい。"
+      },
+      {
+        "planet_en": "Moon",
+        "planet_ja": "月",
+        "sign_en": "Virgo",
+        "sign_ja": "乙女座",
+        "interpretation_ja": "月乙女座は感情を分析的に処理する。心配性で感情を抑制しやすい。奉仕することで感情的な安定を得る。"
+      },
+      {
+        "planet_en": "Moon",
+        "planet_ja": "月",
+        "sign_en": "Libra",
+        "sign_ja": "天秤座",
+        "interpretation_ja": "月天秤座は調和と平和を求める。感情的なバランスを重視し、対立を避ける。パートナーシップを通じて感情的な安定を得る。"
+      },
+      {
+        "planet_en": "Moon",
+        "planet_ja": "月",
+        "sign_en": "Scorpio",
+        "sign_ja": "蠍座",
+        "interpretation_ja": "月蠍座は感情が深く強烈。感情を隠しやすく、嫉妬や執着が強い。変容を通じて感情的な成長を遂げる。"
+      },
+      {
+        "planet_en": "Moon",
+        "planet_ja": "月",
+        "sign_en": "Sagittarius",
+        "sign_ja": "射手座",
+        "interpretation_ja": "月射手座は感情的に楽観的で自由を求める。感情を哲学的に捉え、旅や学びで感情的な充足を得る。"
+      },
+      {
+        "planet_en": "Moon",
+        "planet_ja": "月",
+        "sign_en": "Capricorn",
+        "sign_ja": "山羊座",
+        "interpretation_ja": "月山羊座（デトリメント）は感情を抑制しやすい。感情より実用性を優先し、仕事で感情的な安定を得る。感情表現が苦手。"
+      },
+      {
+        "planet_en": "Moon",
+        "planet_ja": "月",
+        "sign_en": "Aquarius",
+        "sign_ja": "水瓶座",
+        "interpretation_ja": "月水瓶座は感情を客観的に処理する。感情より理性を優先し、グループや友人との絆で安定を得る。感情的に距離を置きやすい。"
+      },
+      {
+        "planet_en": "Moon",
+        "planet_ja": "月",
+        "sign_en": "Pisces",
+        "sign_ja": "魚座",
+        "interpretation_ja": "月魚座は感情が深く境界が曖昧。他者の感情を吸収しやすく、霊的な感受性が高い。感情的に圧倒されやすい。"
+      },
+      {
+        "planet_en": "Venus",
+        "planet_ja": "金星",
+        "sign_en": "Aries",
+        "sign_ja": "牡羊座",
+        "interpretation_ja": "金星牡羊座（デトリメント）は恋愛に積極的で衝動的。一目惚れしやすく、追いかけることに興奮する。飽きっぽい面もある。"
+      },
+      {
+        "planet_en": "Venus",
+        "planet_ja": "金星",
+        "sign_en": "Taurus",
+        "sign_ja": "牡牛座",
+        "interpretation_ja": "金星牡牛座（ドミサイル）は愛情表現が安定していて官能的。物質的な豊かさと感覚的な快楽を愛する。忠実で信頼できるパートナー。"
+      },
+      {
+        "planet_en": "Venus",
+        "planet_ja": "金星",
+        "sign_en": "Gemini",
+        "sign_ja": "双子座",
+        "interpretation_ja": "金星双子座は知的な刺激を愛する。会話と知的交流を重視し、多様な関係を楽しむ。感情的な深みより知的なつながりを求める。"
+      },
+      {
+        "planet_en": "Venus",
+        "planet_ja": "金星",
+        "sign_en": "Cancer",
+        "sign_ja": "蟹座",
+        "interpretation_ja": "金星蟹座は愛情深く保護的。家庭的な環境と感情的な安全を求める。過去の恋愛に執着しやすい。"
+      },
+      {
+        "planet_en": "Venus",
+        "planet_ja": "金星",
+        "sign_en": "Leo",
+        "sign_ja": "獅子座",
+        "interpretation_ja": "金星獅子座は愛情表現が劇的で寛大。ロマンスと特別扱いを求める。パートナーを誇りに思い、忠実に愛する。"
+      },
+      {
+        "planet_en": "Venus",
+        "planet_ja": "金星",
+        "sign_en": "Virgo",
+        "sign_ja": "乙女座",
+        "interpretation_ja": "金星乙女座（フォール）は愛情を奉仕で表現する。実用的で批判的になりやすく、完璧なパートナーを求める傾向がある。"
+      },
+      {
+        "planet_en": "Venus",
+        "planet_ja": "金星",
+        "sign_en": "Libra",
+        "sign_ja": "天秤座",
+        "interpretation_ja": "金星天秤座（ドミサイル）は調和と美を愛する。理想的なパートナーシップを求め、外交的で魅力的。優柔不断になりやすい。"
+      },
+      {
+        "planet_en": "Venus",
+        "planet_ja": "金星",
+        "sign_en": "Scorpio",
+        "sign_ja": "蠍座",
+        "interpretation_ja": "金星蠍座（デトリメント）は愛情が深く強烈。深い感情的・性的なつながりを求める。嫉妬深く執着しやすい。"
+      },
+      {
+        "planet_en": "Venus",
+        "planet_ja": "金星",
+        "sign_en": "Sagittarius",
+        "sign_ja": "射手座",
+        "interpretation_ja": "金星射手座は自由と冒険を愛する。哲学的なつながりと旅を共にするパートナーを求める。束縛を嫌う。"
+      },
+      {
+        "planet_en": "Venus",
+        "planet_ja": "金星",
+        "sign_en": "Capricorn",
+        "sign_ja": "山羊座",
+        "interpretation_ja": "金星山羊座は愛情を実用的に表現する。安定と長期的なコミットメントを重視。感情表現が控えめで冷淡に見えることも。"
+      },
+      {
+        "planet_en": "Venus",
+        "planet_ja": "金星",
+        "sign_en": "Aquarius",
+        "sign_ja": "水瓶座",
+        "interpretation_ja": "金星水瓶座は独立心が強く非伝統的な恋愛を好む。友情から始まる恋愛を好み、自由と平等を重視する。"
+      },
+      {
+        "planet_en": "Venus",
+        "planet_ja": "金星",
+        "sign_en": "Pisces",
+        "sign_ja": "魚座",
+        "interpretation_ja": "金星魚座（エグザルテーション）は愛情が深く無条件。ロマンティックで霊的なつながりを求める。自己犠牲的になりやすい。"
+      },
+      {
+        "planet_en": "Mars",
+        "planet_ja": "火星",
+        "sign_en": "Aries",
+        "sign_ja": "牡羊座",
+        "interpretation_ja": "火星牡羊座（ドミサイル）は行動力と勇気の象徴。衝動的で積極的、競争心が強い。先頭に立って行動するが短気。"
+      },
+      {
+        "planet_en": "Mars",
+        "planet_ja": "火星",
+        "sign_en": "Taurus",
+        "sign_ja": "牡牛座",
+        "interpretation_ja": "火星牡牛座（デトリメント）は行動が遅いが粘り強い。物質的な目標に向けて着実に努力する。怒りを溜め込みやすい。"
+      },
+      {
+        "planet_en": "Mars",
+        "planet_ja": "火星",
+        "sign_en": "Gemini",
+        "sign_ja": "双子座",
+        "interpretation_ja": "火星双子座は言葉と知性でエネルギーを発揮する。多方面に興味が分散しやすく、言葉での議論を好む。"
+      },
+      {
+        "planet_en": "Mars",
+        "planet_ja": "火星",
+        "sign_en": "Cancer",
+        "sign_ja": "蟹座",
+        "interpretation_ja": "火星蟹座（フォール）は感情的に行動する。防衛的で間接的なアプローチを取りやすい。感情が行動の原動力となる。"
+      },
+      {
+        "planet_en": "Mars",
+        "planet_ja": "火星",
+        "sign_en": "Leo",
+        "sign_ja": "獅子座",
+        "interpretation_ja": "火星獅子座は情熱的でドラマティック。創造的なプロジェクトに全力投球し、リーダーシップを発揮する。"
+      },
+      {
+        "planet_en": "Mars",
+        "planet_ja": "火星",
+        "sign_en": "Virgo",
+        "sign_ja": "乙女座",
+        "interpretation_ja": "火星乙女座は細部に注意を払い、実用的に行動する。完璧を求めて努力するが、批判的になりやすい。"
+      },
+      {
+        "planet_en": "Mars",
+        "planet_ja": "火星",
+        "sign_en": "Libra",
+        "sign_ja": "天秤座",
+        "interpretation_ja": "火星天秤座（デトリメント）は行動に迷いやすい。公平さを求めて行動し、対立を避ける傾向がある。"
+      },
+      {
+        "planet_en": "Mars",
+        "planet_ja": "火星",
+        "sign_en": "Scorpio",
+        "sign_ja": "蠍座",
+        "interpretation_ja": "火星蠍座（伝統的ドミサイル）は強烈な意志と深い欲望を持つ。目標に向けて執念深く行動し、変容のエネルギーを持つ。"
+      },
+      {
+        "planet_en": "Mars",
+        "planet_ja": "火星",
+        "sign_en": "Sagittarius",
+        "sign_ja": "射手座",
+        "interpretation_ja": "火星射手座は理想と哲学のために行動する。冒険的で楽観的、遠い目標に向かって矢を放つ。"
+      },
+      {
+        "planet_en": "Mars",
+        "planet_ja": "火星",
+        "sign_en": "Capricorn",
+        "sign_ja": "山羊座",
+        "interpretation_ja": "火星山羊座（エグザルテーション）は野心的で規律正しく行動する。長期的な目標に向けて着実に努力する。"
+      },
+      {
+        "planet_en": "Mars",
+        "planet_ja": "火星",
+        "sign_en": "Aquarius",
+        "sign_ja": "水瓶座",
+        "interpretation_ja": "火星水瓶座は革新的な方法で行動する。集団のために行動し、伝統に反抗する傾向がある。"
+      },
+      {
+        "planet_en": "Mars",
+        "planet_ja": "火星",
+        "sign_en": "Pisces",
+        "sign_ja": "魚座",
+        "interpretation_ja": "火星魚座は霊的な目標のために行動する。直感的で境界が曖昧、行動が不明確になりやすい。"
+      }
+    ],
+    "moon_phases": [
+      {
+        "id": 1,
+        "name_en": "New Moon",
+        "name_ja": "新月",
+        "symbol": "🌑",
+        "degrees_from_sun": "0°",
+        "illumination": "0%",
+        "keywords_en": [
+          "new beginnings",
+          "intentions",
+          "planting seeds",
+          "fresh start",
+          "potential"
+        ],
+        "keywords_ja": [
+          "新しい始まり",
+          "意図",
+          "種まき",
+          "フレッシュスタート",
+          "可能性"
+        ],
+        "description_ja": "新月は太陽と月が同じ度数に位置する時（コンジャンクション）。新しいサイクルの始まりを示し、意図を設定し種を蒔く最良の時期。新しいプロジェクトを始めたり、新しい習慣を取り入れるのに適している。",
+        "best_for_ja": "新しいプロジェクト開始・意図設定・新しい習慣の確立"
+      },
+      {
+        "id": 2,
+        "name_en": "Waxing Crescent",
+        "name_ja": "三日月（上弦前）",
+        "symbol": "🌒",
+        "degrees_from_sun": "45°-90°",
+        "illumination": "1-49%",
+        "keywords_en": [
+          "growth",
+          "intention",
+          "momentum",
+          "action",
+          "building"
+        ],
+        "keywords_ja": [
+          "成長",
+          "意図",
+          "勢い",
+          "行動",
+          "構築"
+        ],
+        "description_ja": "三日月期は新月で設定した意図に向けて行動を起こす時期。エネルギーが高まり、目標に向けて積極的に動く。",
+        "best_for_ja": "行動開始・計画実行・エネルギー構築"
+      },
+      {
+        "id": 3,
+        "name_en": "First Quarter",
+        "name_ja": "上弦の月",
+        "symbol": "🌓",
+        "degrees_from_sun": "90°",
+        "illumination": "50%",
+        "keywords_en": [
+          "decision",
+          "challenge",
+          "action",
+          "commitment",
+          "obstacles"
+        ],
+        "keywords_ja": [
+          "決断",
+          "挑戦",
+          "行動",
+          "コミットメント",
+          "障害"
+        ],
+        "description_ja": "上弦の月は太陽と月が90度（スクエア）の位置。決断と行動の時期。障害に直面することがあるが、それを乗り越えることで成長する。",
+        "best_for_ja": "決断・課題への取り組み・コミットメント"
+      },
+      {
+        "id": 4,
+        "name_en": "Waxing Gibbous",
+        "name_ja": "十三夜月（満月前）",
+        "symbol": "🌔",
+        "degrees_from_sun": "135°-180°",
+        "illumination": "51-99%",
+        "keywords_en": [
+          "refinement",
+          "adjustment",
+          "preparation",
+          "perfecting",
+          "anticipation"
+        ],
+        "keywords_ja": [
+          "洗練",
+          "調整",
+          "準備",
+          "完成に向けて",
+          "期待"
+        ],
+        "description_ja": "満月に向けて高まるエネルギーの時期。計画を洗練させ、最終調整を行う。",
+        "best_for_ja": "計画の洗練・最終調整・準備"
+      },
+      {
+        "id": 5,
+        "name_en": "Full Moon",
+        "name_ja": "満月",
+        "symbol": "🌕",
+        "degrees_from_sun": "180°",
+        "illumination": "100%",
+        "keywords_en": [
+          "culmination",
+          "completion",
+          "revelation",
+          "emotions",
+          "release",
+          "harvest"
+        ],
+        "keywords_ja": [
+          "頂点",
+          "完成",
+          "啓示",
+          "感情",
+          "解放",
+          "収穫"
+        ],
+        "description_ja": "満月は太陽と月が180度（オポジション）の位置。サイクルの頂点・完成・収穫の時期。感情が高まり、隠れていたことが明らかになる。解放と感謝の時期。",
+        "best_for_ja": "完成・収穫・感謝・解放・感情の解放"
+      },
+      {
+        "id": 6,
+        "name_en": "Waning Gibbous",
+        "name_ja": "十六夜月（満月後）",
+        "symbol": "🌖",
+        "degrees_from_sun": "225°-270°",
+        "illumination": "99-51%",
+        "keywords_en": [
+          "sharing",
+          "gratitude",
+          "reflection",
+          "distribution",
+          "wisdom"
+        ],
+        "keywords_ja": [
+          "分かち合い",
+          "感謝",
+          "振り返り",
+          "配布",
+          "知恵"
+        ],
+        "description_ja": "満月後のエネルギーが徐々に落ち着く時期。収穫したものを分かち合い、学びを振り返る。",
+        "best_for_ja": "分かち合い・感謝・振り返り・知識の共有"
+      },
+      {
+        "id": 7,
+        "name_en": "Last Quarter",
+        "name_ja": "下弦の月",
+        "symbol": "🌗",
+        "degrees_from_sun": "270°",
+        "illumination": "50%",
+        "keywords_en": [
+          "release",
+          "letting go",
+          "forgiveness",
+          "clearing",
+          "transition"
+        ],
+        "keywords_ja": [
+          "手放し",
+          "解放",
+          "許し",
+          "浄化",
+          "移行"
+        ],
+        "description_ja": "下弦の月は太陽と月が270度（スクエア）の位置。手放しと解放の時期。古いパターンや不要なものを手放し、次のサイクルへの準備をする。",
+        "best_for_ja": "手放し・解放・浄化・古いパターンの解消"
+      },
+      {
+        "id": 8,
+        "name_en": "Waning Crescent (Balsamic Moon)",
+        "name_ja": "晦日月（バルサミック・ムーン）",
+        "symbol": "🌘",
+        "degrees_from_sun": "315°-360°",
+        "illumination": "49-1%",
+        "keywords_en": [
+          "rest",
+          "surrender",
+          "healing",
+          "contemplation",
+          "preparation for new cycle"
+        ],
+        "keywords_ja": [
+          "休息",
+          "委ねる",
+          "癒し",
+          "瞑想",
+          "新サイクルへの準備"
+        ],
+        "description_ja": "新月直前の最も暗い時期。休息・内省・癒しの時期。次のサイクルへの準備として、静かに内側に向かう。",
+        "best_for_ja": "休息・内省・瞑想・癒し・次のサイクルへの準備"
+      }
+    ],
+    "decans": [
+      {
+        "sign_en": "Aries",
+        "sign_ja": "牡羊座",
+        "decan_number": 1,
+        "degree_range": "0°-9°59'",
+        "ruler_en": "Aries/Mars",
+        "ruler_ja": "牡羊座・火星",
+        "description_ja": "最も純粋な牡羊座のエネルギー。積極性・勇気・開拓精神が強く表れる。"
+      },
+      {
+        "sign_en": "Aries",
+        "sign_ja": "牡羊座",
+        "decan_number": 2,
+        "degree_range": "10°-19°59'",
+        "ruler_en": "Leo/Sun",
+        "ruler_ja": "獅子座・太陽",
+        "description_ja": "創造性とリーダーシップが加わる。自己表現と情熱が強まる。"
+      },
+      {
+        "sign_en": "Aries",
+        "sign_ja": "牡羊座",
+        "decan_number": 3,
+        "degree_range": "20°-29°59'",
+        "ruler_en": "Sagittarius/Jupiter",
+        "ruler_ja": "射手座・木星",
+        "description_ja": "哲学的な探求心と楽観主義が加わる。冒険心と理想主義が強まる。"
+      },
+      {
+        "sign_en": "Taurus",
+        "sign_ja": "牡牛座",
+        "decan_number": 1,
+        "degree_range": "0°-9°59'",
+        "ruler_en": "Taurus/Venus",
+        "ruler_ja": "牡牛座・金星",
+        "description_ja": "最も純粋な牡牛座のエネルギー。安定・官能性・物質的豊かさが強く表れる。"
+      },
+      {
+        "sign_en": "Taurus",
+        "sign_ja": "牡牛座",
+        "decan_number": 2,
+        "degree_range": "10°-19°59'",
+        "ruler_en": "Virgo/Mercury",
+        "ruler_ja": "乙女座・水星",
+        "description_ja": "分析力と実用性が加わる。細部への注意と奉仕精神が強まる。"
+      },
+      {
+        "sign_en": "Taurus",
+        "sign_ja": "牡牛座",
+        "decan_number": 3,
+        "degree_range": "20°-29°59'",
+        "ruler_en": "Capricorn/Saturn",
+        "ruler_ja": "山羊座・土星",
+        "description_ja": "野心と規律が加わる。物質的な達成と長期的な計画が強まる。"
+      },
+      {
+        "sign_en": "Gemini",
+        "sign_ja": "双子座",
+        "decan_number": 1,
+        "degree_range": "0°-9°59'",
+        "ruler_en": "Gemini/Mercury",
+        "ruler_ja": "双子座・水星",
+        "description_ja": "最も純粋な双子座のエネルギー。コミュニケーション・知性・多才さが強く表れる。"
+      },
+      {
+        "sign_en": "Gemini",
+        "sign_ja": "双子座",
+        "decan_number": 2,
+        "degree_range": "10°-19°59'",
+        "ruler_en": "Libra/Venus",
+        "ruler_ja": "天秤座・金星",
+        "description_ja": "美的センスと社交性が加わる。調和と関係性への関心が強まる。"
+      },
+      {
+        "sign_en": "Gemini",
+        "sign_ja": "双子座",
+        "decan_number": 3,
+        "degree_range": "20°-29°59'",
+        "ruler_en": "Aquarius/Uranus",
+        "ruler_ja": "水瓶座・天王星",
+        "description_ja": "革新性と人道主義が加わる。独創的な思考と社会への関心が強まる。"
+      },
+      {
+        "sign_en": "Cancer",
+        "sign_ja": "蟹座",
+        "decan_number": 1,
+        "degree_range": "0°-9°59'",
+        "ruler_en": "Cancer/Moon",
+        "ruler_ja": "蟹座・月",
+        "description_ja": "最も純粋な蟹座のエネルギー。感情・直感・家族への愛が強く表れる。"
+      },
+      {
+        "sign_en": "Cancer",
+        "sign_ja": "蟹座",
+        "decan_number": 2,
+        "degree_range": "10°-19°59'",
+        "ruler_en": "Scorpio/Pluto",
+        "ruler_ja": "蠍座・冥王星",
+        "description_ja": "深い感情と変容のエネルギーが加わる。心理的な洞察力が強まる。"
+      },
+      {
+        "sign_en": "Cancer",
+        "sign_ja": "蟹座",
+        "decan_number": 3,
+        "degree_range": "20°-29°59'",
+        "ruler_en": "Pisces/Neptune",
+        "ruler_ja": "魚座・海王星",
+        "description_ja": "霊的な感受性と共感力が加わる。直感と芸術的感受性が強まる。"
+      },
+      {
+        "sign_en": "Leo",
+        "sign_ja": "獅子座",
+        "decan_number": 1,
+        "degree_range": "0°-9°59'",
+        "ruler_en": "Leo/Sun",
+        "ruler_ja": "獅子座・太陽",
+        "description_ja": "最も純粋な獅子座のエネルギー。カリスマ・創造性・リーダーシップが強く表れる。"
+      },
+      {
+        "sign_en": "Leo",
+        "sign_ja": "獅子座",
+        "decan_number": 2,
+        "degree_range": "10°-19°59'",
+        "ruler_en": "Sagittarius/Jupiter",
+        "ruler_ja": "射手座・木星",
+        "description_ja": "哲学的な拡大と楽観主義が加わる。理想主義と高い目標が強まる。"
+      },
+      {
+        "sign_en": "Leo",
+        "sign_ja": "獅子座",
+        "decan_number": 3,
+        "degree_range": "20°-29°59'",
+        "ruler_en": "Aries/Mars",
+        "ruler_ja": "牡羊座・火星",
+        "description_ja": "行動力と積極性が加わる。競争心とパイオニア精神が強まる。"
+      },
+      {
+        "sign_en": "Virgo",
+        "sign_ja": "乙女座",
+        "decan_number": 1,
+        "degree_range": "0°-9°59'",
+        "ruler_en": "Virgo/Mercury",
+        "ruler_ja": "乙女座・水星",
+        "description_ja": "最も純粋な乙女座のエネルギー。分析力・勤勉さ・完璧主義が強く表れる。"
+      },
+      {
+        "sign_en": "Virgo",
+        "sign_ja": "乙女座",
+        "decan_number": 2,
+        "degree_range": "10°-19°59'",
+        "ruler_en": "Capricorn/Saturn",
+        "ruler_ja": "山羊座・土星",
+        "description_ja": "野心と規律が加わる。実用的な達成と責任感が強まる。"
+      },
+      {
+        "sign_en": "Virgo",
+        "sign_ja": "乙女座",
+        "decan_number": 3,
+        "degree_range": "20°-29°59'",
+        "ruler_en": "Taurus/Venus",
+        "ruler_ja": "牡牛座・金星",
+        "description_ja": "美的センスと感覚的な快楽が加わる。実用性と美の融合が強まる。"
+      },
+      {
+        "sign_en": "Libra",
+        "sign_ja": "天秤座",
+        "decan_number": 1,
+        "degree_range": "0°-9°59'",
+        "ruler_en": "Libra/Venus",
+        "ruler_ja": "天秤座・金星",
+        "description_ja": "最も純粋な天秤座のエネルギー。調和・美・パートナーシップが強く表れる。"
+      },
+      {
+        "sign_en": "Libra",
+        "sign_ja": "天秤座",
+        "decan_number": 2,
+        "degree_range": "10°-19°59'",
+        "ruler_en": "Aquarius/Uranus",
+        "ruler_ja": "水瓶座・天王星",
+        "description_ja": "革新性と人道主義が加わる。社会的な公正と独創性が強まる。"
+      },
+      {
+        "sign_en": "Libra",
+        "sign_ja": "天秤座",
+        "decan_number": 3,
+        "degree_range": "20°-29°59'",
+        "ruler_en": "Gemini/Mercury",
+        "ruler_ja": "双子座・水星",
+        "description_ja": "コミュニケーション能力が加わる。知的な交流と多様な視点が強まる。"
+      },
+      {
+        "sign_en": "Scorpio",
+        "sign_ja": "蠍座",
+        "decan_number": 1,
+        "degree_range": "0°-9°59'",
+        "ruler_en": "Scorpio/Pluto",
+        "ruler_ja": "蠍座・冥王星",
+        "description_ja": "最も純粋な蠍座のエネルギー。変容・強烈さ・深層心理が強く表れる。"
+      },
+      {
+        "sign_en": "Scorpio",
+        "sign_ja": "蠍座",
+        "decan_number": 2,
+        "degree_range": "10°-19°59'",
+        "ruler_en": "Pisces/Neptune",
+        "ruler_ja": "魚座・海王星",
+        "description_ja": "霊的な感受性と直感が加わる。神秘と霊的な深みが強まる。"
+      },
+      {
+        "sign_en": "Scorpio",
+        "sign_ja": "蠍座",
+        "decan_number": 3,
+        "degree_range": "20°-29°59'",
+        "ruler_en": "Cancer/Moon",
+        "ruler_ja": "蟹座・月",
+        "description_ja": "感情的な深さと保護本能が加わる。感情と変容のエネルギーが融合する。"
+      },
+      {
+        "sign_en": "Sagittarius",
+        "sign_ja": "射手座",
+        "decan_number": 1,
+        "degree_range": "0°-9°59'",
+        "ruler_en": "Sagittarius/Jupiter",
+        "ruler_ja": "射手座・木星",
+        "description_ja": "最も純粋な射手座のエネルギー。自由・哲学・冒険が強く表れる。"
+      },
+      {
+        "sign_en": "Sagittarius",
+        "sign_ja": "射手座",
+        "decan_number": 2,
+        "degree_range": "10°-19°59'",
+        "ruler_en": "Aries/Mars",
+        "ruler_ja": "牡羊座・火星",
+        "description_ja": "行動力と積極性が加わる。理想に向けた積極的な行動が強まる。"
+      },
+      {
+        "sign_en": "Sagittarius",
+        "sign_ja": "射手座",
+        "decan_number": 3,
+        "degree_range": "20°-29°59'",
+        "ruler_en": "Leo/Sun",
+        "ruler_ja": "獅子座・太陽",
+        "description_ja": "カリスマと創造性が加わる。哲学的な表現と自己表現が強まる。"
+      },
+      {
+        "sign_en": "Capricorn",
+        "sign_ja": "山羊座",
+        "decan_number": 1,
+        "degree_range": "0°-9°59'",
+        "ruler_en": "Capricorn/Saturn",
+        "ruler_ja": "山羊座・土星",
+        "description_ja": "最も純粋な山羊座のエネルギー。野心・規律・責任感が強く表れる。"
+      },
+      {
+        "sign_en": "Capricorn",
+        "sign_ja": "山羊座",
+        "decan_number": 2,
+        "degree_range": "10°-19°59'",
+        "ruler_en": "Taurus/Venus",
+        "ruler_ja": "牡牛座・金星",
+        "description_ja": "美的センスと物質的豊かさが加わる。実用性と美の融合が強まる。"
+      },
+      {
+        "sign_en": "Capricorn",
+        "sign_ja": "山羊座",
+        "decan_number": 3,
+        "degree_range": "20°-29°59'",
+        "ruler_en": "Virgo/Mercury",
+        "ruler_ja": "乙女座・水星",
+        "description_ja": "分析力と奉仕精神が加わる。実用的な知性と完璧主義が強まる。"
+      },
+      {
+        "sign_en": "Aquarius",
+        "sign_ja": "水瓶座",
+        "decan_number": 1,
+        "degree_range": "0°-9°59'",
+        "ruler_en": "Aquarius/Uranus",
+        "ruler_ja": "水瓶座・天王星",
+        "description_ja": "最も純粋な水瓶座のエネルギー。革新・人道主義・独創性が強く表れる。"
+      },
+      {
+        "sign_en": "Aquarius",
+        "sign_ja": "水瓶座",
+        "decan_number": 2,
+        "degree_range": "10°-19°59'",
+        "ruler_en": "Gemini/Mercury",
+        "ruler_ja": "双子座・水星",
+        "description_ja": "コミュニケーション能力が加わる。知的な革新と情報共有が強まる。"
+      },
+      {
+        "sign_en": "Aquarius",
+        "sign_ja": "水瓶座",
+        "decan_number": 3,
+        "degree_range": "20°-29°59'",
+        "ruler_en": "Libra/Venus",
+        "ruler_ja": "天秤座・金星",
+        "description_ja": "美的センスと社交性が加わる。社会的な調和と美的な革新が強まる。"
+      },
+      {
+        "sign_en": "Pisces",
+        "sign_ja": "魚座",
+        "decan_number": 1,
+        "degree_range": "0°-9°59'",
+        "ruler_en": "Pisces/Neptune",
+        "ruler_ja": "魚座・海王星",
+        "description_ja": "最も純粋な魚座のエネルギー。霊性・直感・共感力が強く表れる。"
+      },
+      {
+        "sign_en": "Pisces",
+        "sign_ja": "魚座",
+        "decan_number": 2,
+        "degree_range": "10°-19°59'",
+        "ruler_en": "Cancer/Moon",
+        "ruler_ja": "蟹座・月",
+        "description_ja": "感情的な深さと保護本能が加わる。感情と霊性の融合が強まる。"
+      },
+      {
+        "sign_en": "Pisces",
+        "sign_ja": "魚座",
+        "decan_number": 3,
+        "degree_range": "20°-29°59'",
+        "ruler_en": "Scorpio/Pluto",
+        "ruler_ja": "蠍座・冥王星",
+        "description_ja": "変容のエネルギーと深層心理が加わる。霊的な変容と深い洞察が強まる。"
+      }
+    ],
+    "arabic_parts": [
+      {
+        "id": 1,
+        "name_en": "Part of Fortune",
+        "name_ja": "フォーチュン（幸運の点）",
+        "symbol": "⊕",
+        "formula_day": "ASC + Moon - Sun",
+        "formula_night": "ASC + Sun - Moon",
+        "formula_ja": "昼：ASC + 月 - 太陽 / 夜：ASC + 太陽 - 月",
+        "keywords_ja": [
+          "幸運",
+          "豊かさ",
+          "身体的健康",
+          "物質的成功"
+        ],
+        "description_ja": "フォーチュンは最も重要なアラビック・パーツ。物質的な幸運・身体的健康・豊かさを示す。フォーチュンのサインとハウスが、物質的な成功が最も得やすい分野を教えてくれる。"
+      },
+      {
+        "id": 2,
+        "name_en": "Part of Spirit",
+        "name_ja": "スピリット（精神の点）",
+        "symbol": "☿",
+        "formula_day": "ASC + Sun - Moon",
+        "formula_night": "ASC + Moon - Sun",
+        "formula_ja": "昼：ASC + 太陽 - 月 / 夜：ASC + 月 - 太陽",
+        "keywords_ja": [
+          "精神的成長",
+          "魂の目的",
+          "意志",
+          "精神的健康"
+        ],
+        "description_ja": "スピリットはフォーチュンの対極にある点。精神的な成長・魂の目的・意志力を示す。"
+      },
+      {
+        "id": 3,
+        "name_en": "Part of Love",
+        "name_ja": "ラブ（愛の点）",
+        "symbol": "♡",
+        "formula_day": "ASC + Venus - Sun",
+        "formula_night": "ASC + Sun - Venus",
+        "formula_ja": "昼：ASC + 金星 - 太陽 / 夜：ASC + 太陽 - 金星",
+        "keywords_ja": [
+          "恋愛",
+          "愛情",
+          "関係性",
+          "美"
+        ],
+        "description_ja": "ラブは恋愛・愛情・関係性を示す。このポイントのサインとハウスが、恋愛が最も活性化する分野を教えてくれる。"
+      },
+      {
+        "id": 4,
+        "name_en": "Part of Marriage",
+        "name_ja": "マリッジ（結婚の点）",
+        "symbol": "⚭",
+        "formula_day": "ASC + DSC - Venus",
+        "formula_night": "ASC + DSC - Venus",
+        "formula_ja": "ASC + DSC - 金星",
+        "keywords_ja": [
+          "結婚",
+          "パートナーシップ",
+          "コミットメント"
+        ],
+        "description_ja": "マリッジは結婚とパートナーシップを示す。このポイントの位置が、結婚のタイミングや理想のパートナー像を教えてくれる。"
+      },
+      {
+        "id": 5,
+        "name_en": "Part of Death",
+        "name_ja": "デス（死の点）",
+        "symbol": "†",
+        "formula_day": "ASC + 8th House Cusp - Moon",
+        "formula_night": "ASC + 8th House Cusp - Moon",
+        "formula_ja": "ASC + 第8ハウスカスプ - 月",
+        "keywords_ja": [
+          "変容",
+          "終わり",
+          "再生",
+          "深い変化"
+        ],
+        "description_ja": "デスは変容・終わり・再生を示す。文字通りの死だけでなく、人生の大きな変容と終わりを示す。"
+      }
+    ],
+    "astrology_glossary": [
+      {
+        "term_en": "Natal Chart",
+        "term_ja": "ネイタルチャート（出生チャート）",
+        "definition_ja": "個人が生まれた瞬間の天体の位置を示す円形の図。その人の性格・才能・人生のテーマを示す基本的な占星術ツール。"
+      },
+      {
+        "term_en": "Ascendant (ASC)",
+        "term_ja": "アセンダント（上昇サイン）",
+        "definition_ja": "出生時に東の地平線上に上昇していた星座。外見・第一印象・人生への全体的なアプローチを示す。"
+      },
+      {
+        "term_en": "Descendant (DSC)",
+        "term_ja": "ディセンダント（下降サイン）",
+        "definition_ja": "アセンダントの対向点（西の地平線）。パートナーシップと引き寄せる他者の資質を示す。"
+      },
+      {
+        "term_en": "Midheaven (MC)",
+        "term_ja": "MC（天頂・ミッドヘブン）",
+        "definition_ja": "出生時に天頂（最も高い点）にあった星座。キャリア・公的イメージ・人生の最高目標を示す。"
+      },
+      {
+        "term_en": "IC (Imum Coeli)",
+        "term_ja": "IC（天底・インムム・コエリ）",
+        "definition_ja": "MCの対向点（最も低い点）。家庭・家族・ルーツ・内的基盤を示す。"
+      },
+      {
+        "term_en": "Retrograde",
+        "term_ja": "逆行（レトログレード）",
+        "definition_ja": "地球から見て惑星が後退しているように見える現象。逆行中の惑星のエネルギーは内向きになり、見直しや再評価が促される。"
+      },
+      {
+        "term_en": "Transit",
+        "term_ja": "トランジット",
+        "definition_ja": "現在の天体が出生チャートの天体や感受点に形成するアスペクト。現在の影響と出来事のタイミングを示す。"
+      },
+      {
+        "term_en": "Progression",
+        "term_ja": "プログレス（二次進行法）",
+        "definition_ja": "出生後の各日を1年として計算する予測技法。内的な成長と人格の発展を示す。"
+      },
+      {
+        "term_en": "Solar Return",
+        "term_ja": "ソーラーリターン（太陽回帰）",
+        "definition_ja": "毎年誕生日前後に太陽が出生時の度数に戻る瞬間のチャート。その年のテーマと傾向を示す。"
+      },
+      {
+        "term_en": "Synastry",
+        "term_ja": "シナストリー（相性占星術）",
+        "definition_ja": "2人の出生チャートを重ね合わせて関係性を分析する技法。2人の天体がどのようなアスペクトを形成するかで相性を判断する。"
+      },
+      {
+        "term_en": "Composite Chart",
+        "term_ja": "コンポジットチャート",
+        "definition_ja": "2人の出生チャートの中点を取って作成する関係性のチャート。2人の関係そのものの性質を示す。"
+      },
+      {
+        "term_en": "Saturn Return",
+        "term_ja": "サターンリターン（土星回帰）",
+        "definition_ja": "土星が出生時の位置に戻る約29.5年ごとの重要な転換期。人生の大きな節目と成熟の時期。"
+      },
+      {
+        "term_en": "Stellium",
+        "term_ja": "ステリウム（天体集中）",
+        "definition_ja": "同じ星座またはハウスに3つ以上の天体が集中している状態。その星座・ハウスのテーマが人生で非常に重要になる。"
+      },
+      {
+        "term_en": "Grand Trine",
+        "term_ja": "グランドトライン（大三角形）",
+        "definition_ja": "3つの天体が互いに120度（トライン）を形成する三角形のパターン。同じ元素の3星座間で形成され、その元素のエネルギーが豊かに流れる。"
+      },
+      {
+        "term_en": "Grand Cross",
+        "term_ja": "グランドクロス（大十字架）",
+        "definition_ja": "4つの天体が互いに90度（スクエア）と180度（オポジション）を形成する十字形のパターン。強い緊張と挑戦をもたらすが、大きな力と達成の可能性も持つ。"
+      },
+      {
+        "term_en": "T-Square",
+        "term_ja": "Tスクエア",
+        "definition_ja": "3つの天体が2つのスクエアと1つのオポジションを形成するパターン。頂点の天体に強い緊張が集中する。"
+      },
+      {
+        "term_en": "Yod",
+        "term_ja": "ヨッド（神の指）",
+        "definition_ja": "2つの天体が互いにセクスタイル（60度）を形成し、両方が第3の天体にクインカンクス（150度）を形成するパターン。運命的な方向転換と特別な使命を示す。"
+      },
+      {
+        "term_en": "Void of Course Moon",
+        "term_ja": "ボイドオブコース（月の空白期間）",
+        "definition_ja": "月が次の星座に移動するまでの間、他の天体と有効なアスペクトを形成しない時期。新しいことを始めるのに適さないとされる。"
+      },
+      {
+        "term_en": "Domicile",
+        "term_ja": "ドミサイル（本来の家）",
+        "definition_ja": "惑星が最も自然に機能する星座。その惑星の性質が最も純粋に表れる。"
+      },
+      {
+        "term_en": "Exaltation",
+        "term_ja": "エグザルテーション（高揚）",
+        "definition_ja": "惑星が特別に強く機能する星座。ドミサイルに次ぐ強さを持つ。"
+      },
+      {
+        "term_en": "Detriment",
+        "term_ja": "デトリメント（不利）",
+        "definition_ja": "惑星がドミサイルの対向にある星座。その惑星の性質が不適切に表れやすい。"
+      },
+      {
+        "term_en": "Fall",
+        "term_ja": "フォール（失墜）",
+        "definition_ja": "惑星がエグザルテーションの対向にある星座。その惑星が最も弱く機能する。"
+      },
+      {
+        "term_en": "Orb",
+        "term_ja": "オーブ（許容度数）",
+        "definition_ja": "アスペクトが有効とみなされる角度の許容範囲。例えばトラインは120度だが、オーブが8度の場合、112〜128度の範囲で有効とみなされる。"
+      },
+      {
+        "term_en": "Applying Aspect",
+        "term_ja": "アプライングアスペクト（接近中）",
+        "definition_ja": "2つの天体が正確なアスペクトに向かって近づいている状態。これから起きることを示す。"
+      },
+      {
+        "term_en": "Separating Aspect",
+        "term_ja": "セパレーティングアスペクト（離反中）",
+        "definition_ja": "2つの天体が正確なアスペクトから離れていく状態。すでに起きたことを示す。"
+      },
+      {
+        "term_en": "Mutual Reception",
+        "term_ja": "ミューチュアルレセプション（相互受容）",
+        "definition_ja": "2つの惑星が互いの支配星座に位置する状態。例：金星が蠍座・冥王星が天秤座。互いに強化し合う関係。"
+      },
+      {
+        "term_en": "Intercepted Sign",
+        "term_ja": "インターセプテッドサイン（挟まれた星座）",
+        "definition_ja": "プラシダスなど不等分ハウスシステムで、ハウスカスプに位置せずハウス内に完全に含まれる星座。そのサインのエネルギーが表現しにくい。"
+      },
+      {
+        "term_en": "Anaretic Degree",
+        "term_ja": "アナレティック度数（29度）",
+        "definition_ja": "各星座の29度目。カルマ的な度数とも呼ばれ、その星座のテーマが緊急性を持って表れる。"
+      },
+      {
+        "term_en": "Critical Degrees",
+        "term_ja": "クリティカル度数",
+        "definition_ja": "特別な力を持つとされる度数。活動宮：0°・13°・26°、不動宮：8°・21°、柔軟宮：4°・17°など。"
+      },
+      {
+        "term_en": "Dispositor",
+        "term_ja": "ディスポジター（支配者）",
+        "definition_ja": "ある天体が位置する星座の支配星。例：太陽が牡羊座にある場合、火星が太陽のディスポジター。"
+      }
+    ],
+    "planet_in_house_interpretations": [
+      {
+        "planet_en": "Sun",
+        "planet_ja": "太陽",
+        "house": 1,
+        "interpretation_ja": "太陽が第1ハウスにある人は、自己表現と個性が人生の中心テーマ。強いアイデンティティと存在感を持ち、リーダーシップを発揮しやすい。外見や身体的な活力が重要。"
+      },
+      {
+        "planet_en": "Sun",
+        "planet_ja": "太陽",
+        "house": 2,
+        "interpretation_ja": "太陽が第2ハウスにある人は、物質的な豊かさと自己価値が人生の中心テーマ。財産・所有物・自己価値感を通じてアイデンティティを確立する。"
+      },
+      {
+        "planet_en": "Sun",
+        "planet_ja": "太陽",
+        "house": 3,
+        "interpretation_ja": "太陽が第3ハウスにある人は、コミュニケーションと知的活動が人生の中心テーマ。言語・文章・兄弟姉妹との関係が重要な役割を果たす。"
+      },
+      {
+        "planet_en": "Sun",
+        "planet_ja": "太陽",
+        "house": 4,
+        "interpretation_ja": "太陽が第4ハウスにある人は、家庭・家族・ルーツが人生の中心テーマ。プライベートな生活と内的な基盤を通じてアイデンティティを確立する。"
+      },
+      {
+        "planet_en": "Sun",
+        "planet_ja": "太陽",
+        "house": 5,
+        "interpretation_ja": "太陽が第5ハウスにある人は、創造性・恋愛・自己表現が人生の中心テーマ。芸術・ロマンス・子供との関係が重要。生まれつきのクリエイティブな才能を持つ。"
+      },
+      {
+        "planet_en": "Sun",
+        "planet_ja": "太陽",
+        "house": 6,
+        "interpretation_ja": "太陽が第6ハウスにある人は、健康・仕事・奉仕が人生の中心テーマ。日常業務と健康管理を通じてアイデンティティを確立する。奉仕精神が強い。"
+      },
+      {
+        "planet_en": "Sun",
+        "planet_ja": "太陽",
+        "house": 7,
+        "interpretation_ja": "太陽が第7ハウスにある人は、パートナーシップと対人関係が人生の中心テーマ。他者との関係を通じてアイデンティティを確立する。結婚や長期パートナーシップが重要。"
+      },
+      {
+        "planet_en": "Sun",
+        "planet_ja": "太陽",
+        "house": 8,
+        "interpretation_ja": "太陽が第8ハウスにある人は、変容・深層心理・共有資源が人生の中心テーマ。深い変容と再生を通じてアイデンティティを確立する。オカルトや心理学への関心が高い。"
+      },
+      {
+        "planet_en": "Sun",
+        "planet_ja": "太陽",
+        "house": 9,
+        "interpretation_ja": "太陽が第9ハウスにある人は、哲学・高等教育・長距離旅行が人生の中心テーマ。真理の探求と世界観の拡大を通じてアイデンティティを確立する。"
+      },
+      {
+        "planet_en": "Sun",
+        "planet_ja": "太陽",
+        "house": 10,
+        "interpretation_ja": "太陽が第10ハウスにある人は、キャリア・社会的地位・公的イメージが人生の中心テーマ。職業的な達成と社会での役割を通じてアイデンティティを確立する。"
+      },
+      {
+        "planet_en": "Sun",
+        "planet_ja": "太陽",
+        "house": 11,
+        "interpretation_ja": "太陽が第11ハウスにある人は、友人・グループ・社会的大義が人生の中心テーマ。コミュニティへの貢献と将来の目標を通じてアイデンティティを確立する。"
+      },
+      {
+        "planet_en": "Sun",
+        "planet_ja": "太陽",
+        "house": 12,
+        "interpretation_ja": "太陽が第12ハウスにある人は、霊性・隠れた事柄・無意識が人生の中心テーマ。内省と霊的な探求を通じてアイデンティティを確立する。孤独の中で力を発揮する。"
+      },
+      {
+        "planet_en": "Moon",
+        "planet_ja": "月",
+        "house": 1,
+        "interpretation_ja": "月が第1ハウスにある人は、感情が外見や第一印象に強く表れる。感情的に敏感で直感的。気分が顔や態度に出やすく、感情の波が激しい。"
+      },
+      {
+        "planet_en": "Moon",
+        "planet_ja": "月",
+        "house": 2,
+        "interpretation_ja": "月が第2ハウスにある人は、感情的な安定を物質的な豊かさに求める。お金や所有物が感情的な安全感と結びついている。財政状況が感情に影響しやすい。"
+      },
+      {
+        "planet_en": "Moon",
+        "planet_ja": "月",
+        "house": 3,
+        "interpretation_ja": "月が第3ハウスにある人は、感情をコミュニケーションで表現する。兄弟姉妹との感情的な絆が深い。日記や文章で感情を整理する傾向がある。"
+      },
+      {
+        "planet_en": "Moon",
+        "planet_ja": "月",
+        "house": 4,
+        "interpretation_ja": "月が第4ハウスにある人は（月の本来の位置）、家庭と家族に深い感情的なつながりを持つ。家庭的な環境で感情的な安定を得る。母親との関係が重要。"
+      },
+      {
+        "planet_en": "Moon",
+        "planet_ja": "月",
+        "house": 5,
+        "interpretation_ja": "月が第5ハウスにある人は、創造的な表現と恋愛に感情的な充足を求める。子供への深い愛情を持つ。感情的に遊び心があり、ロマンティック。"
+      },
+      {
+        "planet_en": "Moon",
+        "planet_ja": "月",
+        "house": 6,
+        "interpretation_ja": "月が第6ハウスにある人は、日常業務と健康管理に感情的な安定を求める。仕事環境が感情に大きく影響する。感情的なストレスが身体症状に表れやすい。"
+      },
+      {
+        "planet_en": "Moon",
+        "planet_ja": "月",
+        "house": 7,
+        "interpretation_ja": "月が第7ハウスにある人は、パートナーシップに感情的な安定を求める。感情的に支えてくれるパートナーを必要とする。人間関係が感情に大きく影響する。"
+      },
+      {
+        "planet_en": "Moon",
+        "planet_ja": "月",
+        "house": 8,
+        "interpretation_ja": "月が第8ハウスにある人は、深い感情的な変容を経験する。感情が強烈で深く、他者の感情を敏感に感じ取る。心理的な探求に引き寄せられる。"
+      },
+      {
+        "planet_en": "Moon",
+        "planet_ja": "月",
+        "house": 9,
+        "interpretation_ja": "月が第9ハウスにある人は、旅行・哲学・高等教育に感情的な充足を求める。異文化への感情的なつながりが深い。精神的な探求で感情的な安定を得る。"
+      },
+      {
+        "planet_en": "Moon",
+        "planet_ja": "月",
+        "house": 10,
+        "interpretation_ja": "月が第10ハウスにある人は、キャリアと公的イメージに感情的な投資をする。職業的な達成で感情的な安定を得る。感情が公的な場で表れやすい。"
+      },
+      {
+        "planet_en": "Moon",
+        "planet_ja": "月",
+        "house": 11,
+        "interpretation_ja": "月が第11ハウスにある人は、友人やグループとのつながりに感情的な安定を求める。社会的な大義に感情的に共鳴する。友人との絆が深い。"
+      },
+      {
+        "planet_en": "Moon",
+        "planet_ja": "月",
+        "house": 12,
+        "interpretation_ja": "月が第12ハウスにある人は、感情を隠す傾向がある。霊的な実践と孤独の中で感情的な充足を得る。無意識の感情パターンが行動に影響しやすい。"
+      },
+      {
+        "planet_en": "Venus",
+        "planet_ja": "金星",
+        "house": 1,
+        "interpretation_ja": "金星が第1ハウスにある人は、魅力的な外見と社交的な人格を持つ。美的センスが高く、他者に好印象を与えやすい。恋愛運が強い。"
+      },
+      {
+        "planet_en": "Venus",
+        "planet_ja": "金星",
+        "house": 2,
+        "interpretation_ja": "金星が第2ハウスにある人は、美と快楽に関連した収入を得やすい。物質的な豊かさと美的な所有物を重視する。財政的に恵まれる傾向がある。"
+      },
+      {
+        "planet_en": "Venus",
+        "planet_ja": "金星",
+        "house": 3,
+        "interpretation_ja": "金星が第3ハウスにある人は、コミュニケーションが魅力的で説得力がある。兄弟姉妹との関係が調和的。文章・言語・芸術的な表現に才能がある。"
+      },
+      {
+        "planet_en": "Venus",
+        "planet_ja": "金星",
+        "house": 4,
+        "interpretation_ja": "金星が第4ハウスにある人は、家庭環境を美しく整えることを重視する。家族との関係が調和的。家庭が愛と美の聖域となる。"
+      },
+      {
+        "planet_en": "Venus",
+        "planet_ja": "金星",
+        "house": 5,
+        "interpretation_ja": "金星が第5ハウスにある人は、恋愛・創造性・楽しみに恵まれる。ロマンティックで魅力的。芸術的な才能と子供への愛情が深い。"
+      },
+      {
+        "planet_en": "Venus",
+        "planet_ja": "金星",
+        "house": 6,
+        "interpretation_ja": "金星が第6ハウスにある人は、職場環境を調和的に保つ。同僚との関係が良好。健康と美容への関心が高い。仕事を通じた奉仕に喜びを感じる。"
+      },
+      {
+        "planet_en": "Venus",
+        "planet_ja": "金星",
+        "house": 7,
+        "interpretation_ja": "金星が第7ハウスにある人は、パートナーシップに恵まれる。魅力的なパートナーを引き寄せる。結婚・ビジネスパートナーシップが人生を豊かにする。"
+      },
+      {
+        "planet_en": "Venus",
+        "planet_ja": "金星",
+        "house": 8,
+        "interpretation_ja": "金星が第8ハウスにある人は、深い感情的・性的なつながりを求める。遺産・共有資源・パートナーの財産から恩恵を受けることがある。"
+      },
+      {
+        "planet_en": "Venus",
+        "planet_ja": "金星",
+        "house": 9,
+        "interpretation_ja": "金星が第9ハウスにある人は、旅行・哲学・高等教育に美と喜びを見出す。外国文化への愛着が深い。高等教育を通じた恋愛もある。"
+      },
+      {
+        "planet_en": "Venus",
+        "planet_ja": "金星",
+        "house": 10,
+        "interpretation_ja": "金星が第10ハウスにある人は、キャリアで美・芸術・外交に関連した分野で成功しやすい。公的なイメージが魅力的。社会的な地位が恋愛に影響する。"
+      },
+      {
+        "planet_en": "Venus",
+        "planet_ja": "金星",
+        "house": 11,
+        "interpretation_ja": "金星が第11ハウスにある人は、友人やグループとの関係が調和的で豊か。社会的なネットワークを通じた恋愛もある。理想主義的な愛の形を求める。"
+      },
+      {
+        "planet_en": "Venus",
+        "planet_ja": "金星",
+        "house": 12,
+        "interpretation_ja": "金星が第12ハウスにある人は、秘密の恋愛や隠れた愛情を持ちやすい。霊的な愛と無条件の愛を求める。芸術的な感受性が深い。"
+      },
+      {
+        "planet_en": "Mars",
+        "planet_ja": "火星",
+        "house": 1,
+        "interpretation_ja": "火星が第1ハウスにある人は、積極的でエネルギッシュな外見と人格を持つ。行動力と競争心が強く、リーダーシップを発揮しやすい。衝動的になりやすい。"
+      },
+      {
+        "planet_en": "Mars",
+        "planet_ja": "火星",
+        "house": 2,
+        "interpretation_ja": "火星が第2ハウスにある人は、積極的に財産を築く。お金のために積極的に行動するが、衝動的な出費もある。自己価値のために戦う。"
+      },
+      {
+        "planet_en": "Mars",
+        "planet_ja": "火星",
+        "house": 3,
+        "interpretation_ja": "火星が第3ハウスにある人は、コミュニケーションが積極的で直接的。議論を好み、兄弟姉妹との関係に競争や対立がある。短距離旅行が多い。"
+      },
+      {
+        "planet_en": "Mars",
+        "planet_ja": "火星",
+        "house": 4,
+        "interpretation_ja": "火星が第4ハウスにある人は、家庭環境に緊張や対立が生じやすい。家族のために積極的に行動する。家庭の改善・リノベーションに情熱を注ぐ。"
+      },
+      {
+        "planet_en": "Mars",
+        "planet_ja": "火星",
+        "house": 5,
+        "interpretation_ja": "火星が第5ハウスにある人は、恋愛・創造性・スポーツに情熱的。積極的な恋愛アプローチ。子供との関係にエネルギーを注ぐ。"
+      },
+      {
+        "planet_en": "Mars",
+        "planet_ja": "火星",
+        "house": 6,
+        "interpretation_ja": "火星が第6ハウスにある人は、仕事に積極的でエネルギッシュ。健康のために積極的に行動する。職場での対立が生じやすい。"
+      },
+      {
+        "planet_en": "Mars",
+        "planet_ja": "火星",
+        "house": 7,
+        "interpretation_ja": "火星が第7ハウスにある人は、パートナーシップに積極的・競争的。積極的なパートナーを引き寄せる。対立を通じて関係が深まる。"
+      },
+      {
+        "planet_en": "Mars",
+        "planet_ja": "火星",
+        "house": 8,
+        "interpretation_ja": "火星が第8ハウスにある人は、変容・性・共有資源に強いエネルギーを注ぐ。深い変容のエネルギーを持つ。オカルトや深層心理への積極的な探求。"
+      },
+      {
+        "planet_en": "Mars",
+        "planet_ja": "火星",
+        "house": 9,
+        "interpretation_ja": "火星が第9ハウスにある人は、哲学・宗教・高等教育に情熱的。真理のために戦う。長距離旅行に積極的。"
+      },
+      {
+        "planet_en": "Mars",
+        "planet_ja": "火星",
+        "house": 10,
+        "interpretation_ja": "火星が第10ハウスにある人は、キャリアに積極的で野心的。競争的な職業環境で力を発揮する。社会的な目標のために積極的に行動する。"
+      },
+      {
+        "planet_en": "Mars",
+        "planet_ja": "火星",
+        "house": 11,
+        "interpretation_ja": "火星が第11ハウスにある人は、グループや社会的大義のために積極的に行動する。友人との関係に競争や対立がある。革命的な変化を推進する。"
+      },
+      {
+        "planet_en": "Mars",
+        "planet_ja": "火星",
+        "house": 12,
+        "interpretation_ja": "火星が第12ハウスにある人は、エネルギーが隠れた形で表れる。霊的な実践に情熱を注ぐ。隠れた敵や自己破壊的なパターンに注意が必要。"
+      },
+      {
+        "planet_en": "Jupiter",
+        "planet_ja": "木星",
+        "house": 1,
+        "interpretation_ja": "木星が第1ハウスにある人は、楽観的で寛大な人格を持つ。幸運を引き寄せやすく、拡大と成長のエネルギーを持つ。体重増加に注意。"
+      },
+      {
+        "planet_en": "Jupiter",
+        "planet_ja": "木星",
+        "house": 2,
+        "interpretation_ja": "木星が第2ハウスにある人は、財政的な幸運に恵まれる。物質的な豊かさを引き寄せる。ただし過剰な支出にも注意が必要。"
+      },
+      {
+        "planet_en": "Jupiter",
+        "planet_ja": "木星",
+        "house": 3,
+        "interpretation_ja": "木星が第3ハウスにある人は、コミュニケーションと学習に恵まれる。兄弟姉妹との関係が豊か。文章・出版・教育での成功。"
+      },
+      {
+        "planet_en": "Jupiter",
+        "planet_ja": "木星",
+        "house": 4,
+        "interpretation_ja": "木星が第4ハウスにある人は、家庭環境が豊かで幸運。大きな家や不動産に恵まれる。家族との関係が拡大・豊か。"
+      },
+      {
+        "planet_en": "Jupiter",
+        "planet_ja": "木星",
+        "house": 5,
+        "interpretation_ja": "木星が第5ハウスにある人は、創造性・恋愛・子供に恵まれる。芸術的な才能と幸運な恋愛。ギャンブルや投機に恵まれることも。"
+      },
+      {
+        "planet_en": "Jupiter",
+        "planet_ja": "木星",
+        "house": 6,
+        "interpretation_ja": "木星が第6ハウスにある人は、仕事と健康に幸運が訪れる。職場での成長と拡大。健康管理で良い結果を得やすい。"
+      },
+      {
+        "planet_en": "Jupiter",
+        "planet_ja": "木星",
+        "house": 7,
+        "interpretation_ja": "木星が第7ハウスにある人は、パートナーシップに幸運が訪れる。豊かなパートナーを引き寄せる。結婚・ビジネスパートナーシップで成功。"
+      },
+      {
+        "planet_en": "Jupiter",
+        "planet_ja": "木星",
+        "house": 8,
+        "interpretation_ja": "木星が第8ハウスにある人は、遺産・共有資源・投資に幸運が訪れる。変容と再生のエネルギーが豊か。霊的な探求で成長。"
+      },
+      {
+        "planet_en": "Jupiter",
+        "planet_ja": "木星",
+        "house": 9,
+        "interpretation_ja": "木星が第9ハウスにある人は（木星の本来の位置）、哲学・高等教育・旅行に恵まれる。精神的な成長と世界観の拡大。海外での成功。"
+      },
+      {
+        "planet_en": "Jupiter",
+        "planet_ja": "木星",
+        "house": 10,
+        "interpretation_ja": "木星が第10ハウスにある人は、キャリアと社会的地位に幸運が訪れる。職業的な成功と名声を引き寄せる。"
+      },
+      {
+        "planet_en": "Jupiter",
+        "planet_ja": "木星",
+        "house": 11,
+        "interpretation_ja": "木星が第11ハウスにある人は、友人・グループ・希望に恵まれる。社会的なネットワークが豊か。将来の目標が実現しやすい。"
+      },
+      {
+        "planet_en": "Jupiter",
+        "planet_ja": "木星",
+        "house": 12,
+        "interpretation_ja": "木星が第12ハウスにある人は、霊的な成長と隠れた恩恵に恵まれる。孤独の中で内的な豊かさを育む。"
+      },
+      {
+        "planet_en": "Saturn",
+        "planet_ja": "土星",
+        "house": 1,
+        "interpretation_ja": "土星が第1ハウスにある人は、責任感と自己規律が強い。外見が厳格・成熟した印象を与える。自己表現に制限を感じることがあるが、努力で克服する。"
+      },
+      {
+        "planet_en": "Saturn",
+        "planet_ja": "土星",
+        "house": 2,
+        "interpretation_ja": "土星が第2ハウスにある人は、財政的な制限と試練を経験する。お金に対して慎重で保守的。努力と規律で長期的な財政的安定を築く。"
+      },
+      {
+        "planet_en": "Saturn",
+        "planet_ja": "土星",
+        "house": 3,
+        "interpretation_ja": "土星が第3ハウスにある人は、コミュニケーションに慎重で真剣。学習に困難があるが、努力で克服する。兄弟姉妹との関係に責任を感じる。"
+      },
+      {
+        "planet_en": "Saturn",
+        "planet_ja": "土星",
+        "house": 4,
+        "interpretation_ja": "土星が第4ハウスにある人は、家庭環境に制限や責任を感じる。幼少期に厳格な環境で育つことが多い。晩年に家庭的な安定を築く。"
+      },
+      {
+        "planet_en": "Saturn",
+        "planet_ja": "土星",
+        "house": 5,
+        "interpretation_ja": "土星が第5ハウスにある人は、創造性・恋愛・子供に制限を感じる。恋愛に慎重で責任感が強い。創造的な表現に規律をもたらす。"
+      },
+      {
+        "planet_en": "Saturn",
+        "planet_ja": "土星",
+        "house": 6,
+        "interpretation_ja": "土星が第6ハウスにある人は、仕事と健康に責任と規律をもたらす。健康管理に真剣に取り組む。職場での責任が重い。"
+      },
+      {
+        "planet_en": "Saturn",
+        "planet_ja": "土星",
+        "house": 7,
+        "interpretation_ja": "土星が第7ハウスにある人は、パートナーシップに責任と制限を感じる。結婚が遅れることがある。長期的で責任あるパートナーシップを求める。"
+      },
+      {
+        "planet_en": "Saturn",
+        "planet_ja": "土星",
+        "house": 8,
+        "interpretation_ja": "土星が第8ハウスにある人は、変容・共有資源・遺産に制限を感じる。深い変容のプロセスに規律をもたらす。"
+      },
+      {
+        "planet_en": "Saturn",
+        "planet_ja": "土星",
+        "house": 9,
+        "interpretation_ja": "土星が第9ハウスにある人は、哲学・高等教育・旅行に制限を感じる。信念体系に慎重で保守的。高等教育に努力が必要。"
+      },
+      {
+        "planet_en": "Saturn",
+        "planet_ja": "土星",
+        "house": 10,
+        "interpretation_ja": "土星が第10ハウスにある人は（土星の本来の位置）、キャリアに強い責任感と野心を持つ。努力と規律で社会的な成功を築く。権威との関係が重要。"
+      },
+      {
+        "planet_en": "Saturn",
+        "planet_ja": "土星",
+        "house": 11,
+        "interpretation_ja": "土星が第11ハウスにある人は、友人関係とグループに制限を感じる。少数の深い友人を持つ。社会的な大義に責任感を持って取り組む。"
+      },
+      {
+        "planet_en": "Saturn",
+        "planet_ja": "土星",
+        "house": 12,
+        "interpretation_ja": "土星が第12ハウスにある人は、隠れた恐れと制限を持つ。霊的な実践と孤独の中で規律を学ぶ。カルマ的な制限を克服する課題がある。"
+      }
+    ],
+    "major_transits": [
+      {
+        "id": 1,
+        "transit": "Saturn Return",
+        "transit_ja": "サターンリターン（土星回帰）",
+        "age_approximate": "約28-30歳・約58-60歳",
+        "duration": "約2-3年",
+        "description_ja": "土星が出生時の位置に戻る約29.5年ごとの重要な転換期。第1回（28-30歳）は成人としての責任・キャリア・人生の方向性を問われる。第2回（58-60歳）は人生の後半への移行と成熟を示す。",
+        "themes_ja": "責任・成熟・人生の方向性・構造の見直し・長期的なコミットメント",
+        "challenges_ja": "古い構造の崩壊・責任の重さ・制限・試練",
+        "opportunities_ja": "真の自己の確立・長期的な基盤の構築・成熟・達成"
+      },
+      {
+        "id": 2,
+        "transit": "Jupiter Return",
+        "transit_ja": "ジュピターリターン（木星回帰）",
+        "age_approximate": "約12年ごと（12・24・36・48・60歳）",
+        "duration": "約1年",
+        "description_ja": "木星が出生時の位置に戻る約12年ごとのサイクル。拡大・成長・幸運の新しいサイクルが始まる。新しい機会・旅行・学習・精神的な成長のチャンス。",
+        "themes_ja": "拡大・成長・幸運・新しい機会・精神的な成長",
+        "challenges_ja": "過信・過剰・散漫",
+        "opportunities_ja": "新しいチャンス・成長・豊かさ・精神的な探求"
+      },
+      {
+        "id": 3,
+        "transit": "Uranus Opposition",
+        "transit_ja": "天王星オポジション（ミッドライフ・クライシス）",
+        "age_approximate": "約40-42歳",
+        "duration": "約1-2年",
+        "description_ja": "天王星が出生時の位置の対向点に達する40歳前後の転換期。いわゆる「ミッドライフ・クライシス」。自由・変化・革新への強い欲求が生まれる。",
+        "themes_ja": "自由・変化・革新・自己発見・人生の再評価",
+        "challenges_ja": "衝動的な変化・不安定さ・既存の構造の崩壊",
+        "opportunities_ja": "真の自己の発見・自由の追求・革新的な変化・新しいアイデンティティ"
+      },
+      {
+        "id": 4,
+        "transit": "Neptune Square",
+        "transit_ja": "海王星スクエア",
+        "age_approximate": "約40-42歳（オポジション：約82歳）",
+        "duration": "約2-3年",
+        "description_ja": "海王星が出生時の位置に対してスクエアを形成する時期。幻想・霊性・理想と現実のギャップが浮き彫りになる。霊的な目覚めや混乱が生じることも。",
+        "themes_ja": "幻想・霊性・理想と現実・境界の曖昧さ・霊的な目覚め",
+        "challenges_ja": "幻滅・混乱・現実逃避・依存症のリスク",
+        "opportunities_ja": "霊的な成長・直感の発達・創造性の開花・慈悲の深まり"
+      },
+      {
+        "id": 5,
+        "transit": "Pluto Square",
+        "transit_ja": "冥王星スクエア",
+        "age_approximate": "約36-45歳（世代により異なる）",
+        "duration": "約3-5年",
+        "description_ja": "冥王星が出生時の位置に対してスクエアを形成する時期。深い変容・権力との対峙・古い構造の崩壊が起きる。人生の根本的な変化を促す。",
+        "themes_ja": "変容・権力・崩壊と再生・深層心理・コントロール",
+        "challenges_ja": "強制的な変化・権力との対立・古い自己の死",
+        "opportunities_ja": "深い変容・真の力の発見・再生・魂の成長"
+      },
+      {
+        "id": 6,
+        "transit": "North Node Return",
+        "transit_ja": "ノースノードリターン",
+        "age_approximate": "約18.6年ごと（18・37・56・75歳）",
+        "duration": "約1-2年",
+        "description_ja": "月のノードが出生時の位置に戻る約18.6年ごとのサイクル。魂の目的と使命に関連した重要な出来事や転換期。",
+        "themes_ja": "魂の目的・使命・カルマ的な転換・運命的な出会い",
+        "challenges_ja": "過去のパターンへの回帰・カルマ的な課題",
+        "opportunities_ja": "魂の成長・使命の明確化・運命的な出来事"
+      },
+      {
+        "id": 7,
+        "transit": "Chiron Return",
+        "transit_ja": "カイロンリターン",
+        "age_approximate": "約50-51歳",
+        "duration": "約1-2年",
+        "description_ja": "カイロンが出生時の位置に戻る約50年ごとの転換期。古い傷の癒しと統合。傷ついた癒し手としての使命が明確になる。",
+        "themes_ja": "癒し・古い傷の統合・使命・知恵・癒し手",
+        "challenges_ja": "古い傷の再浮上・痛みの直面",
+        "opportunities_ja": "深い癒し・傷の統合・癒し手としての使命・知恵の開花"
+      },
+      {
+        "id": 8,
+        "transit": "Solar Eclipse",
+        "transit_ja": "日食（ソーラーエクリプス）",
+        "age_approximate": "年2回前後（約6ヶ月ごと）",
+        "duration": "影響は約6ヶ月",
+        "description_ja": "新月に太陽・月・地球が一直線に並ぶ現象。新しいサイクルの始まりと重要な変化を示す。日食が出生チャートの感受点に接触すると、その分野で重要な変化が起きる。",
+        "themes_ja": "新しい始まり・重要な変化・転換点・運命的な出来事",
+        "challenges_ja": "突然の変化・予期せぬ出来事",
+        "opportunities_ja": "新しいサイクルの始まり・重要な機会・人生の転換"
+      },
+      {
+        "id": 9,
+        "transit": "Lunar Eclipse",
+        "transit_ja": "月食（ルナーエクリプス）",
+        "age_approximate": "年2回前後（約6ヶ月ごと）",
+        "duration": "影響は約6ヶ月",
+        "description_ja": "満月に太陽・地球・月が一直線に並ぶ現象。完成・解放・感情的な頂点を示す。月食が出生チャートの感受点に接触すると、その分野で感情的な解放や完成が起きる。",
+        "themes_ja": "完成・解放・感情的な頂点・啓示・終わり",
+        "challenges_ja": "感情的な過負荷・突然の終わり",
+        "opportunities_ja": "感情的な解放・完成・啓示・古いパターンの終わり"
+      }
+    ],
+    "synastry_aspects": [
+      {
+        "id": 1,
+        "aspect": "Sun Conjunction Sun",
+        "aspect_ja": "太陽コンジャンクション太陽",
+        "type": "Conjunction",
+        "nature": "Neutral",
+        "description_ja": "2人の太陽が同じ度数に位置する。同じ星座の生まれで、基本的な性格・価値観・目標が似ている。強い共鳴を感じるが、競争や自我の衝突も起きやすい。"
+      },
+      {
+        "id": 2,
+        "aspect": "Sun Trine Sun",
+        "aspect_ja": "太陽トライン太陽",
+        "type": "Trine",
+        "nature": "Harmonious",
+        "description_ja": "2人の太陽が120度の調和的な関係。同じ元素の星座で、互いの性格・価値観・目標が自然に調和する。お互いを理解し、支え合える関係。"
+      },
+      {
+        "id": 3,
+        "aspect": "Sun Square Sun",
+        "aspect_ja": "太陽スクエア太陽",
+        "type": "Square",
+        "nature": "Challenging",
+        "description_ja": "2人の太陽が90度の緊張関係。性格・価値観・目標が衝突しやすい。お互いの自我がぶつかり合うが、その摩擦が成長の原動力になることも。"
+      },
+      {
+        "id": 4,
+        "aspect": "Sun Opposition Sun",
+        "aspect_ja": "太陽オポジション太陽",
+        "type": "Opposition",
+        "nature": "Challenging",
+        "description_ja": "2人の太陽が180度の対立関係。対向する星座の生まれで、性格が対照的。引き寄せ合うが、価値観の違いで対立することも。バランスを取ることで補完関係になれる。"
+      },
+      {
+        "id": 5,
+        "aspect": "Sun Conjunction Moon",
+        "aspect_ja": "太陽コンジャンクション月",
+        "type": "Conjunction",
+        "nature": "Harmonious",
+        "description_ja": "一方の太陽が他方の月と合。強力な引力と深い感情的なつながり。太陽の人が月の人を輝かせ、月の人が太陽の人に感情的な安定を与える。"
+      },
+      {
+        "id": 6,
+        "aspect": "Venus Conjunction Mars",
+        "aspect_ja": "金星コンジャンクション火星",
+        "type": "Conjunction",
+        "nature": "Harmonious",
+        "description_ja": "一方の金星が他方の火星と合。強烈な性的・ロマンティックな引力。愛（金星）と欲望（火星）が融合し、情熱的な関係が生まれる。"
+      },
+      {
+        "id": 7,
+        "aspect": "Moon Conjunction Moon",
+        "aspect_ja": "月コンジャンクション月",
+        "type": "Conjunction",
+        "nature": "Harmonious",
+        "description_ja": "2人の月が同じ度数に位置する。感情的な共鳴が非常に強く、互いの感情・ニーズ・反応が似ている。深い感情的な理解と共感が生まれる。"
+      },
+      {
+        "id": 8,
+        "aspect": "Saturn Conjunction Sun",
+        "aspect_ja": "土星コンジャンクション太陽",
+        "type": "Conjunction",
+        "nature": "Karmic",
+        "description_ja": "一方の土星が他方の太陽と合。カルマ的な関係。土星の人が太陽の人に責任・制限・構造をもたらす。長期的で真剣な関係になりやすいが、重さも感じる。"
+      },
+      {
+        "id": 9,
+        "aspect": "North Node Conjunction Sun/Moon/Venus",
+        "aspect_ja": "ノースノードコンジャンクション太陽・月・金星",
+        "type": "Conjunction",
+        "nature": "Karmic",
+        "description_ja": "一方のノースノードが他方の主要天体と合。運命的・カルマ的なつながり。互いの魂の成長に重要な役割を果たす関係。"
+      },
+      {
+        "id": 10,
+        "aspect": "Ascendant Conjunction Sun/Moon/Venus",
+        "aspect_ja": "アセンダントコンジャンクション太陽・月・金星",
+        "type": "Conjunction",
+        "nature": "Harmonious",
+        "description_ja": "一方のアセンダントが他方の主要天体と合。強い引力と即座の認識。相手の存在が自分のアイデンティティや外見に影響を与える。"
+      }
+    ],
+    "retrograde_planets": [
+      {
+        "planet_en": "Mercury Retrograde",
+        "planet_ja": "水星逆行",
+        "frequency": "年3-4回",
+        "duration": "約3週間",
+        "keywords_ja": [
+          "コミュニケーションの混乱",
+          "技術的問題",
+          "再確認",
+          "見直し",
+          "過去との再会"
+        ],
+        "do_ja": "見直し・再確認・修正・過去のプロジェクトの完成・内省",
+        "dont_ja": "新しい契約・重要な決断・新しいデバイスの購入・重要な旅行の開始",
+        "description_ja": "水星逆行中はコミュニケーション・交通・技術に混乱が生じやすい。メールの誤送信・誤解・機器の故障が増える。「Re-」のつく活動（見直し・再確認・修正）に適した時期。"
+      },
+      {
+        "planet_en": "Venus Retrograde",
+        "planet_ja": "金星逆行",
+        "frequency": "約18ヶ月ごと",
+        "duration": "約40日",
+        "keywords_ja": [
+          "恋愛の見直し",
+          "過去の恋人との再会",
+          "価値観の再評価",
+          "美の再定義"
+        ],
+        "do_ja": "恋愛・価値観・美的センスの見直し・過去の関係の整理",
+        "dont_ja": "新しい恋愛の開始・整形手術・高額な美容処置・重要な購入",
+        "description_ja": "金星逆行中は恋愛・価値観・美に関する見直しが促される。過去の恋人が再登場することも。恋愛関係の再評価と価値観の深化の時期。"
+      },
+      {
+        "planet_en": "Mars Retrograde",
+        "planet_ja": "火星逆行",
+        "frequency": "約2年ごと",
+        "duration": "約2ヶ月",
+        "keywords_ja": [
+          "エネルギーの低下",
+          "行動の見直し",
+          "欲求の再評価",
+          "怒りの内向き"
+        ],
+        "do_ja": "行動計画の見直し・欲求の再評価・内なる動機の探求",
+        "dont_ja": "新しい重要なプロジェクトの開始・手術・積極的な対立",
+        "description_ja": "火星逆行中はエネルギーが低下し、行動力が内向きになる。欲求・動機・行動パターンを見直す時期。新しいことを始めるより、既存のことを見直す。"
+      },
+      {
+        "planet_en": "Jupiter Retrograde",
+        "planet_ja": "木星逆行",
+        "frequency": "年1回",
+        "duration": "約4ヶ月",
+        "keywords_ja": [
+          "内的な成長",
+          "信念の見直し",
+          "内的な豊かさ",
+          "哲学の深化"
+        ],
+        "do_ja": "信念・哲学・精神的な成長の見直し・内的な豊かさの探求",
+        "dont_ja": "大きな拡大・過信",
+        "description_ja": "木星逆行中は外的な拡大より内的な成長が促される。信念・哲学・精神的な価値観を見直す時期。"
+      },
+      {
+        "planet_en": "Saturn Retrograde",
+        "planet_ja": "土星逆行",
+        "frequency": "年1回",
+        "duration": "約4.5ヶ月",
+        "keywords_ja": [
+          "責任の見直し",
+          "構造の再評価",
+          "内的な規律",
+          "カルマの清算"
+        ],
+        "do_ja": "責任・構造・長期計画の見直し・内的な規律の強化",
+        "dont_ja": "新しい長期コミットメント",
+        "description_ja": "土星逆行中は責任・構造・規律を内側から見直す時期。カルマ的な課題と向き合い、内的な成熟を促す。"
+      }
+    ]
+  }
+}

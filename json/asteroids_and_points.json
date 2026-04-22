@@ -1,0 +1,193 @@
+[
+  {
+    "id": 11,
+    "name_en": "Chiron",
+    "name_ja": "カイロン",
+    "symbol": "⚷",
+    "type": "Centaur / Asteroid",
+    "type_ja": "ケンタウロス天体",
+    "orbit_days": 18500,
+    "keywords_en": [
+      "wounded healer",
+      "healing",
+      "wounds",
+      "teaching",
+      "bridge",
+      "maverick"
+    ],
+    "keywords_ja": [
+      "傷ついた癒し手",
+      "癒し",
+      "傷",
+      "教師",
+      "橋渡し",
+      "異端者"
+    ],
+    "description_ja": "カイロンは「傷ついた癒し手」と呼ばれ、最も深い傷とその癒しの可能性を示す。出生チャートにおけるカイロンの位置は、その人が最も深い傷を抱える分野と、その傷を癒すことで他者を助ける力を得る領域を示す。カイロンのサインとハウスが、人生の核心的な傷と癒しのテーマを教えてくれる。",
+    "avg_transit_per_sign_years": "約2〜8年（楕円軌道）"
+  },
+  {
+    "id": 12,
+    "name_en": "Ceres",
+    "name_ja": "ケレス",
+    "symbol": "⚳",
+    "type": "Dwarf Planet / Asteroid",
+    "type_ja": "矮小惑星",
+    "orbit_days": 1680,
+    "keywords_en": [
+      "nurturing",
+      "motherhood",
+      "food",
+      "agriculture",
+      "loss",
+      "grief",
+      "cycles"
+    ],
+    "keywords_ja": [
+      "養育",
+      "母性",
+      "食物",
+      "農業",
+      "喪失",
+      "悲嘆",
+      "サイクル"
+    ],
+    "description_ja": "ケレスはローマ神話の農業の女神（ギリシャ神話のデメテル）に対応し、養育・母性・食物・喪失と再会のサイクルを象徴する。出生チャートにおけるケレスの位置は、その人がどのように愛情を与え・受け取るか、喪失とどう向き合うかを示す。",
+    "avg_transit_per_sign_years": "約4.6ヶ月"
+  },
+  {
+    "id": 13,
+    "name_en": "Pallas",
+    "name_ja": "パラス",
+    "symbol": "⚴",
+    "type": "Asteroid",
+    "type_ja": "小惑星",
+    "orbit_days": 1686,
+    "keywords_en": [
+      "wisdom",
+      "strategy",
+      "creativity",
+      "healing",
+      "intelligence",
+      "pattern recognition"
+    ],
+    "keywords_ja": [
+      "知恵",
+      "戦略",
+      "創造性",
+      "癒し",
+      "知性",
+      "パターン認識"
+    ],
+    "description_ja": "パラスはギリシャ神話の知恵の女神アテナに対応し、実践的な知恵・戦略的思考・創造的問題解決を象徴する。出生チャートにおけるパラスの位置は、その人の知的な強みと戦略的な才能を示す。",
+    "avg_transit_per_sign_years": "約4.6ヶ月"
+  },
+  {
+    "id": 14,
+    "name_en": "Juno",
+    "name_ja": "ジュノ",
+    "symbol": "⚵",
+    "type": "Asteroid",
+    "type_ja": "小惑星",
+    "orbit_days": 1594,
+    "keywords_en": [
+      "marriage",
+      "partnership",
+      "commitment",
+      "equality",
+      "jealousy",
+      "betrayal"
+    ],
+    "keywords_ja": [
+      "結婚",
+      "パートナーシップ",
+      "コミットメント",
+      "平等",
+      "嫉妬",
+      "裏切り"
+    ],
+    "description_ja": "ジュノはローマ神話の結婚の女神（ギリシャ神話のヘラ）に対応し、結婚・長期パートナーシップ・コミットメントを象徴する。出生チャートにおけるジュノの位置は、その人が求めるパートナーの資質と関係性のパターンを示す。",
+    "avg_transit_per_sign_years": "約4.4ヶ月"
+  },
+  {
+    "id": 15,
+    "name_en": "Vesta",
+    "name_ja": "ベスタ",
+    "symbol": "⚶",
+    "type": "Asteroid",
+    "type_ja": "小惑星",
+    "orbit_days": 1325,
+    "keywords_en": [
+      "devotion",
+      "focus",
+      "sacred flame",
+      "sexuality",
+      "spirituality",
+      "dedication"
+    ],
+    "keywords_ja": [
+      "献身",
+      "集中力",
+      "聖なる炎",
+      "性",
+      "霊性",
+      "専念"
+    ],
+    "description_ja": "ベスタはローマ神話の炉の女神（ギリシャ神話のヘスティア）に対応し、献身・聖なる炎・霊的な焦点を象徴する。出生チャートにおけるベスタの位置は、その人が最も献身的になれる分野と、霊的な焦点を示す。",
+    "avg_transit_per_sign_years": "約3.6ヶ月"
+  },
+  {
+    "id": 16,
+    "name_en": "North Node",
+    "name_ja": "ノース・ノード（龍の頭）",
+    "symbol": "☊",
+    "type": "Lunar Node",
+    "type_ja": "月のノード",
+    "orbit_days": 6793,
+    "keywords_en": [
+      "destiny",
+      "soul purpose",
+      "growth",
+      "future",
+      "karma",
+      "life direction"
+    ],
+    "keywords_ja": [
+      "運命",
+      "魂の目的",
+      "成長",
+      "未来",
+      "カルマ",
+      "人生の方向性"
+    ],
+    "description_ja": "ノース・ノード（北交点・龍の頭）は魂の進化の方向性・今生の課題と目的を示す。出生チャートにおけるノース・ノードの位置は、この人生で発展させるべき資質と経験すべき領域を示す。ノース・ノードのサインとハウスが、魂の成長の方向を教えてくれる。",
+    "avg_transit_per_sign_years": "約1.5年"
+  },
+  {
+    "id": 17,
+    "name_en": "South Node",
+    "name_ja": "サウス・ノード（龍の尾）",
+    "symbol": "☋",
+    "type": "Lunar Node",
+    "type_ja": "月のノード",
+    "orbit_days": 6793,
+    "keywords_en": [
+      "past lives",
+      "karma",
+      "comfort zone",
+      "talents",
+      "release",
+      "past patterns"
+    ],
+    "keywords_ja": [
+      "前世",
+      "カルマ",
+      "コンフォートゾーン",
+      "才能",
+      "手放し",
+      "過去のパターン"
+    ],
+    "description_ja": "サウス・ノード（南交点・龍の尾）は過去世からの蓄積・カルマ的な才能と過去のパターンを示す。出生チャートにおけるサウス・ノードの位置は、前世から持ち越した資質と手放すべき執着を示す。常にノース・ノードと対向の位置にある。",
+    "avg_transit_per_sign_years": "約1.5年"
+  }
+]

@@ -1,0 +1,338 @@
+[
+  {
+    "planet_en": "Sun",
+    "planet_ja": "太陽",
+    "sign_en": "Aries",
+    "sign_ja": "牡羊座",
+    "interpretation_ja": "太陽牡羊座の人は積極的でエネルギッシュ。リーダーシップがあり、新しいことを始める力に優れる。衝動的になりやすいが、情熱と勇気で道を切り開く。"
+  },
+  {
+    "planet_en": "Sun",
+    "planet_ja": "太陽",
+    "sign_en": "Taurus",
+    "sign_ja": "牡牛座",
+    "interpretation_ja": "太陽牡牛座の人は安定と快楽を重視する。忍耐強く信頼性が高い。美的センスに優れ、物質的な豊かさを大切にする。変化を嫌い頑固な面もある。"
+  },
+  {
+    "planet_en": "Sun",
+    "planet_ja": "太陽",
+    "sign_en": "Gemini",
+    "sign_ja": "双子座",
+    "interpretation_ja": "太陽双子座の人は知的好奇心旺盛でコミュニケーション上手。多才で適応力があるが、飽きっぽく優柔不断な面もある。"
+  },
+  {
+    "planet_en": "Sun",
+    "planet_ja": "太陽",
+    "sign_en": "Cancer",
+    "sign_ja": "蟹座",
+    "interpretation_ja": "太陽蟹座の人は感情豊かで直感的。家族と家庭を何より大切にし、深い共感力を持つ。気分屋で過去に執着する傾向がある。"
+  },
+  {
+    "planet_en": "Sun",
+    "planet_ja": "太陽",
+    "sign_en": "Leo",
+    "sign_ja": "獅子座",
+    "interpretation_ja": "太陽獅子座の人はカリスマ的でクリエイティブ。舞台の中心に立つことを好み、寛大で温かい。自己中心的になりやすく承認欲求が強い。"
+  },
+  {
+    "planet_en": "Sun",
+    "planet_ja": "太陽",
+    "sign_en": "Virgo",
+    "sign_ja": "乙女座",
+    "interpretation_ja": "太陽乙女座の人は分析的で勤勉。細部への注意と実用性に優れ、奉仕精神が高い。完璧主義で自己批判が強い傾向がある。"
+  },
+  {
+    "planet_en": "Sun",
+    "planet_ja": "太陽",
+    "sign_en": "Libra",
+    "sign_ja": "天秤座",
+    "interpretation_ja": "太陽天秤座の人は外交的でバランス感覚に優れる。美と調和を重視し、公平さを追求する。優柔不断で対立を避けすぎる面もある。"
+  },
+  {
+    "planet_en": "Sun",
+    "planet_ja": "太陽",
+    "sign_en": "Scorpio",
+    "sign_ja": "蠍座",
+    "interpretation_ja": "太陽蠍座の人は強烈で洞察力が鋭い。物事の本質を見抜く力と変容のエネルギーを持つ。嫉妬深く執念深い面もある。"
+  },
+  {
+    "planet_en": "Sun",
+    "planet_ja": "太陽",
+    "sign_en": "Sagittarius",
+    "sign_ja": "射手座",
+    "interpretation_ja": "太陽射手座の人は楽観的で冒険好き。哲学・旅行・高等教育に強い関心を持つ。無責任で約束を守らない面もある。"
+  },
+  {
+    "planet_en": "Sun",
+    "planet_ja": "太陽",
+    "sign_en": "Capricorn",
+    "sign_ja": "山羊座",
+    "interpretation_ja": "太陽山羊座の人は野心的で規律正しい。着実に目標を達成する忍耐力と責任感を持つ。冷淡で仕事中毒になりやすい。"
+  },
+  {
+    "planet_en": "Sun",
+    "planet_ja": "太陽",
+    "sign_en": "Aquarius",
+    "sign_ja": "水瓶座",
+    "interpretation_ja": "太陽水瓶座の人は独創的で人道主義的。革新と自由を重視し、コミュニティに貢献しようとする。感情的に距離を置きやすい。"
+  },
+  {
+    "planet_en": "Sun",
+    "planet_ja": "太陽",
+    "sign_en": "Pisces",
+    "sign_ja": "魚座",
+    "interpretation_ja": "太陽魚座の人は感受性豊かで霊的。深い共感力と芸術的感受性を持つ。現実逃避しやすく境界線が曖昧な傾向がある。"
+  },
+  {
+    "planet_en": "Moon",
+    "planet_ja": "月",
+    "sign_en": "Aries",
+    "sign_ja": "牡羊座",
+    "interpretation_ja": "月牡羊座は感情的に衝動的で即座に反応する。感情を素直に表現し、行動で感情を発散する。怒りやすいが立ち直りも早い。"
+  },
+  {
+    "planet_en": "Moon",
+    "planet_ja": "月",
+    "sign_en": "Taurus",
+    "sign_ja": "牡牛座",
+    "interpretation_ja": "月牡牛座は感情的に安定していて落ち着いている。安心感と物質的な快適さを求める。変化を嫌い、感情的に頑固になりやすい。"
+  },
+  {
+    "planet_en": "Moon",
+    "planet_ja": "月",
+    "sign_en": "Gemini",
+    "sign_ja": "双子座",
+    "interpretation_ja": "月双子座は感情を知的に処理する。話すことで感情を整理し、多様な感情を同時に感じる。感情的に不安定になりやすい。"
+  },
+  {
+    "planet_en": "Moon",
+    "planet_ja": "月",
+    "sign_en": "Cancer",
+    "sign_ja": "蟹座",
+    "interpretation_ja": "月蟹座は月の本来の位置（ドミサイル）。深い感情と強い直感を持つ。家族と家庭への愛着が強く、過去の記憶を大切にする。"
+  },
+  {
+    "planet_en": "Moon",
+    "planet_ja": "月",
+    "sign_en": "Leo",
+    "sign_ja": "獅子座",
+    "interpretation_ja": "月獅子座は感情を劇的に表現する。愛情と承認を求め、感情的に温かく寛大。プライドが傷つくと感情的になりやすい。"
+  },
+  {
+    "planet_en": "Moon",
+    "planet_ja": "月",
+    "sign_en": "Virgo",
+    "sign_ja": "乙女座",
+    "interpretation_ja": "月乙女座は感情を分析的に処理する。心配性で感情を抑制しやすい。奉仕することで感情的な安定を得る。"
+  },
+  {
+    "planet_en": "Moon",
+    "planet_ja": "月",
+    "sign_en": "Libra",
+    "sign_ja": "天秤座",
+    "interpretation_ja": "月天秤座は調和と平和を求める。感情的なバランスを重視し、対立を避ける。パートナーシップを通じて感情的な安定を得る。"
+  },
+  {
+    "planet_en": "Moon",
+    "planet_ja": "月",
+    "sign_en": "Scorpio",
+    "sign_ja": "蠍座",
+    "interpretation_ja": "月蠍座は感情が深く強烈。感情を隠しやすく、嫉妬や執着が強い。変容を通じて感情的な成長を遂げる。"
+  },
+  {
+    "planet_en": "Moon",
+    "planet_ja": "月",
+    "sign_en": "Sagittarius",
+    "sign_ja": "射手座",
+    "interpretation_ja": "月射手座は感情的に楽観的で自由を求める。感情を哲学的に捉え、旅や学びで感情的な充足を得る。"
+  },
+  {
+    "planet_en": "Moon",
+    "planet_ja": "月",
+    "sign_en": "Capricorn",
+    "sign_ja": "山羊座",
+    "interpretation_ja": "月山羊座（デトリメント）は感情を抑制しやすい。感情より実用性を優先し、仕事で感情的な安定を得る。感情表現が苦手。"
+  },
+  {
+    "planet_en": "Moon",
+    "planet_ja": "月",
+    "sign_en": "Aquarius",
+    "sign_ja": "水瓶座",
+    "interpretation_ja": "月水瓶座は感情を客観的に処理する。感情より理性を優先し、グループや友人との絆で安定を得る。感情的に距離を置きやすい。"
+  },
+  {
+    "planet_en": "Moon",
+    "planet_ja": "月",
+    "sign_en": "Pisces",
+    "sign_ja": "魚座",
+    "interpretation_ja": "月魚座は感情が深く境界が曖昧。他者の感情を吸収しやすく、霊的な感受性が高い。感情的に圧倒されやすい。"
+  },
+  {
+    "planet_en": "Venus",
+    "planet_ja": "金星",
+    "sign_en": "Aries",
+    "sign_ja": "牡羊座",
+    "interpretation_ja": "金星牡羊座（デトリメント）は恋愛に積極的で衝動的。一目惚れしやすく、追いかけることに興奮する。飽きっぽい面もある。"
+  },
+  {
+    "planet_en": "Venus",
+    "planet_ja": "金星",
+    "sign_en": "Taurus",
+    "sign_ja": "牡牛座",
+    "interpretation_ja": "金星牡牛座（ドミサイル）は愛情表現が安定していて官能的。物質的な豊かさと感覚的な快楽を愛する。忠実で信頼できるパートナー。"
+  },
+  {
+    "planet_en": "Venus",
+    "planet_ja": "金星",
+    "sign_en": "Gemini",
+    "sign_ja": "双子座",
+    "interpretation_ja": "金星双子座は知的な刺激を愛する。会話と知的交流を重視し、多様な関係を楽しむ。感情的な深みより知的なつながりを求める。"
+  },
+  {
+    "planet_en": "Venus",
+    "planet_ja": "金星",
+    "sign_en": "Cancer",
+    "sign_ja": "蟹座",
+    "interpretation_ja": "金星蟹座は愛情深く保護的。家庭的な環境と感情的な安全を求める。過去の恋愛に執着しやすい。"
+  },
+  {
+    "planet_en": "Venus",
+    "planet_ja": "金星",
+    "sign_en": "Leo",
+    "sign_ja": "獅子座",
+    "interpretation_ja": "金星獅子座は愛情表現が劇的で寛大。ロマンスと特別扱いを求める。パートナーを誇りに思い、忠実に愛する。"
+  },
+  {
+    "planet_en": "Venus",
+    "planet_ja": "金星",
+    "sign_en": "Virgo",
+    "sign_ja": "乙女座",
+    "interpretation_ja": "金星乙女座（フォール）は愛情を奉仕で表現する。実用的で批判的になりやすく、完璧なパートナーを求める傾向がある。"
+  },
+  {
+    "planet_en": "Venus",
+    "planet_ja": "金星",
+    "sign_en": "Libra",
+    "sign_ja": "天秤座",
+    "interpretation_ja": "金星天秤座（ドミサイル）は調和と美を愛する。理想的なパートナーシップを求め、外交的で魅力的。優柔不断になりやすい。"
+  },
+  {
+    "planet_en": "Venus",
+    "planet_ja": "金星",
+    "sign_en": "Scorpio",
+    "sign_ja": "蠍座",
+    "interpretation_ja": "金星蠍座（デトリメント）は愛情が深く強烈。深い感情的・性的なつながりを求める。嫉妬深く執着しやすい。"
+  },
+  {
+    "planet_en": "Venus",
+    "planet_ja": "金星",
+    "sign_en": "Sagittarius",
+    "sign_ja": "射手座",
+    "interpretation_ja": "金星射手座は自由と冒険を愛する。哲学的なつながりと旅を共にするパートナーを求める。束縛を嫌う。"
+  },
+  {
+    "planet_en": "Venus",
+    "planet_ja": "金星",
+    "sign_en": "Capricorn",
+    "sign_ja": "山羊座",
+    "interpretation_ja": "金星山羊座は愛情を実用的に表現する。安定と長期的なコミットメントを重視。感情表現が控えめで冷淡に見えることも。"
+  },
+  {
+    "planet_en": "Venus",
+    "planet_ja": "金星",
+    "sign_en": "Aquarius",
+    "sign_ja": "水瓶座",
+    "interpretation_ja": "金星水瓶座は独立心が強く非伝統的な恋愛を好む。友情から始まる恋愛を好み、自由と平等を重視する。"
+  },
+  {
+    "planet_en": "Venus",
+    "planet_ja": "金星",
+    "sign_en": "Pisces",
+    "sign_ja": "魚座",
+    "interpretation_ja": "金星魚座（エグザルテーション）は愛情が深く無条件。ロマンティックで霊的なつながりを求める。自己犠牲的になりやすい。"
+  },
+  {
+    "planet_en": "Mars",
+    "planet_ja": "火星",
+    "sign_en": "Aries",
+    "sign_ja": "牡羊座",
+    "interpretation_ja": "火星牡羊座（ドミサイル）は行動力と勇気の象徴。衝動的で積極的、競争心が強い。先頭に立って行動するが短気。"
+  },
+  {
+    "planet_en": "Mars",
+    "planet_ja": "火星",
+    "sign_en": "Taurus",
+    "sign_ja": "牡牛座",
+    "interpretation_ja": "火星牡牛座（デトリメント）は行動が遅いが粘り強い。物質的な目標に向けて着実に努力する。怒りを溜め込みやすい。"
+  },
+  {
+    "planet_en": "Mars",
+    "planet_ja": "火星",
+    "sign_en": "Gemini",
+    "sign_ja": "双子座",
+    "interpretation_ja": "火星双子座は言葉と知性でエネルギーを発揮する。多方面に興味が分散しやすく、言葉での議論を好む。"
+  },
+  {
+    "planet_en": "Mars",
+    "planet_ja": "火星",
+    "sign_en": "Cancer",
+    "sign_ja": "蟹座",
+    "interpretation_ja": "火星蟹座（フォール）は感情的に行動する。防衛的で間接的なアプローチを取りやすい。感情が行動の原動力となる。"
+  },
+  {
+    "planet_en": "Mars",
+    "planet_ja": "火星",
+    "sign_en": "Leo",
+    "sign_ja": "獅子座",
+    "interpretation_ja": "火星獅子座は情熱的でドラマティック。創造的なプロジェクトに全力投球し、リーダーシップを発揮する。"
+  },
+  {
+    "planet_en": "Mars",
+    "planet_ja": "火星",
+    "sign_en": "Virgo",
+    "sign_ja": "乙女座",
+    "interpretation_ja": "火星乙女座は細部に注意を払い、実用的に行動する。完璧を求めて努力するが、批判的になりやすい。"
+  },
+  {
+    "planet_en": "Mars",
+    "planet_ja": "火星",
+    "sign_en": "Libra",
+    "sign_ja": "天秤座",
+    "interpretation_ja": "火星天秤座（デトリメント）は行動に迷いやすい。公平さを求めて行動し、対立を避ける傾向がある。"
+  },
+  {
+    "planet_en": "Mars",
+    "planet_ja": "火星",
+    "sign_en": "Scorpio",
+    "sign_ja": "蠍座",
+    "interpretation_ja": "火星蠍座（伝統的ドミサイル）は強烈な意志と深い欲望を持つ。目標に向けて執念深く行動し、変容のエネルギーを持つ。"
+  },
+  {
+    "planet_en": "Mars",
+    "planet_ja": "火星",
+    "sign_en": "Sagittarius",
+    "sign_ja": "射手座",
+    "interpretation_ja": "火星射手座は理想と哲学のために行動する。冒険的で楽観的、遠い目標に向かって矢を放つ。"
+  },
+  {
+    "planet_en": "Mars",
+    "planet_ja": "火星",
+    "sign_en": "Capricorn",
+    "sign_ja": "山羊座",
+    "interpretation_ja": "火星山羊座（エグザルテーション）は野心的で規律正しく行動する。長期的な目標に向けて着実に努力する。"
+  },
+  {
+    "planet_en": "Mars",
+    "planet_ja": "火星",
+    "sign_en": "Aquarius",
+    "sign_ja": "水瓶座",
+    "interpretation_ja": "火星水瓶座は革新的な方法で行動する。集団のために行動し、伝統に反抗する傾向がある。"
+  },
+  {
+    "planet_en": "Mars",
+    "planet_ja": "火星",
+    "sign_en": "Pisces",
+    "sign_ja": "魚座",
+    "interpretation_ja": "火星魚座は霊的な目標のために行動する。直感的で境界が曖昧、行動が不明確になりやすい。"
+  }
+]

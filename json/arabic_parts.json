@@ -1,0 +1,81 @@
+[
+  {
+    "id": 1,
+    "name_en": "Part of Fortune",
+    "name_ja": "フォーチュン（幸運の点）",
+    "symbol": "⊕",
+    "formula_day": "ASC + Moon - Sun",
+    "formula_night": "ASC + Sun - Moon",
+    "formula_ja": "昼：ASC + 月 - 太陽 / 夜：ASC + 太陽 - 月",
+    "keywords_ja": [
+      "幸運",
+      "豊かさ",
+      "身体的健康",
+      "物質的成功"
+    ],
+    "description_ja": "フォーチュンは最も重要なアラビック・パーツ。物質的な幸運・身体的健康・豊かさを示す。フォーチュンのサインとハウスが、物質的な成功が最も得やすい分野を教えてくれる。"
+  },
+  {
+    "id": 2,
+    "name_en": "Part of Spirit",
+    "name_ja": "スピリット（精神の点）",
+    "symbol": "☿",
+    "formula_day": "ASC + Sun - Moon",
+    "formula_night": "ASC + Moon - Sun",
+    "formula_ja": "昼：ASC + 太陽 - 月 / 夜：ASC + 月 - 太陽",
+    "keywords_ja": [
+      "精神的成長",
+      "魂の目的",
+      "意志",
+      "精神的健康"
+    ],
+    "description_ja": "スピリットはフォーチュンの対極にある点。精神的な成長・魂の目的・意志力を示す。"
+  },
+  {
+    "id": 3,
+    "name_en": "Part of Love",
+    "name_ja": "ラブ（愛の点）",
+    "symbol": "♡",
+    "formula_day": "ASC + Venus - Sun",
+    "formula_night": "ASC + Sun - Venus",
+    "formula_ja": "昼：ASC + 金星 - 太陽 / 夜：ASC + 太陽 - 金星",
+    "keywords_ja": [
+      "恋愛",
+      "愛情",
+      "関係性",
+      "美"
+    ],
+    "description_ja": "ラブは恋愛・愛情・関係性を示す。このポイントのサインとハウスが、恋愛が最も活性化する分野を教えてくれる。"
+  },
+  {
+    "id": 4,
+    "name_en": "Part of Marriage",
+    "name_ja": "マリッジ（結婚の点）",
+    "symbol": "⚭",
+    "formula_day": "ASC + DSC - Venus",
+    "formula_night": "ASC + DSC - Venus",
+    "formula_ja": "ASC + DSC - 金星",
+    "keywords_ja": [
+      "結婚",
+      "パートナーシップ",
+      "コミットメント"
+    ],
+    "description_ja": "マリッジは結婚とパートナーシップを示す。このポイントの位置が、結婚のタイミングや理想のパートナー像を教えてくれる。"
+  },
+  {
+    "id": 5,
+    "name_en": "Part of Death",
+    "name_ja": "デス（死の点）",
+    "symbol": "†",
+    "formula_day": "ASC + 8th House Cusp - Moon",
+    "formula_night": "ASC + 8th House Cusp - Moon",
+    "formula_ja": "ASC + 第8ハウスカスプ - 月",
+    "keywords_ja": [
+      "変容",
+      "終わり",
+      "再生",
+      "深い変化"
+    ],
+    "description_ja": "デスは変容・終わり・再生を示す。文字通りの死だけでなく、人生の大きな変容と終わりを示す。"
+  }
+]
