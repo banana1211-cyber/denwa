@@ -7,7 +7,7 @@
 
 import { cosineSimilarity } from './embeddings';
 
-export type EntryType = 'flow' | 'zodiac' | 'advice' | 'vocabulary' | 'planet';
+export type EntryType = 'flow' | 'zodiac' | 'advice' | 'vocabulary' | 'planet' | 'house';
 
 export interface VectorEntry {
   id: string;

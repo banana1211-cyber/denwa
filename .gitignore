@@ -27,6 +27,9 @@ Thumbs.db
 *.swp
 *.swo
 
+# RAG vector DB（生成物 - npm run seed:rag で再生成）
+data/vectors.json
+
 # Logs
 *.log
 npm-debug.log*

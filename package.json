@@ -7,13 +7,15 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "type-check": "tsc --noEmit"
+    "type-check": "tsc --noEmit",
+    "seed:rag": "tsx scripts/seedRag.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.90.0",
     "@gltf-transform/core": "^4.3.0",
     "@pixiv/three-vrm": "^3.5.2",
     "@types/three": "^0.184.0",
+    "dotenv": "^17.4.2",
     "next": "^14.2.0",
     "openai": "^6.34.0",
     "react": "^18.3.0",
@@ -26,6 +28,7 @@
     "@types/react-dom": "^18.3.0",
     "eslint": "^8.57.0",
     "eslint-config-next": "^14.2.0",
+    "tsx": "^4.21.0",
     "typescript": "^5.4.0"
   }
 }
