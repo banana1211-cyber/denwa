@@ -1,43 +1,27 @@
 /**
- * Ollama Embedding API
- * nomic-embed-text モデルでテキストをベクトル化する
- *
- * モデルのインストール: ollama pull nomic-embed-text
+ * OpenAI Embedding API
+ * text-embedding-3-small モデルでテキストをベクトル化する（1536次元）
+ * サーバーサイド専用（OPENAI_API_KEY）
  */
 
-const OLLAMA_URL = process.env.NEXT_PUBLIC_OLLAMA_URL || 'http://localhost:11434';
+import OpenAI from 'openai';
 
-/**
- * テキストを768次元のベクトルに変換
- */
+const openai = new OpenAI();
+
 export async function embed(text: string): Promise<number[]> {
-  const response = await fetch(`${OLLAMA_URL}/api/embeddings`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      model: 'nomic-embed-text',
-      prompt: text,
-    }),
+  const response = await openai.embeddings.create({
+    model: 'text-embedding-3-small',
+    input: text,
   });
-
-  if (!response.ok) {
-    throw new Error(`Embedding error: ${response.status}. ollama pull nomic-embed-text を実行してください`);
-  }
-
-  const data = await response.json();
-  return data.embedding as number[];
+  return response.data[0].embedding;
 }
 
-/**
- * 複数テキストをバッチでベクトル化
- */
 export async function embedBatch(texts: string[]): Promise<number[][]> {
-  const results: number[][] = [];
-  for (const text of texts) {
-    results.push(await embed(text));
-    await sleep(50); // レート制限回避
-  }
-  return results;
+  const response = await openai.embeddings.create({
+    model: 'text-embedding-3-small',
+    input: texts,
+  });
+  return response.data.map((d) => d.embedding);
 }
 
 /**
@@ -52,8 +36,4 @@ export function cosineSimilarity(a: number[], b: number[]): number {
   }
   if (magA === 0 || magB === 0) return 0;
   return dot / (Math.sqrt(magA) * Math.sqrt(magB));
-}
-
-function sleep(ms: number): Promise<void> {
-  return new Promise((r) => setTimeout(r, ms));
 }

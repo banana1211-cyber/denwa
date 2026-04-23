@@ -1,14 +1,23 @@
 /**
  * 音声再生キュー管理
  * TTS生成済み音声をシームレスに順番再生するキュー
+ *
+ * getModel を渡すと VRMモデルの speak() 経由でリップシンク付き再生を行う。
+ * モデルが未ロードの場合は AudioContext で直接再生にフォールバックする。
  */
+
+export interface SpeakableModel {
+  speak(buffer: ArrayBuffer, screenplay: { expression: string; talk: { style: string; speakerX: number; speakerY: number; message: string } }): Promise<void>;
+}
 
 export class AudioQueue {
   private queue: ArrayBuffer[] = [];
   private isPlaying = false;
   private audioContext: AudioContext | null = null;
+  private getModel: () => SpeakableModel | undefined;
 
-  constructor() {
+  constructor(getModel?: () => SpeakableModel | undefined) {
+    this.getModel = getModel ?? (() => undefined);
     if (typeof window !== 'undefined') {
       this.audioContext = new AudioContext();
     }
@@ -35,7 +44,17 @@ export class AudioQueue {
     const audioData = this.queue.shift()!;
 
     try {
-      await this.playAudioBuffer(audioData);
+      const model = this.getModel();
+      if (model) {
+        // VRMモデルがロード済み → リップシンク付き再生
+        await model.speak(audioData, {
+          expression: 'neutral',
+          talk: { style: 'talk', speakerX: 0, speakerY: 0, message: '' },
+        });
+      } else {
+        // フォールバック: AudioContextで直接再生
+        await this.playAudioBuffer(audioData);
+      }
     } catch (err) {
       console.error('Audio playback error:', err);
     }

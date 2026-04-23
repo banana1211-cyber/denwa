@@ -92,9 +92,10 @@ def build_interpretations(planet_positions: dict) -> dict[str, Any]:
         sign_interp = get_planet_in_sign(planet, sign_en)
         if sign_interp:
             interp_text = (
-                sign_interp.get("interpretation_ja")
+                sign_interp.get("personality")
+                or sign_interp.get("interpretation")
+                or sign_interp.get("interpretation_ja")
                 or sign_interp.get("description_ja")
-                or sign_interp.get("meaning_ja")
                 or ""
             )
             if interp_text:
@@ -105,9 +106,9 @@ def build_interpretations(planet_positions: dict) -> dict[str, Any]:
             house_interp = get_planet_in_house(planet, int(house))
             if house_interp:
                 interp_text = (
-                    house_interp.get("interpretation_ja")
+                    house_interp.get("interpretation")
+                    or house_interp.get("interpretation_ja")
                     or house_interp.get("description_ja")
-                    or house_interp.get("meaning_ja")
                     or ""
                 )
                 if interp_text:

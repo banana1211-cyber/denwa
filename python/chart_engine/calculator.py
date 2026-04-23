@@ -1,50 +1,47 @@
 """
-Kerykeion ラッパー：出生データ → チャート計算
+Kerykeion 5.x ラッパー：出生データ → チャート計算
 """
 
 from __future__ import annotations
 from dataclasses import dataclass, asdict
 from typing import Any
-from kerykeion import AstrologicalSubject
+from kerykeion import AstrologicalSubject, NatalAspects
 from .constants import SIGN_NAMES_JA, PLANET_NAMES_JA, ASPECT_NAMES_JA
 from .db_linker import build_interpretations, get_asc_in_sign
 
+# ── Kerykeion 5.x 変換テーブル ────────────────────────────
 
-@dataclass
-class PlanetPosition:
-    name_en: str
-    name_ja: str
-    sign_en: str
-    sign_ja: str
-    house: int
-    degree: float          # 星座内の度数（0〜29.9）
-    absolute_degree: float # 黄道上の絶対度数（0〜359.9）
-    retrograde: bool
+# 3文字略称 → フルネーム（英語）
+SIGN_ABBR_TO_FULL: dict[str, str] = {
+    "Ari": "Aries", "Tau": "Taurus", "Gem": "Gemini",
+    "Can": "Cancer", "Leo": "Leo", "Vir": "Virgo",
+    "Lib": "Libra", "Sco": "Scorpio", "Sag": "Sagittarius",
+    "Cap": "Capricorn", "Aqu": "Aquarius", "Pis": "Pisces",
+}
 
-
-@dataclass
-class PointPosition:
-    name_en: str
-    name_ja: str
-    sign_en: str
-    sign_ja: str
-    degree: float
+# "Tenth_House" → 10
+HOUSE_STR_TO_INT: dict[str, int] = {
+    "First_House": 1, "Second_House": 2, "Third_House": 3,
+    "Fourth_House": 4, "Fifth_House": 5, "Sixth_House": 6,
+    "Seventh_House": 7, "Eighth_House": 8, "Ninth_House": 9,
+    "Tenth_House": 10, "Eleventh_House": 11, "Twelfth_House": 12,
+}
 
 
-@dataclass
-class AspectResult:
-    planet1_en: str
-    planet1_ja: str
-    planet2_en: str
-    planet2_ja: str
-    aspect_en: str
-    aspect_ja: str
-    orb: float             # 実際の角度のズレ（許容差）
+def _sign_en(abbr: str) -> str:
+    return SIGN_ABBR_TO_FULL.get(abbr, abbr)
 
+
+def _house_int(house_str: str | int) -> int:
+    if isinstance(house_str, int):
+        return house_str
+    return HOUSE_STR_TO_INT.get(str(house_str), 0)
+
+
+# ── データクラス ──────────────────────────────────────────
 
 @dataclass
 class ChartResult:
-    # 入力情報
     name: str
     birth_year: int
     birth_month: int
@@ -55,14 +52,10 @@ class ChartResult:
     birth_lat: float
     birth_lng: float
     birth_tz: str
-
-    # 計算結果
-    planets: dict[str, dict]    # 各天体の配置
-    points: dict[str, dict]     # ASC・MC等
-    aspects: list[dict]         # アスペクト一覧
-    interpretations: dict[str, str]  # DBから引いた解釈文
-
-    # サマリー
+    planets: dict[str, dict]
+    points: dict[str, dict]
+    aspects: list[dict]
+    interpretations: dict[str, str]
     sun_sign_ja: str
     moon_sign_ja: str
     asc_sign_ja: str
@@ -82,41 +75,38 @@ PLANET_ATTRS = [
     ("pluto",   "冥王星"),
 ]
 
+ELEMENT_MAP: dict[str, str] = {
+    "Aries": "Fire", "Leo": "Fire", "Sagittarius": "Fire",
+    "Taurus": "Earth", "Virgo": "Earth", "Capricorn": "Earth",
+    "Gemini": "Air", "Libra": "Air", "Aquarius": "Air",
+    "Cancer": "Water", "Scorpio": "Water", "Pisces": "Water",
+}
+
+ELEMENT_JA: dict[str, str] = {
+    "Fire": "火", "Earth": "地", "Air": "風", "Water": "水",
+}
+
 
 def calculate_chart(
     name: str,
-    year: int,
-    month: int,
-    day: int,
-    hour: int,
-    minute: int,
-    lat: float,
-    lng: float,
-    tz_str: str,
-    house_system: str = "P",  # P=Placidus, W=WholeSign
+    year: int, month: int, day: int,
+    hour: int, minute: int,
+    lat: float, lng: float, tz_str: str,
+    house_system: str = "P",
 ) -> ChartResult:
     """
-    Kerykeion を使って出生チャートを計算し、DB解釈と紐付けて返す
-
-    house_system:
-      "P" → プラシーダス（デフォルト・最一般的）
-      "W" → ホールサイン（古典的・シンプル）
+    Kerykeion 5.x で出生チャートを計算し、DB解釈と紐付けて返す
     """
     subject = AstrologicalSubject(
         name=name,
-        year=year,
-        month=month,
-        day=day,
-        hour=hour,
-        minute=minute,
-        lng=lng,
-        lat=lat,
-        tz_str=tz_str,
+        year=year, month=month, day=day,
+        hour=hour, minute=minute,
+        lng=lng, lat=lat, tz_str=tz_str,
         houses_system_identifier=house_system,
         online=False,
     )
 
-    # ── 天体位置の収集 ──────────────────────────────────────
+    # ── 天体位置 ──────────────────────────────────────────
     planets: dict[str, dict] = {}
     planet_positions_for_db: dict[str, dict] = {}
 
@@ -125,87 +115,81 @@ def calculate_chart(
         if obj is None:
             continue
 
-        sign_en = obj.sign
+        sign_en = _sign_en(obj.sign)
         sign_ja = SIGN_NAMES_JA.get(sign_en, sign_en)
-        house = getattr(obj, "house", 0)
-        if isinstance(house, str):
-            house = int(house.replace("House_", "").replace("_", ""))
+        house = _house_int(obj.house)
 
-        pos = {
+        planets[attr] = {
             "name_en": attr,
             "name_ja": name_ja,
             "sign_en": sign_en,
             "sign_ja": sign_ja,
             "house": house,
-            "degree": round(obj.position, 2),
-            "absolute_degree": round(obj.abs_pos, 2),
-            "retrograde": bool(getattr(obj, "retrograde", False)),
+            "degree": round(float(obj.position), 2),
+            "absolute_degree": round(float(obj.abs_pos), 2),
+            "retrograde": bool(obj.retrograde),
         }
-        planets[attr] = pos
         planet_positions_for_db[attr] = {"sign_en": sign_en, "house": house}
 
-    # ── 感受点（ASC・MC）──────────────────────────────────
+    # ── 感受点（ASC・MC）─────────────────────────────────
     points: dict[str, dict] = {}
-    for attr, name_ja in [("first_house", "アセンダント"), ("tenth_house", "MC（中天）")]:
+    for attr, key, name_ja in [
+        ("first_house",  "asc", "アセンダント"),
+        ("tenth_house",  "mc",  "MC（中天）"),
+    ]:
         obj = getattr(subject, attr, None)
         if obj is None:
             continue
-        sign_en = obj.sign
-        points[attr.replace("_house", "")] = {
+        sign_en = _sign_en(obj.sign)
+        points[key] = {
             "name_ja": name_ja,
             "sign_en": sign_en,
             "sign_ja": SIGN_NAMES_JA.get(sign_en, sign_en),
-            "degree": round(obj.position, 2),
+            "degree": round(float(obj.position), 2),
         }
 
-    # ── アスペクト ──────────────────────────────────────────
+    # ── アスペクト ─────────────────────────────────────────
     aspects: list[dict] = []
     try:
-        aspect_list = subject.aspects_list
-        if aspect_list:
-            for asp in aspect_list:
-                aspects.append({
-                    "planet1_en": asp.get("p1_name", ""),
-                    "planet1_ja": PLANET_NAMES_JA.get(asp.get("p1_name", "").lower(), ""),
-                    "planet2_en": asp.get("p2_name", ""),
-                    "planet2_ja": PLANET_NAMES_JA.get(asp.get("p2_name", "").lower(), ""),
-                    "aspect_en": asp.get("aspect", ""),
-                    "aspect_ja": ASPECT_NAMES_JA.get(asp.get("aspect", "").lower(), asp.get("aspect", "")),
-                    "orb": round(asp.get("orbit", 0), 2),
-                })
-    except Exception:
-        pass  # アスペクト計算失敗は無視
+        natal_aspects = NatalAspects(subject)
+        for asp in natal_aspects.relevant_aspects:
+            aspects.append({
+                "planet1_en": asp.p1_name,
+                "planet1_ja": PLANET_NAMES_JA.get(asp.p1_name.lower(), asp.p1_name),
+                "planet2_en": asp.p2_name,
+                "planet2_ja": PLANET_NAMES_JA.get(asp.p2_name.lower(), asp.p2_name),
+                "aspect_en": asp.aspect,
+                "aspect_ja": ASPECT_NAMES_JA.get(asp.aspect.lower(), asp.aspect),
+                "orb": round(float(asp.orbit), 2),
+            })
+    except Exception as e:
+        print(f"[aspect] {e}")
 
-    # ── DB紐付け（解釈文） ──────────────────────────────────
+    # ── DB紐付け ──────────────────────────────────────────
     interpretations = build_interpretations(planet_positions_for_db)
 
-    # ASC解釈
-    asc_sign = points.get("first", {}).get("sign_en", "")
-    asc_interp = get_asc_in_sign(asc_sign)
+    asc_sign_en = points.get("asc", {}).get("sign_en", "")
+    asc_interp = get_asc_in_sign(asc_sign_en)
     if asc_interp:
         text = (
             asc_interp.get("interpretation_ja")
             or asc_interp.get("description_ja")
+            or asc_interp.get("meaning_ja")
+            or asc_interp.get("personality_mask")
+            or asc_interp.get("life_approach")
+            or asc_interp.get("life_theme")
             or ""
         )
         if text:
             interpretations["asc_in_sign"] = text
 
-    # ── 支配元素の計算 ──────────────────────────────────────
-    element_count = {"Fire": 0, "Earth": 0, "Air": 0, "Water": 0}
-    element_map = {
-        "Aries": "Fire", "Leo": "Fire", "Sagittarius": "Fire",
-        "Taurus": "Earth", "Virgo": "Earth", "Capricorn": "Earth",
-        "Gemini": "Air", "Libra": "Air", "Aquarius": "Air",
-        "Cancer": "Water", "Scorpio": "Water", "Pisces": "Water",
-    }
+    # ── 支配元素 ──────────────────────────────────────────
+    element_count: dict[str, int] = {"Fire": 0, "Earth": 0, "Air": 0, "Water": 0}
     for pos in planets.values():
-        el = element_map.get(pos["sign_en"], "")
+        el = ELEMENT_MAP.get(pos["sign_en"], "")
         if el:
             element_count[el] += 1
-
     dominant_element = max(element_count, key=lambda k: element_count[k])
-    element_ja_map = {"Fire": "火", "Earth": "地", "Air": "風", "Water": "水"}
 
     return ChartResult(
         name=name,
@@ -218,8 +202,8 @@ def calculate_chart(
         interpretations=interpretations,
         sun_sign_ja=planets.get("sun", {}).get("sign_ja", ""),
         moon_sign_ja=planets.get("moon", {}).get("sign_ja", ""),
-        asc_sign_ja=points.get("first", {}).get("sign_ja", ""),
-        dominant_element_ja=element_ja_map.get(dominant_element, ""),
+        asc_sign_ja=points.get("asc", {}).get("sign_ja", ""),
+        dominant_element_ja=ELEMENT_JA.get(dominant_element, ""),
     )
 
 
