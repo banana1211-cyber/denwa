@@ -22,12 +22,16 @@ export default function VrmViewer() {
           if (!files) return;
           const file = files[0];
           if (!file) return;
-          const ext = file.name.split(".").pop();
-          if (ext === "vrm") {
-            const blob = new Blob([file], { type: "application/octet-stream" });
-            const url = window.URL.createObjectURL(blob);
-            viewer.loadVrm(url);
+          const ext = file.name.split(".").pop()?.toLowerCase();
+          if (ext !== "vrm") return;
+          // 100MB 上限
+          if (file.size > 100 * 1024 * 1024) {
+            alert("VRMファイルは100MB以内にしてください");
+            return;
           }
+          const blob = new Blob([file], { type: "application/octet-stream" });
+          const url = window.URL.createObjectURL(blob);
+          viewer.loadVrm(url);
         });
       }
     },
