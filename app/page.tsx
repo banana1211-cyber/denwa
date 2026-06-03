@@ -8,6 +8,8 @@ import {
   createInitialState,
   transition,
   type ConversationState,
+  type BirthInput,
+  type ChartData,
 } from '@/lib/rag/conversationFlow';
 import { ViewerContext } from '@/features/vrmViewer/viewerContext';
 
@@ -25,6 +27,7 @@ interface Message {
 
 const FLOW_LABELS: Record<string, string> = {
   greeting: '挨拶',
+  birth_input: '出生データ入力',
   category_detection: 'カテゴリ判定',
   love: '恋愛相談',
   work: '仕事相談',
@@ -50,6 +53,7 @@ export default function ChatPage() {
 
   const audioQueueRef = useRef<AudioQueue | null>(null);
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const chartFetchingRef = useRef(false);
 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -71,6 +75,23 @@ export default function ChatPage() {
     });
   };
 
+  const fetchChartData = async (bi: BirthInput): Promise<ChartData | null> => {
+    const [year, month, day] = bi.date!.split('-').map(Number);
+    const [hour, minute] = (bi.time ?? '12:00').split(':').map(Number);
+    try {
+      const res = await fetch('/api/chart', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ year, month, day, hour, minute, city: bi.place }),
+      });
+      if (!res.ok) return null;
+      const data = await res.json();
+      return (data.chart as ChartData) ?? null;
+    } catch {
+      return null;
+    }
+  };
+
   const sendMessage = useCallback(
     async (text: string) => {
       const trimmed = text.trim();
@@ -79,6 +100,20 @@ export default function ChatPage() {
       setInput('');
       const nextState = transition(convState, trimmed);
       setConvState(nextState);
+
+      // 出生データが揃った瞬間にチャート計算を非同期で開始
+      if (
+        nextState.birthInput?.date &&
+        nextState.birthInput?.place &&
+        !nextState.chartData &&
+        !chartFetchingRef.current
+      ) {
+        chartFetchingRef.current = true;
+        fetchChartData(nextState.birthInput).then((chartData) => {
+          if (chartData) setConvState((prev) => ({ ...prev, chartData }));
+          chartFetchingRef.current = false;
+        });
+      }
       setStatus('thinking');
       addMessage('user', trimmed);
       addMessage('assistant', '');
@@ -232,6 +267,20 @@ export default function ChatPage() {
                 {convState.zodiacSign}
               </span>
             )}
+            {convState.chartData && (
+              <span
+                style={{
+                  fontSize: '0.72rem',
+                  padding: '0.2rem 0.65rem',
+                  background: 'rgba(52, 211, 153, 0.15)',
+                  border: '1px solid rgba(52, 211, 153, 0.5)',
+                  borderRadius: '12px',
+                  color: '#6ee7b7',
+                }}
+              >
+                ✦ チャート取得済
+              </span>
+            )}
           </div>
 
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
@@ -357,7 +406,11 @@ export default function ChatPage() {
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={handleKeyDown}
-              placeholder="聞きたいことをいれてね"
+              placeholder={
+                convState.currentNode === 'birth_input'
+                  ? '例）1990年3月21日、東京生まれです'
+                  : '聞きたいことをいれてね'
+              }
               rows={1}
               disabled={isBusy}
               style={{

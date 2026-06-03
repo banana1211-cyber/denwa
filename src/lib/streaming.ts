@@ -41,6 +41,7 @@ export async function streamWithTTS(
       currentNode: state.currentNode,
       zodiacSign: state.zodiacSign,
       category: state.category,
+      chartData: state.chartData ?? null,
     }),
   });
 

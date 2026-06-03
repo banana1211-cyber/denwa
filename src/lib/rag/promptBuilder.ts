@@ -64,6 +64,37 @@ export function buildSystemPrompt(
     }
   }
 
+  // ④b ネイタルチャートデータ（出生データ計算済みの場合）
+  if (state.chartData) {
+    const c = state.chartData;
+    const planetLines = Object.values(c.planets)
+      .map((p) => `${p.name_ja}：${p.sign_ja} ${p.house}ハウス${p.retrograde ? '（逆行）' : ''}`)
+      .join('、');
+
+    const pointLines = Object.values(c.points)
+      .map((p) => `${p.name_ja}：${p.sign_ja}`)
+      .join('、');
+
+    const aspectLines = c.aspects
+      .slice(0, 6)
+      .map((a) => `${a.planet1_ja}${a.aspect_ja}${a.planet2_ja}`)
+      .join('、');
+
+    const interpLines = Object.values(c.interpretations)
+      .filter(Boolean)
+      .slice(0, 6)
+      .map((v) => `・${v}`)
+      .join('\n');
+
+    parts.push(`\n【ネイタルチャートデータ（必ず参照して占うこと）】
+太陽星座: ${c.sun_sign_ja} ／ 月星座: ${c.moon_sign_ja} ／ ASC: ${c.asc_sign_ja}
+支配エレメント: ${c.dominant_element_ja}
+天体配置: ${planetLines}
+感受点: ${pointLines}
+主要アスペクト: ${aspectLines}
+解釈文:\n${interpLines}`);
+  }
+
   // ⑤ RAG取得コンテキスト（類似ドキュメント）
   if (ragResults.length > 0) {
     const ragTexts = ragResults

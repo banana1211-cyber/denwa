@@ -2,14 +2,14 @@ import OpenAI from 'openai';
 import { NextRequest } from 'next/server';
 import { buildSystemPrompt } from '@/lib/rag/promptBuilder';
 import { retrieveContext } from '@/lib/rag/retriever';
-import type { ConversationState } from '@/lib/rag/conversationFlow';
+import type { ConversationState, ChartData } from '@/lib/rag/conversationFlow';
 import type { FlowState } from '@/data/ragData';
 import { checkRateLimit, getClientIp } from '@/lib/rateLimit';
 
 const openai = new OpenAI();
 
 const VALID_NODES = new Set<string>([
-  'greeting', 'category_detection', 'love', 'work', 'health',
+  'greeting', 'birth_input', 'category_detection', 'love', 'work', 'health',
   'money', 'relationship', 'fortune_reading', 'advice', 'followup', 'closing',
 ]);
 const VALID_CATEGORIES = new Set<string>(['love', 'work', 'health', 'money', 'relationship']);
@@ -79,6 +79,10 @@ export async function POST(req: NextRequest) {
     typeof b.category === 'string' && VALID_CATEGORIES.has(b.category)
       ? b.category
       : undefined;
+  const chartData =
+    typeof b.chartData === 'object' && b.chartData !== null
+      ? (b.chartData as ChartData)
+      : undefined;
 
   const state: ConversationState = {
     currentNode,
@@ -86,6 +90,7 @@ export async function POST(req: NextRequest) {
     category,
     history,
     turnCount: history.length,
+    chartData,
   };
 
   const encoder = new TextEncoder();
